@@ -1,6 +1,6 @@
-# 🌦️ WeatherBet — Polymarket Weather Trading Bot
+# 🌦️ WeatherBet — Powered by Hermes Agent
 
-> Autonomous trading bot that exploits weather forecast errors to find mispriced Polymarket prediction markets — and self-improves over time.
+> **完全自治的预测市场交易机器人** — 基于 ECMWF 天气预报数据在全链上自动寻找错误定价的 Polymarket 市场进行投注，并借助 **Hermes Agent** 框架实现全自动进化学习。
 
 [![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/downloads/)
 [![Polygon](https://img.shields.io/badge/Chain-Polygon%20137-9B59B6.svg)](https://polygon.technology/)
@@ -8,41 +8,44 @@
 
 ---
 
-## 🎯 What It Does
+## 🤖 为什么选择 Hermes Agent
 
-The bot monitors **6 US cities** (NYC, Chicago, Miami, Dallas, Seattle, Atlanta) and bets on Polymarket's temperature prediction markets using **real ECMWF weather forecasts** as its edge. When the forecast predicts a temperature bucket, but the market price implies a different probability, the bot calculates the Expected Value (EV) and places a trade if EV > threshold.
+本项目展示了 **Hermes Agent** 框架在自动化交易领域的强大能力：
 
----
-
-## 💡 Why It Makes Money
-
-**The edge is weather forecast accuracy.**
-
-Polymarket traders rely on gut feel and consensus. This bot uses **ECMWF** — the world's most accurate weather model — to calculate the true probability of each temperature bucket, then compares it to the market price.
-
-```
-True Probability (from ECMWF) vs. Market Price (from Polymarket)
-```
-
-When `Market Price < True Probability`, the market is **underpriced** → BUY.
+| Hermes Agent 特性 | 在本项目中的应用 |
+|---|---|
+| **自主学习进化 (Self-Learning)** | 机器人从历史交易中自动调整 Kelly 分数和 EV 阈值参数 |
+| **全自动化执行 (Autonomous Execution)** | 60 分钟循环扫描市场 → 计算信号 → 自动下单 → 链上结算，全程无需人工干预 |
+| **多消息平台接入 (Multi-Platform Gateway)** | 通过 Telegram 实时推送交易通知，手机随时掌控全局 |
+| **长期记忆 (Persistent Memory)** | 交易日志 + 学习模型持久化存储，跨会话保留学习成果 |
+| **模型无关 (Model Agnostic)** | 可自由切换任意 LLM 提供者进行决策推理 |
+| **工具编排 (Tool Orchestration)** | 整合天气预报 API + 链上 CLOB 交易 + Telegram 通知 |
 
 ---
 
-## 🧮 The Math
+## 🎯 这个项目做什么
 
-### Step 1 — True Probability (Gaussian Bucket Model)
+机器人监控 **6 个美国城市**（纽约、芝加哥、迈阿密、达拉斯、西雅图、亚特兰大）的天气预报，在 **Polymarket 温度预测市场** 中寻找错误定价机会。
+
+**核心逻辑：** 当天气预报预测某温度区间的概率与市场隐含概率不一致时 → 计算期望值 (EV) → EV > 阈值则自动投注。
+
+---
+
+## 🧠 核心技术：Gaussian Bucket Model
+
+### 第一步 — 从 ECMWF 获取真实概率
 
 ```python
 import math
 
 def norm_cdf(x):
-    """Cumulative distribution function of standard normal — uses math.erf, no scipy needed."""
+    """标准正态分布累计分布函数"""
     return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
 
 def bucket_prob(forecast_temp, t_low, t_high, sigma=2.0):
     """
-    The forecast says 72°F ± 2σ.
-    What's the probability the actual high falls in the 70-75°F bucket?
+    天气预报给出 72°F ± 2σ
+    计算实际高温落在 70-75°F 区间的真实概率
     P(t_low ≤ X ≤ t_high) = CDF(z_high) - CDF(z_low)
     """
     z_low  = (t_low  - forecast_temp) / sigma
@@ -50,104 +53,98 @@ def bucket_prob(forecast_temp, t_low, t_high, sigma=2.0):
     return norm_cdf(z_high) - norm_cdf(z_low)
 ```
 
-### Step 2 — Expected Value
+### 第二步 — 计算期望值 (Expected Value)
 
 ```python
 def calc_ev(true_prob, market_price):
     """
-    EV = P(win) × payoff - P(lose) × cost
-    If EV > 0, the market underprices this outcome.
+    EV = P(赢) × 收益 - P(输) × 损失
+    EV > 0 表示市场定价偏低 → 买入信号
     """
-    win  = true_prob * (1 / market_price - 1)   # profit if we win
-    lose = (1 - true_prob) * 1                   # we lose our stake
+    win  = true_prob * (1 / market_price - 1)
+    lose = (1 - true_prob) * 1
     return win - lose
 ```
 
-**Example:**
-- Forecast: 72°F → 75% chance of 70-75°F bucket
-- Market price: $0.30 (implies 30% probability)
-- `EV = 0.75 × (1/0.30 - 1) - 0.25 = +1.25` → **Strong BUY**
+**示例：**
+- 天气预报：72°F → 70-75°F 区间概率 **75%**
+- 市场价格：$0.30（隐含 30% 概率）
+- `EV = 0.75 × (1/0.30 - 1) - 0.25 = +1.25` → **强烈买入信号** 📈
 
-### Step 3 — Kelly Criterion (Optimal Bet Size)
+### 第三步 — Kelly Criterion 最优投注
 
 ```python
 def calc_kelly(p, price):
-    """
-    Kelly % = (bp - q) / b
-    where b = 1/price - 1, p = true_prob, q = 1-p
-    """
+    """Kelly % = (bp - q) / b，使用 1/4 Kelly 保守分数"""
     b = 1.0 / price - 1.0
     f = (p * b - (1.0 - p)) / b
     return round(min(max(f, 0.0) * KELLY_FRAC, 1.0), 4)
-
-def bet_size(kelly, balance):
-    return round(min(kelly * balance, MAX_BET), 2)
 ```
-
-- Uses **1/4 Kelly** (conservative fraction) to survive variance
-- Caps bet at `$2.00` per trade
-- **Only trades when EV ≥ 10%** (adaptive floor, self-improving)
-
-### Summary: Why This Strategy Wins
-
-| Component | Detail |
-|---|---|
-| **Edge** | ECMWF weather model is more accurate than consensus |
-| **Signal** | Mispriced markets when `Market Price < True Probability` |
-| **Sizing** | Kelly Criterion — mathematically optimal bet sizing |
-| **Filter** | EV ≥ 10% (adaptive), volume > $500, spread < 3% |
-| **Execution** | Real Polymarket CLOB on Polygon (not simulation) |
-| **Learning** | Self-tuning Kelly fraction + EV floor from trade history |
 
 ---
 
-## 🧠 Self-Learning System
+## 🌀 自动进化学习系统
 
-After each trade, the bot records the outcome and adjusts its strategy:
+这是 Hermes Agent 框架的核心优势之一 — 机器人**从实战中学习，自动调参**：
 
 ```
 data/learning/
-├── trade_log.json   # All trades: city, bucket, cost, outcome, pnl
-└── model.json       # Learned parameters per city/bucket
+├── trade_log.json   # 所有交易记录：城市、区间、成本、结果、盈亏
+└── model.json       # 每个城市/区间的学习参数
 ```
 
-**Adaptation rules:**
-- Winrate < 45% → Kelly fraction ×0.8, EV floor +10%
-- Winrate > 55% + PnL > $2 → Kelly fraction ×1.1, EV floor −5%
-- Per-city winrate tracking adjusts confidence in each market
-- Starts conservative (25% Kelly) → converges to optimal as data accumulates
+**自适应规则：**
+-胜率 < 45% → Kelly 分数 ×0.8，EV 阈值 +10%
+-胜率 > 55% + 盈利 > $2 → Kelly 分数 ×1.1，EV 阈值 −5%
+-按城市追踪胜率，调整各市场置信度
+-初始保守（25% Kelly）→ 随着数据积累自动收敛到最优
 
 ---
 
-## ⚙️ Setup
+## 📊 系统架构
 
-### Requirements
+```
+ECMWF 天气预报 API
+        ↓
+Hermes Agent（自主决策引擎）
+    ├── 高斯桶模型 → 真实概率
+    ├── calc_ev() → 期望值计算
+    ├── calc_kelly() → 最优投注
+    └── 自适应学习 → 自动调参
+        ↓
+Polymarket CLOB（Polygon 链上执行）
+        ↓
+Telegram（实时推送通知）
+```
 
+---
+
+## ⚙️ 快速开始
+
+### 环境要求
 - Python 3.13+
-- Polygon wallet with USDC.e (on chain 137)
-- Polymarket CLOB approval
-- Polymarket API credentials
+- Polygon 钱包 + USDC.e
+- Polymarket CLOB 授权
+- Polymarket API 凭证
 
-### Installation
-
+### 安装
 ```bash
-git clone https://github.com/yourhandle/weatherbot.git
-cd weatherbot
+git clone https://github.com/nicolastinkl/hermes_weatherbot.git
+cd hermes_weatherbot
 python3.13 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Configuration
-
-Create `.env`:
+### 配置
+创建 `.env`：
 ```env
 PK=your_polygon_private_key
 WALLET=your_polygon_address
 SIG_TYPE=0
 ```
 
-Edit `config.json`:
+编辑 `config.json`：
 ```json
 {
   "balance": 0,
@@ -160,96 +157,65 @@ Edit `config.json`:
 }
 ```
 
-### Run
-
+### 运行
 ```bash
-# One-shot scan
+# 单次扫描
 python bot_v3.py scan
 
-# Continuous trading loop
+# 持续交易循环
 python bot_v3.py run
 
-# Check status
+# 查看状态
 python bot_v3.py status
 ```
 
 ---
 
-## 📊 Architecture
+## 🛡️ 风险管理
 
-```
-bot_v3.py
-│
-├── Weather Data
-│   ├── ECMWF API      — 10-day temperature forecast (primary signal)
-│   └── METAR          — current obs for D+0 override
-│
-├── Signal Evaluation
-│   ├── bucket_prob()  — Gaussian model → true probability
-│   ├── calc_ev()      — expected value vs market price
-│   ├── calc_kelly()   — optimal bet fraction
-│   └── Adaptive floor — self-learning EV threshold
-│
-├── Execution
-│   ├── py_clob_client — Polymarket CLOB on Polygon
-│   ├── place_buy_order — market order with 10s timeout
-│   └── on-chain settlement
-│
-├── Monitoring
-│   ├── Telegram       — real-time trade alerts
-│   ├── Self-learning  — trade_log + model.json
-│   └── 60-min loop    — continuous scan
-│
-└── Market Resolution
-    └── Outcome check   — PnL update when market resolves
-```
-
----
-
-## 🔐 Trading Flow
-
-```
-1. Fetch ECMWF forecast for each city (D+0 to D+3)
-2. Query Polymarket for temperature bucket markets
-3. Calculate true probability (Gaussian model, σ=2°F)
-4. Compare to market price → calc EV
-5. If EV ≥ adaptive threshold → calculate Kelly bet size
-6. Execute market order on Polymarket CLOB (Polygon)
-7. Record trade → update self-learning model
-8. Send Telegram notification
-9. Repeat every 60 minutes
-```
-
----
-
-## ⚠️ Risk Management
-
-| Parameter | Value | Purpose |
+| 参数 | 值 | 说明 |
 |---|---|---|
-| Max bet | $2.00 | Cap per-trade exposure |
-| Kelly fraction | 25% | Survive variance (1/4 Kelly) |
-| Min EV | 10%+ | Only trade positive EV |
-| Min volume | $500 | Avoid illiquid markets |
-| Max spread | 3% | Avoid high-slippage markets |
-| Adaptive floor | 10-20% | Self-tuning from performance |
+| 最大投注 | $2.00 | 单笔交易上限 |
+| Kelly 分数 | 25% | 1/4 Kelly 保守策略 |
+| 最低 EV | 10%+ | 只交易正期望值 |
+| 最低成交量 | $500 | 避免低流动性市场 |
+| 最大价差 | 3% | 避免高滑点 |
+| 自适应阈值 | 10-20% | 根据表现自动调整 |
 
 ---
 
-## 📦 Tech Stack
+## 🔐 交易流程（全自动化）
 
-- **Language:** Python 3.13
-- **Trading:** [py_clob_client](https://github.com/polymarket/py-clob-client) — Polymarket CLOB
-- **Weather:** ECMWF OpenMETAR / Open-Meteo API
-- **Chain:** Polygon (Chain ID 137) — USDC.e stablecoin
-- **Notifications:** Telegram Bot API
-- **Self-learning:** Pure Python JSON persistence (no DB needed)
+```
+1. 拉取 ECMWF 天气预报（D+0 ~ D+3）
+2. 查询 Polymarket 温度区间市场
+3. Gaussian 模型计算真实概率（σ=2°F）
+4. 与市场价格对比 → 计算 EV
+5. EV ≥ 自适应阈值 → 计算 Kelly 投注大小
+6. Polymarket CLOB 链上下单（Polygon）
+7. 记录交易 → 更新学习模型
+8. Telegram 实时通知
+9. 每 60 分钟循环
+```
 
 ---
 
-## 📝 Disclaimer
+## 💡 技术栈
 
-This bot trades real markets with real money. Past performance does not guarantee future results. Trade at your own risk. The bot is provided as-is for educational and research purposes.
+- **框架：** Hermes Agent（自主学习 + 多消息平台）
+- **语言：** Python 3.13
+- **交易：** [py_clob_client](https://github.com/polymarket/py-clob-client) — Polymarket CLOB
+- **天气：** ECMWF OpenMETAR / Open-Meteo API
+- **链：** Polygon（Chain ID 137）— USDC.e 稳定币
+- **通知：** Telegram Bot API
+- **学习：** 纯 Python JSON 持久化（零依赖数据库）
 
 ---
 
-*Built with 🐍 on Polygon — autonomous weather prediction trading.*
+## ⚠️ 免责声明
+
+本机器人使用真实资金交易真实市场。过去表现不代表未来结果。风险自担。本项目仅供教育和研究目的。
+
+---
+
+*Built with 🐍 + Hermes Agent on Polygon — Autonomous Weather Prediction Trading.*
