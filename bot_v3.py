@@ -990,7 +990,13 @@ def scan_and_trade():
                 warn(f"  ⚠️  Invalid forecast temp {forecast_temp}°F — skipping city")
                 break
 
-            # Collect for Telegram top-signals report (avoid duplicate API calls later)
+            # Skip sentinel/unbounded bucket ranges (t_high=999 or t_low=-999 from Polymarket)
+            sentinel_buckets = [(o["range"][0], o["range"][1]) for o in outcomes
+                                 if o["range"][0] == -999 or o["range"][1] == 999]
+            if sentinel_buckets:
+                info(f"  ⚠️  Sentinel buckets detected — ignoring for EV calculation")
+
+            # Collect for Telegram top-signals report
             city_market_data.append((city_slug, loc, outcomes, forecastsnap, horizon, end_date, date))
 
             sigma = get_sigma(city_slug)
@@ -999,6 +1005,9 @@ def scan_and_trade():
             # Find the bucket that matches our forecast
             for o in outcomes:
                 t_low, t_high = o["range"]
+                # Skip unbounded sentinel buckets from Polymarket
+                if t_low == -999 or t_high == 999:
+                    continue
                 if not in_bucket(forecast_temp, t_low, t_high):
                     continue
 
