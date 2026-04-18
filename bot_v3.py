@@ -915,6 +915,9 @@ def scan_and_trade():
     new_trades = 0
     errors = []
 
+    # Collect city market data for Telegram report (top signals)
+    city_market_data = []
+
     for city_slug, loc in LOCATIONS.items():
         print(f"  -> {loc['name']}...", end=" ", flush=True)
         unit_sym = "F"
@@ -993,6 +996,9 @@ def scan_and_trade():
             if forecast_temp is None:
                 continue
 
+            # Collect for Telegram top-signals report (avoid duplicate API calls later)
+            city_market_data.append((city_slug, loc, outcomes, forecastsnap, horizon, end_date, date))
+
             sigma = get_sigma(city_slug)
             best_signal = None
 
@@ -1013,12 +1019,14 @@ def scan_and_trade():
                 if spread > MAX_SLIPPAGE:
                     continue
 
+                # Calculate probability FIRST (needed for Kelly and EV)
+                p = bucket_prob(forecast_temp, t_low, t_high, sigma)
+
                 # Use adaptive EV floor and Kelly from self-learning
                 adaptive_ev_floor = get_adjusted_ev_floor()
                 base_kelly = calc_kelly(p, ask)
                 adjusted_kelly = get_adjusted_kelly(base_kelly)
 
-                p = bucket_prob(forecast_temp, t_low, t_high, sigma)
                 ev = calc_ev(p, ask)
                 if ev < adaptive_ev_floor:
                     continue
@@ -1043,7 +1051,7 @@ def scan_and_trade():
                     "cost": round(shares * ask, 4),
                     "p": round(p, 4),
                     "ev": round(ev, 4),
-                    "kelly": round(kelly, 4),
+                    "kelly": round(adjusted_kelly, 4),
                     "forecast_temp": forecast_temp,
                     "forecast_src": best_source,
                     "sigma": sigma,
