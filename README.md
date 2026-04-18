@@ -33,15 +33,21 @@ When `Market Price < True Probability`, the market is **underpriced** → BUY.
 ### Step 1 — True Probability (Gaussian Bucket Model)
 
 ```python
-def bucket_prob(forecast_temp, t_low, t_high, sigma=2.0°F):
+import math
+
+def norm_cdf(x):
+    """Cumulative distribution function of standard normal — uses math.erf, no scipy needed."""
+    return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
+
+def bucket_prob(forecast_temp, t_low, t_high, sigma=2.0):
     """
     The forecast says 72°F ± 2σ.
     What's the probability the actual high falls in the 70-75°F bucket?
+    P(t_low ≤ X ≤ t_high) = CDF(z_high) - CDF(z_low)
     """
-    from scipy.stats import norm
     z_low  = (t_low  - forecast_temp) / sigma
     z_high = (t_high - forecast_temp) / sigma
-    return norm.cdf(z_high) - norm.cdf(z_low)
+    return norm_cdf(z_high) - norm_cdf(z_low)
 ```
 
 ### Step 2 — Expected Value
