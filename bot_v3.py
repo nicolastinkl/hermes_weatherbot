@@ -104,8 +104,9 @@ def calc_kelly(p, price):
     f = (p * b - (1.0 - p)) / b
     return round(min(max(0.0, f) * KELLY_FRAC, 1.0), 4)
 
-def bet_size(kelly, balance):
-    raw = kelly * balance
+def bet_size(kelly):
+    """Calculate bet size from Kelly fraction. Always uses MAX_BET as cap for consistency."""
+    raw = kelly * MAX_BET
     return round(min(raw, MAX_BET), 2)
 
 # =============================================================================
@@ -582,16 +583,15 @@ def ensure_approvals():
 # =============================================================================
 
 def place_buy_order(market_id: str, token_id: str, price: float, shares: float,
-                   balance: float, private_key: str, wallet: str) -> dict:
+                   private_key: str, wallet: str) -> dict:
     """
     Place a BUY order on Polymarket CLOB.
     Uses FOK (Fill-Or-Kill) market order to guarantee execution.
     Returns dict with success status and details.
     Uses _timeout_call to prevent indefinite hangs.
+    Balance check is done on-chain — we always attempt the order for consistency.
     """
     cost = round(shares * price, 4)
-    if cost > balance:
-        return {"success": False, "reason": f"Insufficient balance (${balance:.2f} < ${cost:.2f})"}
 
     if not is_approved(USDC_ADDRESS, ROUTER, wallet):
         return {"success": False, "reason": "Router approval missing"}
@@ -1034,7 +1034,7 @@ def scan_and_trade():
                 if ev < adaptive_ev_floor:
                     continue
 
-                size = bet_size(adjusted_kelly, balance)
+                size = bet_size(adjusted_kelly)
                 if size < 0.50:
                     continue
 
@@ -1076,7 +1076,6 @@ def scan_and_trade():
                     token_id=best_signal["token_id"],
                     price=best_signal["entry_price"],
                     shares=best_signal["shares"],
-                    balance=balance,
                     private_key=PK,
                     wallet=WALLET,
                 )
