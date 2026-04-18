@@ -21,6 +21,16 @@
       "metar": null,
       "best": 26.7,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:36:39.712047+00:00",
+      "horizon": "D+1",
+      "hours_left": 28.4,
+      "ecmwf": 26.7,
+      "hrrr": null,
+      "metar": null,
+      "best": 26.7,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:34:42.322054+00:00",
       "top_bucket": "27.0-27.0C",
       "top_price": 0.38
+    },
+    {
+      "ts": "2026-04-18T07:36:39.712047+00:00",
+      "top_bucket": "27.0-27.0C",
+      "top_price": 0.37
     }
   ],
   "all_outcomes": [
@@ -51,11 +66,11 @@
         24.0,
         24.0
       ],
-      "bid": 0.004,
-      "ask": 0.996,
-      "price": 0.004,
-      "spread": 0.992,
-      "volume": 2181.0
+      "bid": 0.003,
+      "ask": 0.997,
+      "price": 0.003,
+      "spread": 0.994,
+      "volume": 2186.0
     },
     {
       "question": "Will the highest temperature in Sao Paulo be 25°C on April 19?",
@@ -64,10 +79,10 @@
         25.0,
         25.0
       ],
-      "bid": 0.0095,
-      "ask": 0.9905,
-      "price": 0.0095,
-      "spread": 0.981,
+      "bid": 0.018,
+      "ask": 0.982,
+      "price": 0.018,
+      "spread": 0.964,
       "volume": 940.0
     },
     {
@@ -90,11 +105,11 @@
         27.0,
         27.0
       ],
-      "bid": 0.38,
-      "ask": 0.62,
-      "price": 0.38,
-      "spread": 0.24,
-      "volume": 736.0
+      "bid": 0.37,
+      "ask": 0.63,
+      "price": 0.37,
+      "spread": 0.26,
+      "volume": 740.0
     },
     {
       "question": "Will the highest temperature in Sao Paulo be 28°C on April 19?",
@@ -103,11 +118,11 @@
         28.0,
         28.0
       ],
-      "bid": 0.33,
-      "ask": 0.67,
-      "price": 0.33,
-      "spread": 0.34,
-      "volume": 939.0
+      "bid": 0.335,
+      "ask": 0.665,
+      "price": 0.335,
+      "spread": 0.33,
+      "volume": 950.0
     },
     {
       "question": "Will the highest temperature in Sao Paulo be 29°C on April 19?",
@@ -116,11 +131,11 @@
         29.0,
         29.0
       ],
-      "bid": 0.19,
-      "ask": 0.81,
-      "price": 0.19,
-      "spread": 0.62,
-      "volume": 1040.0
+      "bid": 0.155,
+      "ask": 0.845,
+      "price": 0.155,
+      "spread": 0.69,
+      "volume": 1050.0
     },
     {
       "question": "Will the highest temperature in Sao Paulo be 30°C on April 19?",

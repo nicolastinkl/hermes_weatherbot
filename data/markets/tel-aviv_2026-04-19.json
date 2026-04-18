@@ -21,6 +21,16 @@
       "metar": null,
       "best": 23.6,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:36:31.622523+00:00",
+      "horizon": "D+1",
+      "hours_left": 28.4,
+      "ecmwf": 23.6,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.6,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:34:35.480269+00:00",
       "top_bucket": "23.0-23.0C",
       "top_price": 0.365
+    },
+    {
+      "ts": "2026-04-18T07:36:31.622523+00:00",
+      "top_bucket": "23.0-23.0C",
+      "top_price": 0.43
     }
   ],
   "all_outcomes": [
@@ -42,7 +57,7 @@
       "ask": 0.997,
       "price": 0.003,
       "spread": 0.994,
-      "volume": 1300.0
+      "volume": 2300.0
     },
     {
       "question": "Will the highest temperature in Tel Aviv be 17°C on April 19?",
@@ -55,7 +70,7 @@
       "ask": 0.9965,
       "price": 0.0035,
       "spread": 0.993,
-      "volume": 851.0
+      "volume": 861.0
     },
     {
       "question": "Will the highest temperature in Tel Aviv be 18°C on April 19?",
@@ -68,7 +83,7 @@
       "ask": 0.9945,
       "price": 0.0055,
       "spread": 0.989,
-      "volume": 615.0
+      "volume": 624.0
     },
     {
       "question": "Will the highest temperature in Tel Aviv be 19°C on April 19?",
@@ -81,7 +96,7 @@
       "ask": 0.988,
       "price": 0.012,
       "spread": 0.976,
-      "volume": 509.0
+      "volume": 592.0
     },
     {
       "question": "Will the highest temperature in Tel Aviv be 20°C on April 19?",
@@ -90,11 +105,11 @@
         20.0,
         20.0
       ],
-      "bid": 0.0145,
-      "ask": 0.9855,
-      "price": 0.0145,
-      "spread": 0.971,
-      "volume": 988.0
+      "bid": 0.014,
+      "ask": 0.986,
+      "price": 0.014,
+      "spread": 0.972,
+      "volume": 998.0
     },
     {
       "question": "Will the highest temperature in Tel Aviv be 21°C on April 19?",
@@ -103,11 +118,11 @@
         21.0,
         21.0
       ],
-      "bid": 0.056,
-      "ask": 0.944,
-      "price": 0.056,
-      "spread": 0.888,
-      "volume": 966.0
+      "bid": 0.0535,
+      "ask": 0.9465,
+      "price": 0.0535,
+      "spread": 0.893,
+      "volume": 988.0
     },
     {
       "question": "Will the highest temperature in Tel Aviv be 22°C on April 19?",
@@ -116,11 +131,11 @@
         22.0,
         22.0
       ],
-      "bid": 0.19,
-      "ask": 0.81,
-      "price": 0.19,
-      "spread": 0.62,
-      "volume": 477.0
+      "bid": 0.17,
+      "ask": 0.83,
+      "price": 0.17,
+      "spread": 0.66,
+      "volume": 493.0
     },
     {
       "question": "Will the highest temperature in Tel Aviv be 23°C on April 19?",
@@ -129,11 +144,11 @@
         23.0,
         23.0
       ],
-      "bid": 0.365,
-      "ask": 0.635,
-      "price": 0.365,
-      "spread": 0.27,
-      "volume": 337.0
+      "bid": 0.43,
+      "ask": 0.57,
+      "price": 0.43,
+      "spread": 0.14,
+      "volume": 395.0
     },
     {
       "question": "Will the highest temperature in Tel Aviv be 24°C on April 19?",
@@ -142,11 +157,11 @@
         24.0,
         24.0
       ],
-      "bid": 0.255,
-      "ask": 0.745,
-      "price": 0.255,
-      "spread": 0.49,
-      "volume": 556.0
+      "bid": 0.25,
+      "ask": 0.75,
+      "price": 0.25,
+      "spread": 0.5,
+      "volume": 626.0
     },
     {
       "question": "Will the highest temperature in Tel Aviv be 25°C on April 19?",
@@ -155,11 +170,11 @@
         25.0,
         25.0
       ],
-      "bid": 0.135,
-      "ask": 0.865,
-      "price": 0.135,
-      "spread": 0.73,
-      "volume": 435.0
+      "bid": 0.125,
+      "ask": 0.875,
+      "price": 0.125,
+      "spread": 0.75,
+      "volume": 444.0
     },
     {
       "question": "Will the highest temperature in Tel Aviv be 26°C or higher on April 19?",
@@ -168,11 +183,11 @@
         26.0,
         999.0
       ],
-      "bid": 0.03,
-      "ask": 0.97,
-      "price": 0.03,
-      "spread": 0.94,
-      "volume": 828.0
+      "bid": 0.024,
+      "ask": 0.976,
+      "price": 0.024,
+      "spread": 0.952,
+      "volume": 838.0
     }
   ],
   "created_at": "2026-04-18T06:34:38.147706+00:00"

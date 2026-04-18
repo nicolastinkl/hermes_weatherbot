@@ -21,6 +21,16 @@
       "metar": null,
       "best": 70,
       "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-18T07:35:22.555950+00:00",
+      "horizon": "D+1",
+      "hours_left": 28.4,
+      "ecmwf": 71,
+      "hrrr": 70,
+      "metar": null,
+      "best": 70,
+      "best_source": "hrrr"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:33:52.905589+00:00",
       "top_bucket": "70.0-71.0F",
       "top_price": 0.325
+    },
+    {
+      "ts": "2026-04-18T07:35:22.555950+00:00",
+      "top_bucket": "70.0-71.0F",
+      "top_price": 0.335
     }
   ],
   "all_outcomes": [
@@ -64,10 +79,10 @@
         58.0,
         59.0
       ],
-      "bid": 0.0025,
-      "ask": 0.9975,
-      "price": 0.0025,
-      "spread": 0.995,
+      "bid": 0.003,
+      "ask": 0.997,
+      "price": 0.003,
+      "spread": 0.994,
       "volume": 833.0
     },
     {
@@ -90,10 +105,10 @@
         62.0,
         63.0
       ],
-      "bid": 0.0025,
-      "ask": 0.9975,
-      "price": 0.0025,
-      "spread": 0.995,
+      "bid": 0.003,
+      "ask": 0.997,
+      "price": 0.003,
+      "spread": 0.994,
       "volume": 1775.0
     },
     {
@@ -103,11 +118,11 @@
         64.0,
         65.0
       ],
-      "bid": 0.007,
-      "ask": 0.993,
-      "price": 0.007,
-      "spread": 0.986,
-      "volume": 1062.0
+      "bid": 0.0035,
+      "ask": 0.9965,
+      "price": 0.0035,
+      "spread": 0.993,
+      "volume": 1150.0
     },
     {
       "question": "Will the highest temperature in Atlanta be between 66-67°F on April 19?",
@@ -116,11 +131,11 @@
         66.0,
         67.0
       ],
-      "bid": 0.0345,
-      "ask": 0.9655,
-      "price": 0.0345,
-      "spread": 0.931,
-      "volume": 1515.0
+      "bid": 0.0325,
+      "ask": 0.9675,
+      "price": 0.0325,
+      "spread": 0.935,
+      "volume": 1521.0
     },
     {
       "question": "Will the highest temperature in Atlanta be between 68-69°F on April 19?",
@@ -129,11 +144,11 @@
         68.0,
         69.0
       ],
-      "bid": 0.095,
-      "ask": 0.905,
-      "price": 0.095,
-      "spread": 0.81,
-      "volume": 2506.0
+      "bid": 0.115,
+      "ask": 0.885,
+      "price": 0.115,
+      "spread": 0.77,
+      "volume": 2539.0
     },
     {
       "question": "Will the highest temperature in Atlanta be between 70-71°F on April 19?",
@@ -142,11 +157,11 @@
         70.0,
         71.0
       ],
-      "bid": 0.325,
-      "ask": 0.675,
-      "price": 0.325,
-      "spread": 0.35,
-      "volume": 1373.0
+      "bid": 0.335,
+      "ask": 0.665,
+      "price": 0.335,
+      "spread": 0.33,
+      "volume": 1426.0
     },
     {
       "question": "Will the highest temperature in Atlanta be between 72-73°F on April 19?",
@@ -155,11 +170,11 @@
         72.0,
         73.0
       ],
-      "bid": 0.28,
-      "ask": 0.72,
-      "price": 0.28,
-      "spread": 0.44,
-      "volume": 1056.0
+      "bid": 0.245,
+      "ask": 0.755,
+      "price": 0.245,
+      "spread": 0.51,
+      "volume": 1121.0
     },
     {
       "question": "Will the highest temperature in Atlanta be 74°F or higher on April 19?",
@@ -168,11 +183,11 @@
         74.0,
         999.0
       ],
-      "bid": 0.285,
-      "ask": 0.715,
-      "price": 0.285,
-      "spread": 0.43,
-      "volume": 3440.0
+      "bid": 0.275,
+      "ask": 0.725,
+      "price": 0.275,
+      "spread": 0.45,
+      "volume": 3535.0
     }
   ],
   "created_at": "2026-04-18T06:33:56.622167+00:00"

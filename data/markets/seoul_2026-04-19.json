@@ -21,6 +21,16 @@
       "metar": null,
       "best": 22.7,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:35:58.430248+00:00",
+      "horizon": "D+1",
+      "hours_left": 28.4,
+      "ecmwf": 22.7,
+      "hrrr": null,
+      "metar": null,
+      "best": 22.7,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:34:19.250565+00:00",
       "top_bucket": "24.0-999.0C",
       "top_price": 0.53
+    },
+    {
+      "ts": "2026-04-18T07:35:58.430248+00:00",
+      "top_bucket": "24.0-999.0C",
+      "top_price": 0.515
     }
   ],
   "all_outcomes": [
@@ -42,7 +57,7 @@
       "ask": 0.9985,
       "price": 0.0015,
       "spread": 0.997,
-      "volume": 11372.0
+      "volume": 14565.0
     },
     {
       "question": "Will the highest temperature in Seoul be 15°C on April 19?",
@@ -55,7 +70,7 @@
       "ask": 0.9985,
       "price": 0.0015,
       "spread": 0.997,
-      "volume": 7306.0
+      "volume": 7370.0
     },
     {
       "question": "Will the highest temperature in Seoul be 16°C on April 19?",
@@ -68,7 +83,7 @@
       "ask": 0.9985,
       "price": 0.0015,
       "spread": 0.997,
-      "volume": 7514.0
+      "volume": 7574.0
     },
     {
       "question": "Will the highest temperature in Seoul be 17°C on April 19?",
@@ -77,11 +92,11 @@
         17.0,
         17.0
       ],
-      "bid": 0.0055,
-      "ask": 0.9945,
-      "price": 0.0055,
-      "spread": 0.989,
-      "volume": 5657.0
+      "bid": 0.0045,
+      "ask": 0.9955,
+      "price": 0.0045,
+      "spread": 0.991,
+      "volume": 5717.0
     },
     {
       "question": "Will the highest temperature in Seoul be 18°C on April 19?",
@@ -90,11 +105,11 @@
         18.0,
         18.0
       ],
-      "bid": 0.0045,
-      "ask": 0.9955,
-      "price": 0.0045,
-      "spread": 0.991,
-      "volume": 7145.0
+      "bid": 0.0075,
+      "ask": 0.9925,
+      "price": 0.0075,
+      "spread": 0.985,
+      "volume": 7333.0
     },
     {
       "question": "Will the highest temperature in Seoul be 19°C on April 19?",
@@ -103,11 +118,11 @@
         19.0,
         19.0
       ],
-      "bid": 0.0185,
-      "ask": 0.9815,
-      "price": 0.0185,
-      "spread": 0.963,
-      "volume": 4440.0
+      "bid": 0.023,
+      "ask": 0.977,
+      "price": 0.023,
+      "spread": 0.954,
+      "volume": 4712.0
     },
     {
       "question": "Will the highest temperature in Seoul be 20°C on April 19?",
@@ -116,11 +131,11 @@
         20.0,
         20.0
       ],
-      "bid": 0.0435,
-      "ask": 0.9565,
-      "price": 0.0435,
-      "spread": 0.913,
-      "volume": 3948.0
+      "bid": 0.036,
+      "ask": 0.964,
+      "price": 0.036,
+      "spread": 0.928,
+      "volume": 4118.0
     },
     {
       "question": "Will the highest temperature in Seoul be 21°C on April 19?",
@@ -129,11 +144,11 @@
         21.0,
         21.0
       ],
-      "bid": 0.09,
-      "ask": 0.91,
-      "price": 0.09,
-      "spread": 0.82,
-      "volume": 4304.0
+      "bid": 0.105,
+      "ask": 0.895,
+      "price": 0.105,
+      "spread": 0.79,
+      "volume": 4702.0
     },
     {
       "question": "Will the highest temperature in Seoul be 22°C on April 19?",
@@ -142,11 +157,11 @@
         22.0,
         22.0
       ],
-      "bid": 0.19,
-      "ask": 0.81,
-      "price": 0.19,
-      "spread": 0.62,
-      "volume": 2731.0
+      "bid": 0.17,
+      "ask": 0.83,
+      "price": 0.17,
+      "spread": 0.66,
+      "volume": 2886.0
     },
     {
       "question": "Will the highest temperature in Seoul be 23°C on April 19?",
@@ -155,11 +170,11 @@
         23.0,
         23.0
       ],
-      "bid": 0.17,
-      "ask": 0.83,
-      "price": 0.17,
-      "spread": 0.66,
-      "volume": 3762.0
+      "bid": 0.175,
+      "ask": 0.825,
+      "price": 0.175,
+      "spread": 0.65,
+      "volume": 3859.0
     },
     {
       "question": "Will the highest temperature in Seoul be 24°C or higher on April 19?",
@@ -168,11 +183,11 @@
         24.0,
         999.0
       ],
-      "bid": 0.53,
-      "ask": 0.47,
-      "price": 0.53,
-      "spread": -0.06,
-      "volume": 5450.0
+      "bid": 0.515,
+      "ask": 0.485,
+      "price": 0.515,
+      "spread": -0.03,
+      "volume": 6488.0
     }
   ],
   "created_at": "2026-04-18T06:34:21.584046+00:00"

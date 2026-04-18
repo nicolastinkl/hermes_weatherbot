@@ -20,7 +20,9 @@ import json
 import math
 import time
 import os
+import logging
 import dotenv
+import requests
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -54,6 +56,10 @@ VC_KEY        = _cfg.get("vc_key", "")
 # --- CLOB ---
 CLOB_HOST = "https://clob.polymarket.com"
 CHAIN_ID  = 137   # Polygon
+
+# --- Telegram ---
+TELEGRAM_BOT_TOKEN = _cfg.get("telegram_bot_token", "")
+TELEGRAM_CHAT_ID   = _cfg.get("telegram_chat_id", "")
 
 # --- Contract addresses (Polygon) ---
 USDC_ADDRESS            = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
@@ -203,6 +209,70 @@ def get_pol_balance(wallet: str) -> float:
     w3 = get_w3()
     bal = w3.eth.get_balance(Web3.to_checksum_address(wallet))
     return int(bal) / 1e18
+
+# =============================================================================
+# TELEGRAM NOTIFICATIONS
+# =============================================================================
+
+_tg_session = requests.Session()
+_tg_session.proxies = {
+    "http": "socks5h://127.0.0.1:6922",
+    "https": "socks5h://127.0.0.1:6922",
+}
+
+def send_telegram(text: str, retry=2) -> bool:
+    """Send a message via Telegram Bot API. Returns True on success."""
+    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+        return False
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    payload = {
+        "chat_id": TELEGRAM_CHAT_ID,
+        "text": text,
+        "parse_mode": "HTML",
+        "disable_web_page_preview": True,
+    }
+    for attempt in range(retry + 1):
+        try:
+            r = _tg_session.post(url, json=payload, timeout=(5, 10))
+            if r.status_code == 200:
+                return True
+        except Exception:
+            pass
+        if attempt < retry:
+            time.sleep(1)
+    return False
+
+def tg_signal(city: str, horizon: str, date: str, bucket_label: str,
+              forecast_temp: float, entry_price: float, cost: float,
+              ev: float, kelly: float, success: bool, reason: str = ""):
+    """Send a trade signal notification to Telegram."""
+    if success:
+        msg = (
+            f"📍 <b>{city} {horizon}</b> — {date}\n"
+            f"🌡 Forecast: <b>{forecast_temp}°F</b>\n"
+            f"🎯 Bucket: <b>{bucket_label}</b>\n"
+            f"💰 Cost: <b>${cost:.2f}</b> @ <b>${entry_price:.3f}</b>\n"
+            f"📈 EV: <b>+{ev:.2f}</b> | Kelly: <b>{kelly:.2f}</b>\n"
+            f"✅ <b>ORDER FILLED</b>"
+        )
+    else:
+        msg = (
+            f"📍 <b>{city} {horizon}</b> — {date}\n"
+            f"🌡 Forecast: <b>{forecast_temp}°F</b>\n"
+            f"🎯 Bucket: <b>{bucket_label}</b>\n"
+            f"❌ <b>ORDER FAILED:</b> {reason}"
+        )
+    send_telegram(msg)
+
+def tg_scan_summary(new_trades: int, errors: int, balance: float, cities: int):
+    """Send a scan summary to Telegram."""
+    status_emoji = "✅" if errors == 0 else "⚠️"
+    msg = (
+        f"🔔 <b>Weather Bot Scan Complete</b>\n"
+        f"{status_emoji} Cities: {cities} | New trades: {new_trades} | Errors: {errors}\n"
+        f"💰 Balance: <b>${balance:.4f}</b> USDC.e"
+    )
+    send_telegram(msg)
 
 # =============================================================================
 # APPROVAL CHECK
@@ -772,9 +842,27 @@ def scan_and_trade():
                         "pnl": None,
                     }
                     save_market(mkt_record)
+
+                    # Telegram notification — success
+                    tg_signal(
+                        city=loc["name"], horizon=horizon, date=date,
+                        bucket_label=bucket_label, forecast_temp=best_signal["forecast_temp"],
+                        entry_price=best_signal["entry_price"], cost=best_signal["cost"],
+                        ev=best_signal["ev"], kelly=best_signal["kelly"],
+                        success=True,
+                    )
                 else:
                     errors.append(f"{loc['name']} {horizon}: {result['reason']}")
                     warn(f"  ❌ Order failed: {result['reason']}")
+
+                    # Telegram notification — failure
+                    tg_signal(
+                        city=loc["name"], horizon=horizon, date=date,
+                        bucket_label=bucket_label, forecast_temp=best_signal["forecast_temp"],
+                        entry_price=best_signal["entry_price"], cost=best_signal.get("cost", 0),
+                        ev=best_signal["ev"], kelly=best_signal["kelly"],
+                        success=False, reason=result.get("reason", "unknown"),
+                    )
             else:
                 # No signal — show why
                 for o in outcomes:
@@ -799,6 +887,10 @@ def scan_and_trade():
     print(f"  Errors:     {len(errors)}")
     print(f"  Balance:    ${balance:.4f}")
     print(f"{'=' * 60}\n")
+
+    # Telegram scan summary
+    tg_scan_summary(new_trades=new_trades, errors=len(errors),
+                    balance=balance, cities=len(LOCATIONS))
 
     return new_trades, errors
 
@@ -848,7 +940,7 @@ def show_status():
 # MAIN LOOP
 # =============================================================================
 
-MONITOR_INTERVAL = 600  # 10 minutes
+MONITOR_INTERVAL = 600   # 10 minutes between monitor cycles
 
 def run_loop():
     print(f"\n{C.BOLD}{C.CYAN}🌤  Weather Trading Bot v3 — LIVE{C.RESET}")

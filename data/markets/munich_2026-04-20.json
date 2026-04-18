@@ -21,6 +21,16 @@
       "metar": null,
       "best": 12.1,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:35:36.919217+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.4,
+      "ecmwf": 12.1,
+      "hrrr": null,
+      "metar": null,
+      "best": 12.1,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:34:05.123715+00:00",
       "top_bucket": "12.0-12.0C",
       "top_price": 0.25
+    },
+    {
+      "ts": "2026-04-18T07:35:36.919217+00:00",
+      "top_bucket": "13.0-13.0C",
+      "top_price": 0.325
     }
   ],
   "all_outcomes": [
@@ -42,7 +57,7 @@
       "ask": 0.9925,
       "price": 0.0075,
       "spread": 0.985,
-      "volume": 145.0
+      "volume": 159.0
     },
     {
       "question": "Will the highest temperature in Munich be 7°C on April 20?",
@@ -51,11 +66,11 @@
         7.0,
         7.0
       ],
-      "bid": 0.0165,
-      "ask": 0.9835,
-      "price": 0.0165,
-      "spread": 0.967,
-      "volume": 166.0
+      "bid": 0.014,
+      "ask": 0.986,
+      "price": 0.014,
+      "spread": 0.972,
+      "volume": 170.0
     },
     {
       "question": "Will the highest temperature in Munich be 8°C on April 20?",
@@ -64,11 +79,11 @@
         8.0,
         8.0
       ],
-      "bid": 0.03,
-      "ask": 0.97,
-      "price": 0.03,
-      "spread": 0.94,
-      "volume": 45.0
+      "bid": 0.019,
+      "ask": 0.981,
+      "price": 0.019,
+      "spread": 0.962,
+      "volume": 160.0
     },
     {
       "question": "Will the highest temperature in Munich be 9°C on April 20?",
@@ -77,11 +92,11 @@
         9.0,
         9.0
       ],
-      "bid": 0.035,
-      "ask": 0.965,
-      "price": 0.035,
-      "spread": 0.93,
-      "volume": 0.0
+      "bid": 0.0395,
+      "ask": 0.9605,
+      "price": 0.0395,
+      "spread": 0.921,
+      "volume": 53.0
     },
     {
       "question": "Will the highest temperature in Munich be 10°C on April 20?",
@@ -90,11 +105,11 @@
         10.0,
         10.0
       ],
-      "bid": 0.025,
-      "ask": 0.975,
-      "price": 0.025,
-      "spread": 0.95,
-      "volume": 11.0
+      "bid": 0.0765,
+      "ask": 0.9235,
+      "price": 0.0765,
+      "spread": 0.847,
+      "volume": 28.0
     },
     {
       "question": "Will the highest temperature in Munich be 11°C on April 20?",
@@ -103,11 +118,11 @@
         11.0,
         11.0
       ],
-      "bid": 0.1,
-      "ask": 0.9,
-      "price": 0.1,
-      "spread": 0.8,
-      "volume": 143.0
+      "bid": 0.11,
+      "ask": 0.89,
+      "price": 0.11,
+      "spread": 0.78,
+      "volume": 185.0
     },
     {
       "question": "Will the highest temperature in Munich be 12°C on April 20?",
@@ -120,7 +135,7 @@
       "ask": 0.75,
       "price": 0.25,
       "spread": 0.5,
-      "volume": 9.0
+      "volume": 58.0
     },
     {
       "question": "Will the highest temperature in Munich be 13°C on April 20?",
@@ -129,11 +144,11 @@
         13.0,
         13.0
       ],
-      "bid": 0.25,
-      "ask": 0.75,
-      "price": 0.25,
-      "spread": 0.5,
-      "volume": 0.0
+      "bid": 0.325,
+      "ask": 0.675,
+      "price": 0.325,
+      "spread": 0.35,
+      "volume": 80.0
     },
     {
       "question": "Will the highest temperature in Munich be 14°C on April 20?",
@@ -142,11 +157,11 @@
         14.0,
         14.0
       ],
-      "bid": 0.185,
-      "ask": 0.815,
-      "price": 0.185,
-      "spread": 0.63,
-      "volume": 9.0
+      "bid": 0.28,
+      "ask": 0.72,
+      "price": 0.28,
+      "spread": 0.44,
+      "volume": 21.0
     },
     {
       "question": "Will the highest temperature in Munich be 15°C on April 20?",
@@ -159,7 +174,7 @@
       "ask": 0.905,
       "price": 0.095,
       "spread": 0.81,
-      "volume": 17.0
+      "volume": 29.0
     },
     {
       "question": "Will the highest temperature in Munich be 16°C or higher on April 20?",
@@ -172,7 +187,7 @@
       "ask": 0.935,
       "price": 0.065,
       "spread": 0.87,
-      "volume": 173.0
+      "volume": 208.0
     }
   ],
   "created_at": "2026-04-18T06:34:15.809220+00:00"

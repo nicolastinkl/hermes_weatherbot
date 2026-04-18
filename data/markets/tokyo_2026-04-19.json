@@ -21,6 +21,16 @@
       "metar": null,
       "best": 21.7,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:36:06.328891+00:00",
+      "horizon": "D+1",
+      "hours_left": 28.4,
+      "ecmwf": 21.7,
+      "hrrr": null,
+      "metar": null,
+      "best": 21.7,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:34:22.441395+00:00",
       "top_bucket": "24.0-24.0C",
       "top_price": 0.395
+    },
+    {
+      "ts": "2026-04-18T07:36:06.328891+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.4
     }
   ],
   "all_outcomes": [
@@ -42,7 +57,7 @@
       "ask": 0.9975,
       "price": 0.0025,
       "spread": 0.995,
-      "volume": 1657.0
+      "volume": 1663.0
     },
     {
       "question": "Will the highest temperature in Tokyo be 17°C on April 19?",
@@ -55,7 +70,7 @@
       "ask": 0.9975,
       "price": 0.0025,
       "spread": 0.995,
-      "volume": 1290.0
+      "volume": 1296.0
     },
     {
       "question": "Will the highest temperature in Tokyo be 18°C on April 19?",
@@ -68,7 +83,7 @@
       "ask": 0.9965,
       "price": 0.0035,
       "spread": 0.993,
-      "volume": 1593.0
+      "volume": 1599.0
     },
     {
       "question": "Will the highest temperature in Tokyo be 19°C on April 19?",
@@ -81,7 +96,7 @@
       "ask": 0.995,
       "price": 0.005,
       "spread": 0.99,
-      "volume": 543.0
+      "volume": 549.0
     },
     {
       "question": "Will the highest temperature in Tokyo be 20°C on April 19?",
@@ -94,7 +109,7 @@
       "ask": 0.992,
       "price": 0.008,
       "spread": 0.984,
-      "volume": 751.0
+      "volume": 1204.0
     },
     {
       "question": "Will the highest temperature in Tokyo be 21°C on April 19?",
@@ -103,11 +118,11 @@
         21.0,
         21.0
       ],
-      "bid": 0.008,
-      "ask": 0.992,
-      "price": 0.008,
-      "spread": 0.984,
-      "volume": 1577.0
+      "bid": 0.007,
+      "ask": 0.993,
+      "price": 0.007,
+      "spread": 0.986,
+      "volume": 1583.0
     },
     {
       "question": "Will the highest temperature in Tokyo be 22°C on April 19?",
@@ -116,11 +131,11 @@
         22.0,
         22.0
       ],
-      "bid": 0.075,
-      "ask": 0.925,
-      "price": 0.075,
-      "spread": 0.85,
-      "volume": 1949.0
+      "bid": 0.095,
+      "ask": 0.905,
+      "price": 0.095,
+      "spread": 0.81,
+      "volume": 2074.0
     },
     {
       "question": "Will the highest temperature in Tokyo be 23°C on April 19?",
@@ -129,11 +144,11 @@
         23.0,
         23.0
       ],
-      "bid": 0.295,
-      "ask": 0.705,
-      "price": 0.295,
-      "spread": 0.41,
-      "volume": 651.0
+      "bid": 0.305,
+      "ask": 0.695,
+      "price": 0.305,
+      "spread": 0.39,
+      "volume": 722.0
     },
     {
       "question": "Will the highest temperature in Tokyo be 24°C on April 19?",
@@ -142,11 +157,11 @@
         24.0,
         24.0
       ],
-      "bid": 0.395,
-      "ask": 0.605,
-      "price": 0.395,
-      "spread": 0.21,
-      "volume": 1270.0
+      "bid": 0.4,
+      "ask": 0.6,
+      "price": 0.4,
+      "spread": 0.2,
+      "volume": 1323.0
     },
     {
       "question": "Will the highest temperature in Tokyo be 25°C on April 19?",
@@ -155,11 +170,11 @@
         25.0,
         25.0
       ],
-      "bid": 0.185,
-      "ask": 0.815,
-      "price": 0.185,
-      "spread": 0.63,
-      "volume": 705.0
+      "bid": 0.175,
+      "ask": 0.825,
+      "price": 0.175,
+      "spread": 0.65,
+      "volume": 736.0
     },
     {
       "question": "Will the highest temperature in Tokyo be 26°C or higher on April 19?",
@@ -168,11 +183,11 @@
         26.0,
         999.0
       ],
-      "bid": 0.055,
-      "ask": 0.945,
-      "price": 0.055,
-      "spread": 0.89,
-      "volume": 1553.0
+      "bid": 0.06,
+      "ask": 0.94,
+      "price": 0.06,
+      "spread": 0.88,
+      "volume": 1654.0
     }
   ],
   "created_at": "2026-04-18T06:34:24.836914+00:00"

@@ -21,6 +21,16 @@
       "metar": null,
       "best": 28.4,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:36:22.669401+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.4,
+      "ecmwf": 28.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 28.4,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:34:28.838426+00:00",
       "top_bucket": "32.0-999.0C",
       "top_price": 0.605
+    },
+    {
+      "ts": "2026-04-18T07:36:22.669401+00:00",
+      "top_bucket": "32.0-999.0C",
+      "top_price": 0.6
     }
   ],
   "all_outcomes": [
@@ -42,7 +57,7 @@
       "ask": 0.9965,
       "price": 0.0035,
       "spread": 0.993,
-      "volume": 300.0
+      "volume": 320.0
     },
     {
       "question": "Will the highest temperature in Singapore be 23°C on April 20?",
@@ -55,7 +70,7 @@
       "ask": 0.9945,
       "price": 0.0055,
       "spread": 0.989,
-      "volume": 220.0
+      "volume": 240.0
     },
     {
       "question": "Will the highest temperature in Singapore be 24°C on April 20?",
@@ -64,11 +79,11 @@
         24.0,
         24.0
       ],
-      "bid": 0.0075,
-      "ask": 0.9925,
-      "price": 0.0075,
-      "spread": 0.985,
-      "volume": 150.0
+      "bid": 0.0065,
+      "ask": 0.9935,
+      "price": 0.0065,
+      "spread": 0.987,
+      "volume": 190.0
     },
     {
       "question": "Will the highest temperature in Singapore be 25°C on April 20?",
@@ -77,11 +92,11 @@
         25.0,
         25.0
       ],
-      "bid": 0.012,
-      "ask": 0.988,
-      "price": 0.012,
-      "spread": 0.976,
-      "volume": 170.0
+      "bid": 0.0095,
+      "ask": 0.9905,
+      "price": 0.0095,
+      "spread": 0.981,
+      "volume": 190.0
     },
     {
       "question": "Will the highest temperature in Singapore be 26°C on April 20?",
@@ -103,11 +118,11 @@
         27.0,
         27.0
       ],
-      "bid": 0.017,
-      "ask": 0.983,
-      "price": 0.017,
-      "spread": 0.966,
-      "volume": 165.0
+      "bid": 0.0055,
+      "ask": 0.9945,
+      "price": 0.0055,
+      "spread": 0.989,
+      "volume": 174.0
     },
     {
       "question": "Will the highest temperature in Singapore be 28°C on April 20?",
@@ -116,11 +131,11 @@
         28.0,
         28.0
       ],
-      "bid": 0.02,
-      "ask": 0.98,
-      "price": 0.02,
-      "spread": 0.96,
-      "volume": 162.0
+      "bid": 0.025,
+      "ask": 0.975,
+      "price": 0.025,
+      "spread": 0.95,
+      "volume": 208.0
     },
     {
       "question": "Will the highest temperature in Singapore be 29°C on April 20?",
@@ -129,11 +144,11 @@
         29.0,
         29.0
       ],
-      "bid": 0.0235,
-      "ask": 0.9765,
-      "price": 0.0235,
-      "spread": 0.953,
-      "volume": 332.0
+      "bid": 0.0265,
+      "ask": 0.9735,
+      "price": 0.0265,
+      "spread": 0.947,
+      "volume": 345.0
     },
     {
       "question": "Will the highest temperature in Singapore be 30°C on April 20?",
@@ -142,10 +157,10 @@
         30.0,
         30.0
       ],
-      "bid": 0.15,
-      "ask": 0.85,
-      "price": 0.15,
-      "spread": 0.7,
+      "bid": 0.14,
+      "ask": 0.86,
+      "price": 0.14,
+      "spread": 0.72,
       "volume": 39.0
     },
     {
@@ -155,11 +170,11 @@
         31.0,
         31.0
       ],
-      "bid": 0.24,
-      "ask": 0.76,
-      "price": 0.24,
-      "spread": 0.52,
-      "volume": 1.0
+      "bid": 0.215,
+      "ask": 0.785,
+      "price": 0.215,
+      "spread": 0.57,
+      "volume": 5.0
     },
     {
       "question": "Will the highest temperature in Singapore be 32°C or higher on April 20?",
@@ -168,11 +183,11 @@
         32.0,
         999.0
       ],
-      "bid": 0.605,
-      "ask": 0.395,
-      "price": 0.605,
-      "spread": -0.21,
-      "volume": 78.0
+      "bid": 0.6,
+      "ask": 0.4,
+      "price": 0.6,
+      "spread": -0.2,
+      "volume": 138.0
     }
   ],
   "created_at": "2026-04-18T06:34:31.831362+00:00"

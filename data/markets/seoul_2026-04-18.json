@@ -21,11 +21,26 @@
       "metar": 20.0,
       "best": 21.0,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:35:58.430248+00:00",
+      "horizon": "D+0",
+      "hours_left": 4.4,
+      "ecmwf": 21.0,
+      "hrrr": null,
+      "metar": 18.0,
+      "best": 21.0,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
     {
       "ts": "2026-04-18T06:34:19.250565+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.9995
+    },
+    {
+      "ts": "2026-04-18T07:35:58.430248+00:00",
       "top_bucket": "21.0-999.0C",
       "top_price": 0.9995
     }
@@ -155,11 +170,11 @@
         20.0,
         20.0
       ],
-      "bid": 0.0005,
-      "ask": 0.9995,
-      "price": 0.0005,
-      "spread": 0.999,
-      "volume": 79529.0
+      "bid": 0.0,
+      "ask": 1.0,
+      "price": 0.0,
+      "spread": 1.0,
+      "volume": 79546.0
     },
     {
       "question": "Will the highest temperature in Seoul be 21°C or higher on April 18?",
@@ -172,7 +187,7 @@
       "ask": 0.0005,
       "price": 0.9995,
       "spread": -0.999,
-      "volume": 69931.0
+      "volume": 72835.0
     }
   ],
   "created_at": "2026-04-18T06:34:21.090038+00:00"

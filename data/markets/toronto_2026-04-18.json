@@ -21,6 +21,16 @@
       "metar": 9.0,
       "best": 17.8,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:36:35.440708+00:00",
+      "horizon": "D+0",
+      "hours_left": 4.4,
+      "ecmwf": 17.8,
+      "hrrr": null,
+      "metar": 8.0,
+      "best": 17.8,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:34:39.006007+00:00",
       "top_bucket": "18.0-18.0C",
       "top_price": 0.265
+    },
+    {
+      "ts": "2026-04-18T07:36:35.440708+00:00",
+      "top_bucket": "18.0-18.0C",
+      "top_price": 0.26
     }
   ],
   "all_outcomes": [
@@ -38,11 +53,11 @@
         -999.0,
         11.0
       ],
-      "bid": 0.002,
-      "ask": 0.998,
-      "price": 0.002,
-      "spread": 0.996,
-      "volume": 8807.0
+      "bid": 0.0025,
+      "ask": 0.9975,
+      "price": 0.0025,
+      "spread": 0.995,
+      "volume": 8832.0
     },
     {
       "question": "Will the highest temperature in Toronto be 12°C on April 18?",
@@ -55,7 +70,7 @@
       "ask": 0.9985,
       "price": 0.0015,
       "spread": 0.997,
-      "volume": 3129.0
+      "volume": 3214.0
     },
     {
       "question": "Will the highest temperature in Toronto be 13°C on April 18?",
@@ -68,7 +83,7 @@
       "ask": 0.9985,
       "price": 0.0015,
       "spread": 0.997,
-      "volume": 2080.0
+      "volume": 2105.0
     },
     {
       "question": "Will the highest temperature in Toronto be 14°C on April 18?",
@@ -77,11 +92,11 @@
         14.0,
         14.0
       ],
-      "bid": 0.0055,
-      "ask": 0.9945,
-      "price": 0.0055,
-      "spread": 0.989,
-      "volume": 3974.0
+      "bid": 0.0125,
+      "ask": 0.9875,
+      "price": 0.0125,
+      "spread": 0.975,
+      "volume": 3999.0
     },
     {
       "question": "Will the highest temperature in Toronto be 15°C on April 18?",
@@ -90,11 +105,11 @@
         15.0,
         15.0
       ],
-      "bid": 0.0105,
-      "ask": 0.9895,
-      "price": 0.0105,
-      "spread": 0.979,
-      "volume": 3547.0
+      "bid": 0.008,
+      "ask": 0.992,
+      "price": 0.008,
+      "spread": 0.984,
+      "volume": 3848.0
     },
     {
       "question": "Will the highest temperature in Toronto be 16°C on April 18?",
@@ -103,11 +118,11 @@
         16.0,
         16.0
       ],
-      "bid": 0.0935,
-      "ask": 0.9065,
-      "price": 0.0935,
-      "spread": 0.813,
-      "volume": 4480.0
+      "bid": 0.082,
+      "ask": 0.918,
+      "price": 0.082,
+      "spread": 0.836,
+      "volume": 4755.0
     },
     {
       "question": "Will the highest temperature in Toronto be 17°C on April 18?",
@@ -116,11 +131,11 @@
         17.0,
         17.0
       ],
-      "bid": 0.215,
-      "ask": 0.785,
-      "price": 0.215,
-      "spread": 0.57,
-      "volume": 3899.0
+      "bid": 0.19,
+      "ask": 0.81,
+      "price": 0.19,
+      "spread": 0.62,
+      "volume": 4026.0
     },
     {
       "question": "Will the highest temperature in Toronto be 18°C on April 18?",
@@ -129,11 +144,11 @@
         18.0,
         18.0
       ],
-      "bid": 0.265,
-      "ask": 0.735,
-      "price": 0.265,
-      "spread": 0.47,
-      "volume": 3999.0
+      "bid": 0.26,
+      "ask": 0.74,
+      "price": 0.26,
+      "spread": 0.48,
+      "volume": 4187.0
     },
     {
       "question": "Will the highest temperature in Toronto be 19°C on April 18?",
@@ -142,11 +157,11 @@
         19.0,
         19.0
       ],
-      "bid": 0.245,
-      "ask": 0.755,
-      "price": 0.245,
-      "spread": 0.51,
-      "volume": 2029.0
+      "bid": 0.235,
+      "ask": 0.765,
+      "price": 0.235,
+      "spread": 0.53,
+      "volume": 2109.0
     },
     {
       "question": "Will the highest temperature in Toronto be 20°C on April 18?",
@@ -155,11 +170,11 @@
         20.0,
         20.0
       ],
-      "bid": 0.051,
-      "ask": 0.949,
-      "price": 0.051,
-      "spread": 0.898,
-      "volume": 3971.0
+      "bid": 0.052,
+      "ask": 0.948,
+      "price": 0.052,
+      "spread": 0.896,
+      "volume": 4046.0
     },
     {
       "question": "Will the highest temperature in Toronto be 21°C or higher on April 18?",
@@ -168,11 +183,11 @@
         21.0,
         999.0
       ],
-      "bid": 0.0235,
-      "ask": 0.9765,
-      "price": 0.0235,
-      "spread": 0.953,
-      "volume": 5106.0
+      "bid": 0.03,
+      "ask": 0.97,
+      "price": 0.03,
+      "spread": 0.94,
+      "volume": 5276.0
     }
   ],
   "created_at": "2026-04-18T06:34:41.044833+00:00"

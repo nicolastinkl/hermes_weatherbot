@@ -21,6 +21,16 @@
       "metar": 63,
       "best": 63,
       "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-18T07:35:02.766600+00:00",
+      "horizon": "D+0",
+      "hours_left": 4.4,
+      "ecmwf": 66,
+      "hrrr": 63,
+      "metar": 61,
+      "best": 63,
+      "best_source": "hrrr"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:33:33.876961+00:00",
       "top_bucket": "62.0-63.0F",
       "top_price": 0.9185
+    },
+    {
+      "ts": "2026-04-18T07:35:02.766600+00:00",
+      "top_bucket": "62.0-63.0F",
+      "top_price": 0.97
     }
   ],
   "all_outcomes": [
@@ -42,7 +57,7 @@
       "ask": 0.9995,
       "price": 0.0005,
       "spread": 0.999,
-      "volume": 55796.0
+      "volume": 59857.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 54-55°F on April 18?",
@@ -55,7 +70,7 @@
       "ask": 0.9995,
       "price": 0.0005,
       "spread": 0.999,
-      "volume": 11575.0
+      "volume": 11656.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 56-57°F on April 18?",
@@ -68,7 +83,7 @@
       "ask": 0.9995,
       "price": 0.0005,
       "spread": 0.999,
-      "volume": 10782.0
+      "volume": 10925.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 58-59°F on April 18?",
@@ -81,7 +96,7 @@
       "ask": 0.9995,
       "price": 0.0005,
       "spread": 0.999,
-      "volume": 13442.0
+      "volume": 13574.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 60-61°F on April 18?",
@@ -94,7 +109,7 @@
       "ask": 0.9995,
       "price": 0.0005,
       "spread": 0.999,
-      "volume": 13791.0
+      "volume": 13957.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 62-63°F on April 18?",
@@ -103,11 +118,11 @@
         62.0,
         63.0
       ],
-      "bid": 0.9185,
-      "ask": 0.0815,
-      "price": 0.9185,
-      "spread": -0.837,
-      "volume": 10274.0
+      "bid": 0.97,
+      "ask": 0.03,
+      "price": 0.97,
+      "spread": -0.94,
+      "volume": 18239.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 64-65°F on April 18?",
@@ -116,11 +131,11 @@
         64.0,
         65.0
       ],
-      "bid": 0.0615,
-      "ask": 0.9385,
-      "price": 0.0615,
-      "spread": 0.877,
-      "volume": 5738.0
+      "bid": 0.0145,
+      "ask": 0.9855,
+      "price": 0.0145,
+      "spread": 0.971,
+      "volume": 7420.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 66-67°F on April 18?",
@@ -129,11 +144,11 @@
         66.0,
         67.0
       ],
-      "bid": 0.0345,
-      "ask": 0.9655,
-      "price": 0.0345,
-      "spread": 0.931,
-      "volume": 9171.0
+      "bid": 0.0095,
+      "ask": 0.9905,
+      "price": 0.0095,
+      "spread": 0.981,
+      "volume": 10254.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 68-69°F on April 18?",
@@ -142,11 +157,11 @@
         68.0,
         69.0
       ],
-      "bid": 0.0025,
-      "ask": 0.9975,
-      "price": 0.0025,
-      "spread": 0.995,
-      "volume": 8138.0
+      "bid": 0.0125,
+      "ask": 0.9875,
+      "price": 0.0125,
+      "spread": 0.975,
+      "volume": 9139.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 70-71°F on April 18?",
@@ -159,7 +174,7 @@
       "ask": 0.9955,
       "price": 0.0045,
       "spread": 0.991,
-      "volume": 7215.0
+      "volume": 7917.0
     },
     {
       "question": "Will the highest temperature in Chicago be 72°F or higher on April 18?",
@@ -168,11 +183,11 @@
         72.0,
         999.0
       ],
-      "bid": 0.0015,
-      "ask": 0.9985,
-      "price": 0.0015,
-      "spread": 0.997,
-      "volume": 13447.0
+      "bid": 0.003,
+      "ask": 0.997,
+      "price": 0.003,
+      "spread": 0.994,
+      "volume": 14304.0
     }
   ],
   "created_at": "2026-04-18T06:33:36.997932+00:00"

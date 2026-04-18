@@ -21,6 +21,16 @@
       "metar": 21.0,
       "best": 19.3,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:36:11.273578+00:00",
+      "horizon": "D+0",
+      "hours_left": 4.4,
+      "ecmwf": 19.3,
+      "hrrr": null,
+      "metar": 20.0,
+      "best": 19.3,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:34:25.740032+00:00",
       "top_bucket": "21.0-21.0C",
       "top_price": 0.962
+    },
+    {
+      "ts": "2026-04-18T07:36:11.273578+00:00",
+      "top_bucket": "21.0-21.0C",
+      "top_price": 0.996
     }
   ],
   "all_outcomes": [
@@ -77,11 +92,11 @@
         18.0,
         18.0
       ],
-      "bid": 0.0005,
-      "ask": 0.9995,
-      "price": 0.0005,
-      "spread": 0.999,
-      "volume": 41638.0
+      "bid": 0.0,
+      "ask": 1.0,
+      "price": 0.0,
+      "spread": 1.0,
+      "volume": 41739.0
     },
     {
       "question": "Will the highest temperature in Shanghai be 19°C on April 18?",
@@ -90,11 +105,11 @@
         19.0,
         19.0
       ],
-      "bid": 0.0005,
-      "ask": 0.9995,
-      "price": 0.0005,
-      "spread": 0.999,
-      "volume": 40107.0
+      "bid": 0.0,
+      "ask": 1.0,
+      "price": 0.0,
+      "spread": 1.0,
+      "volume": 40119.0
     },
     {
       "question": "Will the highest temperature in Shanghai be 20°C on April 18?",
@@ -107,7 +122,7 @@
       "ask": 0.9995,
       "price": 0.0005,
       "spread": 0.999,
-      "volume": 43862.0
+      "volume": 45988.0
     },
     {
       "question": "Will the highest temperature in Shanghai be 21°C on April 18?",
@@ -116,11 +131,11 @@
         21.0,
         21.0
       ],
-      "bid": 0.962,
-      "ask": 0.038,
-      "price": 0.962,
-      "spread": -0.924,
-      "volume": 37647.0
+      "bid": 0.996,
+      "ask": 0.004,
+      "price": 0.996,
+      "spread": -0.992,
+      "volume": 45982.0
     },
     {
       "question": "Will the highest temperature in Shanghai be 22°C on April 18?",
@@ -129,11 +144,11 @@
         22.0,
         22.0
       ],
-      "bid": 0.029,
-      "ask": 0.971,
-      "price": 0.029,
-      "spread": 0.942,
-      "volume": 19985.0
+      "bid": 0.0035,
+      "ask": 0.9965,
+      "price": 0.0035,
+      "spread": 0.993,
+      "volume": 22381.0
     },
     {
       "question": "Will the highest temperature in Shanghai be 23°C on April 18?",
@@ -142,11 +157,11 @@
         23.0,
         23.0
       ],
-      "bid": 0.004,
-      "ask": 0.996,
-      "price": 0.004,
-      "spread": 0.992,
-      "volume": 11870.0
+      "bid": 0.0035,
+      "ask": 0.9965,
+      "price": 0.0035,
+      "spread": 0.993,
+      "volume": 14356.0
     },
     {
       "question": "Will the highest temperature in Shanghai be 24°C on April 18?",
@@ -155,11 +170,11 @@
         24.0,
         24.0
       ],
-      "bid": 0.004,
-      "ask": 0.996,
-      "price": 0.004,
-      "spread": 0.992,
-      "volume": 8022.0
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 10518.0
     },
     {
       "question": "Will the highest temperature in Shanghai be 25°C or higher on April 18?",
@@ -172,7 +187,7 @@
       "ask": 0.9995,
       "price": 0.0005,
       "spread": 0.999,
-      "volume": 10760.0
+      "volume": 11306.0
     }
   ],
   "created_at": "2026-04-18T06:34:27.575987+00:00"

@@ -11,5 +11,7 @@
   "calibration_min": 30,
   "vc_key": "DFPWW2VD4LTZSM32ZS2R6XTSA",
   "mode": "live",
-  "max_slippage": 0.03
+  "max_slippage": 0.03,
+  "telegram_bot_token": "8448304532:AAEdg-gSneZW_WPliKq_0QLmi7NIEh1Z5Tc",
+  "telegram_chat_id": "-5106762842"
 }

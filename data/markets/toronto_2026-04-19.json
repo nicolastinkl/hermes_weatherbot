@@ -21,6 +21,16 @@
       "metar": null,
       "best": 7.6,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:36:35.440708+00:00",
+      "horizon": "D+1",
+      "hours_left": 28.4,
+      "ecmwf": 7.6,
+      "hrrr": null,
+      "metar": null,
+      "best": 7.6,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:34:39.006007+00:00",
       "top_bucket": "8.0-8.0C",
       "top_price": 0.325
+    },
+    {
+      "ts": "2026-04-18T07:36:35.440708+00:00",
+      "top_bucket": "8.0-8.0C",
+      "top_price": 0.335
     }
   ],
   "all_outcomes": [
@@ -42,7 +57,7 @@
       "ask": 0.9965,
       "price": 0.0035,
       "spread": 0.993,
-      "volume": 1569.0
+      "volume": 1574.0
     },
     {
       "question": "Will the highest temperature in Toronto be 1°C on April 19?",
@@ -55,7 +70,7 @@
       "ask": 0.9975,
       "price": 0.0025,
       "spread": 0.995,
-      "volume": 1094.0
+      "volume": 1099.0
     },
     {
       "question": "Will the highest temperature in Toronto be 2°C on April 19?",
@@ -64,11 +79,11 @@
         2.0,
         2.0
       ],
-      "bid": 0.004,
-      "ask": 0.996,
-      "price": 0.004,
-      "spread": 0.992,
-      "volume": 1114.0
+      "bid": 0.0035,
+      "ask": 0.9965,
+      "price": 0.0035,
+      "spread": 0.993,
+      "volume": 1119.0
     },
     {
       "question": "Will the highest temperature in Toronto be 3°C on April 19?",
@@ -81,7 +96,7 @@
       "ask": 0.9975,
       "price": 0.0025,
       "spread": 0.995,
-      "volume": 1174.0
+      "volume": 1179.0
     },
     {
       "question": "Will the highest temperature in Toronto be 4°C on April 19?",
@@ -90,11 +105,11 @@
         4.0,
         4.0
       ],
-      "bid": 0.0135,
-      "ask": 0.9865,
-      "price": 0.0135,
-      "spread": 0.973,
-      "volume": 738.0
+      "bid": 0.014,
+      "ask": 0.986,
+      "price": 0.014,
+      "spread": 0.972,
+      "volume": 742.0
     },
     {
       "question": "Will the highest temperature in Toronto be 5°C on April 19?",
@@ -103,11 +118,11 @@
         5.0,
         5.0
       ],
-      "bid": 0.029,
-      "ask": 0.971,
-      "price": 0.029,
-      "spread": 0.942,
-      "volume": 876.0
+      "bid": 0.0285,
+      "ask": 0.9715,
+      "price": 0.0285,
+      "spread": 0.943,
+      "volume": 1110.0
     },
     {
       "question": "Will the highest temperature in Toronto be 6°C on April 19?",
@@ -116,11 +131,11 @@
         6.0,
         6.0
       ],
-      "bid": 0.155,
-      "ask": 0.845,
-      "price": 0.155,
-      "spread": 0.69,
-      "volume": 1043.0
+      "bid": 0.105,
+      "ask": 0.895,
+      "price": 0.105,
+      "spread": 0.79,
+      "volume": 1555.0
     },
     {
       "question": "Will the highest temperature in Toronto be 7°C on April 19?",
@@ -133,7 +148,7 @@
       "ask": 0.735,
       "price": 0.265,
       "spread": 0.47,
-      "volume": 611.0
+      "volume": 648.0
     },
     {
       "question": "Will the highest temperature in Toronto be 8°C on April 19?",
@@ -142,11 +157,11 @@
         8.0,
         8.0
       ],
-      "bid": 0.325,
-      "ask": 0.675,
-      "price": 0.325,
-      "spread": 0.35,
-      "volume": 913.0
+      "bid": 0.335,
+      "ask": 0.665,
+      "price": 0.335,
+      "spread": 0.33,
+      "volume": 1005.0
     },
     {
       "question": "Will the highest temperature in Toronto be 9°C on April 19?",
@@ -155,11 +170,11 @@
         9.0,
         9.0
       ],
-      "bid": 0.125,
-      "ask": 0.875,
-      "price": 0.125,
-      "spread": 0.75,
-      "volume": 638.0
+      "bid": 0.145,
+      "ask": 0.855,
+      "price": 0.145,
+      "spread": 0.71,
+      "volume": 700.0
     },
     {
       "question": "Will the highest temperature in Toronto be 10°C or higher on April 19?",
@@ -168,11 +183,11 @@
         10.0,
         999.0
       ],
-      "bid": 0.125,
-      "ask": 0.875,
-      "price": 0.125,
-      "spread": 0.75,
-      "volume": 1485.0
+      "bid": 0.115,
+      "ask": 0.885,
+      "price": 0.115,
+      "spread": 0.77,
+      "volume": 1599.0
     }
   ],
   "created_at": "2026-04-18T06:34:41.520483+00:00"

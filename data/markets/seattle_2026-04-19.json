@@ -21,11 +21,26 @@
       "metar": null,
       "best": 68,
       "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-18T07:35:16.628189+00:00",
+      "horizon": "D+1",
+      "hours_left": 28.4,
+      "ecmwf": 67,
+      "hrrr": 68,
+      "metar": null,
+      "best": 68,
+      "best_source": "hrrr"
     }
   ],
   "market_snapshots": [
     {
       "ts": "2026-04-18T06:33:48.396807+00:00",
+      "top_bucket": "62.0-999.0F",
+      "top_price": 0.983
+    },
+    {
+      "ts": "2026-04-18T07:35:16.628189+00:00",
       "top_bucket": "62.0-999.0F",
       "top_price": 0.983
     }
@@ -64,11 +79,11 @@
         46.0,
         47.0
       ],
-      "bid": 0.0015,
-      "ask": 0.9985,
-      "price": 0.0015,
-      "spread": 0.997,
-      "volume": 1743.0
+      "bid": 0.001,
+      "ask": 0.999,
+      "price": 0.001,
+      "spread": 0.998,
+      "volume": 1757.0
     },
     {
       "question": "Will the highest temperature in Seattle be between 48-49°F on April 19?",
@@ -103,11 +118,11 @@
         52.0,
         53.0
       ],
-      "bid": 0.0015,
-      "ask": 0.9985,
-      "price": 0.0015,
-      "spread": 0.997,
-      "volume": 1141.0
+      "bid": 0.001,
+      "ask": 0.999,
+      "price": 0.001,
+      "spread": 0.998,
+      "volume": 1218.0
     },
     {
       "question": "Will the highest temperature in Seattle be between 54-55°F on April 19?",
@@ -116,11 +131,11 @@
         54.0,
         55.0
       ],
-      "bid": 0.004,
-      "ask": 0.996,
-      "price": 0.004,
-      "spread": 0.992,
-      "volume": 2970.0
+      "bid": 0.0045,
+      "ask": 0.9955,
+      "price": 0.0045,
+      "spread": 0.991,
+      "volume": 3900.0
     },
     {
       "question": "Will the highest temperature in Seattle be between 56-57°F on April 19?",
@@ -133,7 +148,7 @@
       "ask": 0.9965,
       "price": 0.0035,
       "spread": 0.993,
-      "volume": 936.0
+      "volume": 1028.0
     },
     {
       "question": "Will the highest temperature in Seattle be between 58-59°F on April 19?",
@@ -142,11 +157,11 @@
         58.0,
         59.0
       ],
-      "bid": 0.006,
-      "ask": 0.994,
-      "price": 0.006,
-      "spread": 0.988,
-      "volume": 977.0
+      "bid": 0.013,
+      "ask": 0.987,
+      "price": 0.013,
+      "spread": 0.974,
+      "volume": 1637.0
     },
     {
       "question": "Will the highest temperature in Seattle be between 60-61°F on April 19?",
@@ -155,11 +170,11 @@
         60.0,
         61.0
       ],
-      "bid": 0.0045,
-      "ask": 0.9955,
-      "price": 0.0045,
-      "spread": 0.991,
-      "volume": 1066.0
+      "bid": 0.006,
+      "ask": 0.994,
+      "price": 0.006,
+      "spread": 0.988,
+      "volume": 1625.0
     },
     {
       "question": "Will the highest temperature in Seattle be 62°F or higher on April 19?",
@@ -172,7 +187,7 @@
       "ask": 0.017,
       "price": 0.983,
       "spread": -0.966,
-      "volume": 2219.0
+      "volume": 2287.0
     }
   ],
   "created_at": "2026-04-18T06:33:51.958281+00:00"

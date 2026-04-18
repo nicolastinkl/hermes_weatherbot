@@ -21,6 +21,16 @@
       "metar": null,
       "best": 24.1,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:36:43.100694+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.4,
+      "ecmwf": 24.1,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.1,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:34:45.652558+00:00",
       "top_bucket": "22.0-22.0C",
       "top_price": 0.28
+    },
+    {
+      "ts": "2026-04-18T07:36:43.100694+00:00",
+      "top_bucket": "23.0-23.0C",
+      "top_price": 0.285
     }
   ],
   "all_outcomes": [
@@ -51,11 +66,11 @@
         16.0,
         16.0
       ],
-      "bid": 0.0235,
-      "ask": 0.9765,
-      "price": 0.0235,
-      "spread": 0.953,
-      "volume": 190.0
+      "bid": 0.013,
+      "ask": 0.987,
+      "price": 0.013,
+      "spread": 0.974,
+      "volume": 195.0
     },
     {
       "question": "Will the highest temperature in Buenos Aires be 17°C on April 20?",
@@ -64,11 +79,11 @@
         17.0,
         17.0
       ],
-      "bid": 0.0245,
-      "ask": 0.9755,
-      "price": 0.0245,
-      "spread": 0.951,
-      "volume": 69.0
+      "bid": 0.015,
+      "ask": 0.985,
+      "price": 0.015,
+      "spread": 0.97,
+      "volume": 99.0
     },
     {
       "question": "Will the highest temperature in Buenos Aires be 18°C on April 20?",
@@ -77,10 +92,10 @@
         18.0,
         18.0
       ],
-      "bid": 0.0395,
-      "ask": 0.9605,
-      "price": 0.0395,
-      "spread": 0.921,
+      "bid": 0.0175,
+      "ask": 0.9825,
+      "price": 0.0175,
+      "spread": 0.965,
       "volume": 29.0
     },
     {
@@ -94,7 +109,7 @@
       "ask": 0.955,
       "price": 0.045,
       "spread": 0.91,
-      "volume": 0.0
+      "volume": 5.0
     },
     {
       "question": "Will the highest temperature in Buenos Aires be 20°C on April 20?",
@@ -103,11 +118,11 @@
         20.0,
         20.0
       ],
-      "bid": 0.1,
-      "ask": 0.9,
-      "price": 0.1,
-      "spread": 0.8,
-      "volume": 11.0
+      "bid": 0.085,
+      "ask": 0.915,
+      "price": 0.085,
+      "spread": 0.83,
+      "volume": 20.0
     },
     {
       "question": "Will the highest temperature in Buenos Aires be 21°C on April 20?",
@@ -116,10 +131,10 @@
         21.0,
         21.0
       ],
-      "bid": 0.245,
-      "ask": 0.755,
-      "price": 0.245,
-      "spread": 0.51,
+      "bid": 0.235,
+      "ask": 0.765,
+      "price": 0.235,
+      "spread": 0.53,
       "volume": 17.0
     },
     {
@@ -129,11 +144,11 @@
         22.0,
         22.0
       ],
-      "bid": 0.28,
-      "ask": 0.72,
-      "price": 0.28,
-      "spread": 0.44,
-      "volume": 13.0
+      "bid": 0.275,
+      "ask": 0.725,
+      "price": 0.275,
+      "spread": 0.45,
+      "volume": 16.0
     },
     {
       "question": "Will the highest temperature in Buenos Aires be 23°C on April 20?",
@@ -142,10 +157,10 @@
         23.0,
         23.0
       ],
-      "bid": 0.265,
-      "ask": 0.735,
-      "price": 0.265,
-      "spread": 0.47,
+      "bid": 0.285,
+      "ask": 0.715,
+      "price": 0.285,
+      "spread": 0.43,
       "volume": 0.0
     },
     {
@@ -155,10 +170,10 @@
         24.0,
         24.0
       ],
-      "bid": 0.14,
-      "ask": 0.86,
-      "price": 0.14,
-      "spread": 0.72,
+      "bid": 0.13,
+      "ask": 0.87,
+      "price": 0.13,
+      "spread": 0.74,
       "volume": 0.0
     },
     {
@@ -168,10 +183,10 @@
         25.0,
         999.0
       ],
-      "bid": 0.0955,
-      "ask": 0.9045,
-      "price": 0.0955,
-      "spread": 0.809,
+      "bid": 0.095,
+      "ask": 0.905,
+      "price": 0.095,
+      "spread": 0.81,
       "volume": 20.0
     }
   ],

@@ -21,6 +21,16 @@
       "metar": 33.0,
       "best": 31.0,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:36:22.669401+00:00",
+      "horizon": "D+0",
+      "hours_left": 4.4,
+      "ecmwf": 31.0,
+      "hrrr": null,
+      "metar": 32.0,
+      "best": 31.0,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:34:28.838426+00:00",
       "top_bucket": "34.0-34.0C",
       "top_price": 0.984
+    },
+    {
+      "ts": "2026-04-18T07:36:22.669401+00:00",
+      "top_bucket": "34.0-34.0C",
+      "top_price": 0.993
     }
   ],
   "all_outcomes": [
@@ -146,7 +161,7 @@
       "ask": 0.9995,
       "price": 0.0005,
       "spread": 0.999,
-      "volume": 15077.0
+      "volume": 17077.0
     },
     {
       "question": "Will the highest temperature in Singapore be 34°C on April 18?",
@@ -155,11 +170,11 @@
         34.0,
         34.0
       ],
-      "bid": 0.984,
-      "ask": 0.016,
-      "price": 0.984,
-      "spread": -0.968,
-      "volume": 9529.0
+      "bid": 0.993,
+      "ask": 0.007,
+      "price": 0.993,
+      "spread": -0.986,
+      "volume": 11177.0
     },
     {
       "question": "Will the highest temperature in Singapore be 35°C or higher on April 18?",
@@ -168,11 +183,11 @@
         35.0,
         999.0
       ],
-      "bid": 0.023,
-      "ask": 0.977,
-      "price": 0.023,
-      "spread": 0.954,
-      "volume": 9913.0
+      "bid": 0.0145,
+      "ask": 0.9855,
+      "price": 0.0145,
+      "spread": 0.971,
+      "volume": 10796.0
     }
   ],
   "created_at": "2026-04-18T06:34:31.000900+00:00"

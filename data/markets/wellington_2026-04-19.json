@@ -21,6 +21,16 @@
       "metar": null,
       "best": 16.5,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:36:46.211842+00:00",
+      "horizon": "D+1",
+      "hours_left": 28.4,
+      "ecmwf": 16.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 16.5,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:34:48.896577+00:00",
       "top_bucket": "18.0-18.0C",
       "top_price": 0.455
+    },
+    {
+      "ts": "2026-04-18T07:36:46.211842+00:00",
+      "top_bucket": "18.0-18.0C",
+      "top_price": 0.47
     }
   ],
   "all_outcomes": [
@@ -51,11 +66,11 @@
         12.0,
         12.0
       ],
-      "bid": 0.001,
-      "ask": 0.999,
-      "price": 0.001,
-      "spread": 0.998,
-      "volume": 3379.0
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 5879.0
     },
     {
       "question": "Will the highest temperature in Wellington be 13°C on April 19?",
@@ -64,10 +79,10 @@
         13.0,
         13.0
       ],
-      "bid": 0.0025,
-      "ask": 0.9975,
-      "price": 0.0025,
-      "spread": 0.995,
+      "bid": 0.003,
+      "ask": 0.997,
+      "price": 0.003,
+      "spread": 0.994,
       "volume": 1378.0
     },
     {
@@ -77,10 +92,10 @@
         14.0,
         14.0
       ],
-      "bid": 0.0055,
-      "ask": 0.9945,
-      "price": 0.0055,
-      "spread": 0.989,
+      "bid": 0.007,
+      "ask": 0.993,
+      "price": 0.007,
+      "spread": 0.986,
       "volume": 886.0
     },
     {
@@ -90,11 +105,11 @@
         15.0,
         15.0
       ],
-      "bid": 0.015,
-      "ask": 0.985,
-      "price": 0.015,
-      "spread": 0.97,
-      "volume": 1971.0
+      "bid": 0.0105,
+      "ask": 0.9895,
+      "price": 0.0105,
+      "spread": 0.979,
+      "volume": 2143.0
     },
     {
       "question": "Will the highest temperature in Wellington be 16°C on April 19?",
@@ -103,11 +118,11 @@
         16.0,
         16.0
       ],
-      "bid": 0.095,
-      "ask": 0.905,
-      "price": 0.095,
-      "spread": 0.81,
-      "volume": 4786.0
+      "bid": 0.11,
+      "ask": 0.89,
+      "price": 0.11,
+      "spread": 0.78,
+      "volume": 5028.0
     },
     {
       "question": "Will the highest temperature in Wellington be 17°C on April 19?",
@@ -116,11 +131,11 @@
         17.0,
         17.0
       ],
-      "bid": 0.22,
-      "ask": 0.78,
-      "price": 0.22,
-      "spread": 0.56,
-      "volume": 3839.0
+      "bid": 0.225,
+      "ask": 0.775,
+      "price": 0.225,
+      "spread": 0.55,
+      "volume": 3864.0
     },
     {
       "question": "Will the highest temperature in Wellington be 18°C on April 19?",
@@ -129,11 +144,11 @@
         18.0,
         18.0
       ],
-      "bid": 0.455,
-      "ask": 0.545,
-      "price": 0.455,
-      "spread": 0.09,
-      "volume": 1109.0
+      "bid": 0.47,
+      "ask": 0.53,
+      "price": 0.47,
+      "spread": 0.06,
+      "volume": 1207.0
     },
     {
       "question": "Will the highest temperature in Wellington be 19°C on April 19?",
@@ -142,11 +157,11 @@
         19.0,
         19.0
       ],
-      "bid": 0.125,
-      "ask": 0.875,
-      "price": 0.125,
-      "spread": 0.75,
-      "volume": 2433.0
+      "bid": 0.11,
+      "ask": 0.89,
+      "price": 0.11,
+      "spread": 0.78,
+      "volume": 2683.0
     },
     {
       "question": "Will the highest temperature in Wellington be 20°C on April 19?",
@@ -155,10 +170,10 @@
         20.0,
         20.0
       ],
-      "bid": 0.0145,
-      "ask": 0.9855,
-      "price": 0.0145,
-      "spread": 0.971,
+      "bid": 0.0155,
+      "ask": 0.9845,
+      "price": 0.0155,
+      "spread": 0.969,
       "volume": 891.0
     },
     {
@@ -168,10 +183,10 @@
         21.0,
         999.0
       ],
-      "bid": 0.009,
-      "ask": 0.991,
-      "price": 0.009,
-      "spread": 0.982,
+      "bid": 0.0085,
+      "ask": 0.9915,
+      "price": 0.0085,
+      "spread": 0.983,
       "volume": 994.0
     }
   ],

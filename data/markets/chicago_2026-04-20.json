@@ -21,6 +21,16 @@
       "metar": null,
       "best": 57,
       "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-18T07:35:02.766600+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.4,
+      "ecmwf": 50,
+      "hrrr": 57,
+      "metar": null,
+      "best": 57,
+      "best_source": "hrrr"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:33:33.876961+00:00",
       "top_bucket": "-999.0-55.0F",
       "top_price": 0.745
+    },
+    {
+      "ts": "2026-04-18T07:35:02.766600+00:00",
+      "top_bucket": "-999.0-55.0F",
+      "top_price": 0.735
     }
   ],
   "all_outcomes": [
@@ -38,11 +53,11 @@
         -999.0,
         55.0
       ],
-      "bid": 0.745,
-      "ask": 0.255,
-      "price": 0.745,
-      "spread": -0.49,
-      "volume": 174.0
+      "bid": 0.735,
+      "ask": 0.265,
+      "price": 0.735,
+      "spread": -0.47,
+      "volume": 219.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 56-57°F on April 20?",
@@ -51,11 +66,11 @@
         56.0,
         57.0
       ],
-      "bid": 0.165,
-      "ask": 0.835,
-      "price": 0.165,
-      "spread": 0.67,
-      "volume": 78.0
+      "bid": 0.105,
+      "ask": 0.895,
+      "price": 0.105,
+      "spread": 0.79,
+      "volume": 318.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 58-59°F on April 20?",
@@ -64,11 +79,11 @@
         58.0,
         59.0
       ],
-      "bid": 0.085,
-      "ask": 0.915,
-      "price": 0.085,
-      "spread": 0.83,
-      "volume": 60.0
+      "bid": 0.09,
+      "ask": 0.91,
+      "price": 0.09,
+      "spread": 0.82,
+      "volume": 80.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 60-61°F on April 20?",
@@ -77,11 +92,11 @@
         60.0,
         61.0
       ],
-      "bid": 0.0605,
-      "ask": 0.9395,
-      "price": 0.0605,
-      "spread": 0.879,
-      "volume": 240.0
+      "bid": 0.0465,
+      "ask": 0.9535,
+      "price": 0.0465,
+      "spread": 0.907,
+      "volume": 308.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 62-63°F on April 20?",
@@ -90,11 +105,11 @@
         62.0,
         63.0
       ],
-      "bid": 0.04,
-      "ask": 0.96,
-      "price": 0.04,
-      "spread": 0.92,
-      "volume": 258.0
+      "bid": 0.0245,
+      "ask": 0.9755,
+      "price": 0.0245,
+      "spread": 0.951,
+      "volume": 327.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 64-65°F on April 20?",
@@ -103,11 +118,11 @@
         64.0,
         65.0
       ],
-      "bid": 0.025,
-      "ask": 0.975,
-      "price": 0.025,
-      "spread": 0.95,
-      "volume": 82.0
+      "bid": 0.0075,
+      "ask": 0.9925,
+      "price": 0.0075,
+      "spread": 0.985,
+      "volume": 267.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 66-67°F on April 20?",
@@ -116,11 +131,11 @@
         66.0,
         67.0
       ],
-      "bid": 0.025,
-      "ask": 0.975,
-      "price": 0.025,
-      "spread": 0.95,
-      "volume": 103.0
+      "bid": 0.006,
+      "ask": 0.994,
+      "price": 0.006,
+      "spread": 0.988,
+      "volume": 290.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 68-69°F on April 20?",
@@ -129,11 +144,11 @@
         68.0,
         69.0
       ],
-      "bid": 0.007,
-      "ask": 0.993,
-      "price": 0.007,
-      "spread": 0.986,
-      "volume": 424.0
+      "bid": 0.0065,
+      "ask": 0.9935,
+      "price": 0.0065,
+      "spread": 0.987,
+      "volume": 434.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 70-71°F on April 20?",
@@ -142,11 +157,11 @@
         70.0,
         71.0
       ],
-      "bid": 0.007,
-      "ask": 0.993,
-      "price": 0.007,
-      "spread": 0.986,
-      "volume": 223.0
+      "bid": 0.006,
+      "ask": 0.994,
+      "price": 0.006,
+      "spread": 0.988,
+      "volume": 233.0
     },
     {
       "question": "Will the highest temperature in Chicago be between 72-73°F on April 20?",
@@ -155,11 +170,11 @@
         72.0,
         73.0
       ],
-      "bid": 0.007,
-      "ask": 0.993,
-      "price": 0.007,
-      "spread": 0.986,
-      "volume": 218.0
+      "bid": 0.006,
+      "ask": 0.994,
+      "price": 0.006,
+      "spread": 0.988,
+      "volume": 228.0
     },
     {
       "question": "Will the highest temperature in Chicago be 74°F or higher on April 20?",
@@ -168,11 +183,11 @@
         74.0,
         999.0
       ],
-      "bid": 0.007,
-      "ask": 0.993,
-      "price": 0.007,
-      "spread": 0.986,
-      "volume": 222.0
+      "bid": 0.0055,
+      "ask": 0.9945,
+      "price": 0.0055,
+      "spread": 0.989,
+      "volume": 232.0
     }
   ],
   "created_at": "2026-04-18T06:33:38.007412+00:00"

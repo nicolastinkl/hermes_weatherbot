@@ -21,6 +21,16 @@
       "metar": null,
       "best": 21.5,
       "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-18T07:36:31.622523+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.4,
+      "ecmwf": 21.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 21.5,
+      "best_source": "ecmwf"
     }
   ],
   "market_snapshots": [
@@ -28,6 +38,11 @@
       "ts": "2026-04-18T06:34:35.480269+00:00",
       "top_bucket": "22.0-22.0C",
       "top_price": 0.34
+    },
+    {
+      "ts": "2026-04-18T07:36:31.622523+00:00",
+      "top_bucket": "22.0-22.0C",
+      "top_price": 0.345
     }
   ],
   "all_outcomes": [
@@ -64,11 +79,11 @@
         17.0,
         17.0
       ],
-      "bid": 0.0235,
-      "ask": 0.9765,
-      "price": 0.0235,
-      "spread": 0.953,
-      "volume": 13.0
+      "bid": 0.0155,
+      "ask": 0.9845,
+      "price": 0.0155,
+      "spread": 0.969,
+      "volume": 68.0
     },
     {
       "question": "Will the highest temperature in Tel Aviv be 18°C on April 20?",
@@ -77,10 +92,10 @@
         18.0,
         18.0
       ],
-      "bid": 0.065,
-      "ask": 0.935,
-      "price": 0.065,
-      "spread": 0.87,
+      "bid": 0.04,
+      "ask": 0.96,
+      "price": 0.04,
+      "spread": 0.92,
       "volume": 6.0
     },
     {
@@ -94,7 +109,7 @@
       "ask": 0.935,
       "price": 0.065,
       "spread": 0.87,
-      "volume": 20.0
+      "volume": 30.0
     },
     {
       "question": "Will the highest temperature in Tel Aviv be 20°C on April 20?",
@@ -103,10 +118,10 @@
         20.0,
         20.0
       ],
-      "bid": 0.09,
-      "ask": 0.91,
-      "price": 0.09,
-      "spread": 0.82,
+      "bid": 0.095,
+      "ask": 0.905,
+      "price": 0.095,
+      "spread": 0.81,
       "volume": 5.0
     },
     {
@@ -116,10 +131,10 @@
         21.0,
         21.0
       ],
-      "bid": 0.295,
-      "ask": 0.705,
-      "price": 0.295,
-      "spread": 0.41,
+      "bid": 0.285,
+      "ask": 0.715,
+      "price": 0.285,
+      "spread": 0.43,
       "volume": 0.0
     },
     {
@@ -129,11 +144,11 @@
         22.0,
         22.0
       ],
-      "bid": 0.34,
-      "ask": 0.66,
-      "price": 0.34,
-      "spread": 0.32,
-      "volume": 0.0
+      "bid": 0.345,
+      "ask": 0.655,
+      "price": 0.345,
+      "spread": 0.31,
+      "volume": 23.0
     },
     {
       "question": "Will the highest temperature in Tel Aviv be 23°C on April 20?",
@@ -168,10 +183,10 @@
         25.0,
         999.0
       ],
-      "bid": 0.09,
-      "ask": 0.91,
-      "price": 0.09,
-      "spread": 0.82,
+      "bid": 0.055,
+      "ask": 0.945,
+      "price": 0.055,
+      "spread": 0.89,
       "volume": 0.0
     }
   ],
