@@ -985,6 +985,11 @@ def scan_and_trade():
             if forecast_temp is None:
                 continue
 
+            # Guard against invalid API readings (e.g. -999 from ECMWF)
+            if forecast_temp < -40 or forecast_temp > 130:
+                warn(f"  ⚠️  Invalid forecast temp {forecast_temp}°F — skipping city")
+                break
+
             # Collect for Telegram top-signals report (avoid duplicate API calls later)
             city_market_data.append((city_slug, loc, outcomes, forecastsnap, horizon, end_date, date))
 
@@ -1154,6 +1159,8 @@ def scan_and_trade():
             continue
         forecast_temp = forecastsnap.get("temp")
         if forecast_temp is None:
+            continue
+        if forecast_temp < -40 or forecast_temp > 130:
             continue
         sigma = get_sigma(city_slug)
         for o in outcomes:
