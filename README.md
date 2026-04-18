@@ -7,6 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
+![alt text](image.png)
 
 ## 🤖 为什么选择 Hermes Agent
 
