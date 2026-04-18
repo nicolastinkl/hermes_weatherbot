@@ -81,11 +81,18 @@ def norm_cdf(x):
     return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
 
 def bucket_prob(forecast, t_low, t_high, sigma=2.0):
+    """
+    Gaussian probability that forecast falls in [t_low, t_high].
+    Uses error function (math.erf) — no scipy needed.
+    """
     if t_low == -999:
         return norm_cdf((t_high - float(forecast)) / sigma)
     if t_high == 999:
         return 1.0 - norm_cdf((t_low - float(forecast)) / sigma)
-    return 1.0 if in_bucket(forecast, t_low, t_high) else 0.0
+    # Bounded range: P(t_low <= X <= t_high) = CDF(t_high) - CDF(t_low)
+    z_low  = (t_low  - float(forecast)) / sigma
+    z_high = (t_high - float(forecast)) / sigma
+    return norm_cdf(z_high) - norm_cdf(z_low)
 
 def calc_ev(p, price):
     if price <= 0 or price >= 1: return 0.0
