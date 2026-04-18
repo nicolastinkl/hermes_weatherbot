@@ -1,0 +1,179 @@
+{
+  "city": "shanghai",
+  "city_name": "Shanghai",
+  "date": "2026-04-19",
+  "unit": "C",
+  "station": "ZSPD",
+  "event_end_date": "2026-04-19T12:00:00Z",
+  "hours_at_discovery": 29.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:25.740032+00:00",
+      "horizon": "D+1",
+      "hours_left": 29.4,
+      "ecmwf": 20.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 20.4,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:25.740032+00:00",
+      "top_bucket": "21.0-21.0C",
+      "top_price": 0.335
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Shanghai be 17°C or below on April 19?",
+      "market_id": "2003843",
+      "range": [
+        -999.0,
+        17.0
+      ],
+      "bid": 0.0045,
+      "ask": 0.9955,
+      "price": 0.0045,
+      "spread": 0.991,
+      "volume": 2404.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 18°C on April 19?",
+      "market_id": "2003844",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.0075,
+      "ask": 0.9925,
+      "price": 0.0075,
+      "spread": 0.985,
+      "volume": 2698.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 19°C on April 19?",
+      "market_id": "2003845",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.026,
+      "ask": 0.974,
+      "price": 0.026,
+      "spread": 0.948,
+      "volume": 4925.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 20°C on April 19?",
+      "market_id": "2003846",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.155,
+      "ask": 0.845,
+      "price": 0.155,
+      "spread": 0.69,
+      "volume": 1264.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 21°C on April 19?",
+      "market_id": "2003847",
+      "range": [
+        21.0,
+        21.0
+      ],
+      "bid": 0.335,
+      "ask": 0.665,
+      "price": 0.335,
+      "spread": 0.33,
+      "volume": 781.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 22°C on April 19?",
+      "market_id": "2003848",
+      "range": [
+        22.0,
+        22.0
+      ],
+      "bid": 0.295,
+      "ask": 0.705,
+      "price": 0.295,
+      "spread": 0.41,
+      "volume": 1555.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 23°C on April 19?",
+      "market_id": "2003849",
+      "range": [
+        23.0,
+        23.0
+      ],
+      "bid": 0.16,
+      "ask": 0.84,
+      "price": 0.16,
+      "spread": 0.68,
+      "volume": 1133.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 24°C on April 19?",
+      "market_id": "2003850",
+      "range": [
+        24.0,
+        24.0
+      ],
+      "bid": 0.0455,
+      "ask": 0.9545,
+      "price": 0.0455,
+      "spread": 0.909,
+      "volume": 1817.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 25°C on April 19?",
+      "market_id": "2003851",
+      "range": [
+        25.0,
+        25.0
+      ],
+      "bid": 0.0075,
+      "ask": 0.9925,
+      "price": 0.0075,
+      "spread": 0.985,
+      "volume": 1860.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 26°C on April 19?",
+      "market_id": "2003852",
+      "range": [
+        26.0,
+        26.0
+      ],
+      "bid": 0.0055,
+      "ask": 0.9945,
+      "price": 0.0055,
+      "spread": 0.989,
+      "volume": 783.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 27°C or higher on April 19?",
+      "market_id": "2003853",
+      "range": [
+        27.0,
+        999.0
+      ],
+      "bid": 0.0055,
+      "ask": 0.9945,
+      "price": 0.0055,
+      "spread": 0.989,
+      "volume": 1561.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:27.991288+00:00"
+}

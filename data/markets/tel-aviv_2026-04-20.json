@@ -1,0 +1,179 @@
+{
+  "city": "tel-aviv",
+  "city_name": "Tel Aviv",
+  "date": "2026-04-20",
+  "unit": "C",
+  "station": "LLBG",
+  "event_end_date": "2026-04-20T12:00:00Z",
+  "hours_at_discovery": 53.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:35.480269+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.4,
+      "ecmwf": 21.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 21.5,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:35.480269+00:00",
+      "top_bucket": "22.0-22.0C",
+      "top_price": 0.34
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Tel Aviv be 15°C or below on April 20?",
+      "market_id": "2011222",
+      "range": [
+        -999.0,
+        15.0
+      ],
+      "bid": 0.0065,
+      "ask": 0.9935,
+      "price": 0.0065,
+      "spread": 0.987,
+      "volume": 215.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 16°C on April 20?",
+      "market_id": "2011223",
+      "range": [
+        16.0,
+        16.0
+      ],
+      "bid": 0.0075,
+      "ask": 0.9925,
+      "price": 0.0075,
+      "spread": 0.985,
+      "volume": 150.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 17°C on April 20?",
+      "market_id": "2011224",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.0235,
+      "ask": 0.9765,
+      "price": 0.0235,
+      "spread": 0.953,
+      "volume": 13.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 18°C on April 20?",
+      "market_id": "2011225",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.065,
+      "ask": 0.935,
+      "price": 0.065,
+      "spread": 0.87,
+      "volume": 6.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 19°C on April 20?",
+      "market_id": "2011226",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.065,
+      "ask": 0.935,
+      "price": 0.065,
+      "spread": 0.87,
+      "volume": 20.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 20°C on April 20?",
+      "market_id": "2011227",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.09,
+      "ask": 0.91,
+      "price": 0.09,
+      "spread": 0.82,
+      "volume": 5.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 21°C on April 20?",
+      "market_id": "2011228",
+      "range": [
+        21.0,
+        21.0
+      ],
+      "bid": 0.295,
+      "ask": 0.705,
+      "price": 0.295,
+      "spread": 0.41,
+      "volume": 0.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 22°C on April 20?",
+      "market_id": "2011229",
+      "range": [
+        22.0,
+        22.0
+      ],
+      "bid": 0.34,
+      "ask": 0.66,
+      "price": 0.34,
+      "spread": 0.32,
+      "volume": 0.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 23°C on April 20?",
+      "market_id": "2011230",
+      "range": [
+        23.0,
+        23.0
+      ],
+      "bid": 0.12,
+      "ask": 0.88,
+      "price": 0.12,
+      "spread": 0.76,
+      "volume": 0.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 24°C on April 20?",
+      "market_id": "2011231",
+      "range": [
+        24.0,
+        24.0
+      ],
+      "bid": 0.085,
+      "ask": 0.915,
+      "price": 0.085,
+      "spread": 0.83,
+      "volume": 5.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 25°C or higher on April 20?",
+      "market_id": "2011232",
+      "range": [
+        25.0,
+        999.0
+      ],
+      "bid": 0.09,
+      "ask": 0.91,
+      "price": 0.09,
+      "spread": 0.82,
+      "volume": 0.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:38.593413+00:00"
+}

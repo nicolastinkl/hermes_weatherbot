@@ -1,0 +1,102 @@
+{
+  "balance": 773.78,
+  "starting_balance": 1000.0,
+  "positions": {
+    "1996421": {
+      "question": "Will the highest temperature in Chicago be 72\u00b0F or higher on April 18?",
+      "entry_price": 0.0015,
+      "shares": 33333.333333333336,
+      "cost": 50.0,
+      "date": "2026-04-18",
+      "location": "chicago",
+      "forecast_temp": 72,
+      "opened_at": "2026-04-18T14:23:29.466959"
+    },
+    "1996383": {
+      "question": "Will the highest temperature in Dallas be between 78-79\u00b0F on April 18?",
+      "entry_price": 0.004,
+      "shares": 11875.0,
+      "cost": 47.5,
+      "date": "2026-04-18",
+      "location": "dallas",
+      "forecast_temp": 79,
+      "opened_at": "2026-04-18T14:23:33.764294"
+    },
+    "2003724": {
+      "question": "Will the highest temperature in Dallas be between 74-75\u00b0F on April 19?",
+      "entry_price": 0.135,
+      "shares": 334.2222222222222,
+      "cost": 45.12,
+      "date": "2026-04-19",
+      "location": "dallas",
+      "forecast_temp": 74,
+      "opened_at": "2026-04-18T14:23:34.044806"
+    },
+    "1996370": {
+      "question": "Will the highest temperature in New York City be between 60-61\u00b0F on April 18?",
+      "entry_price": 0.0665,
+      "shares": 644.6616541353383,
+      "cost": 42.87,
+      "date": "2026-04-18",
+      "location": "nyc",
+      "forecast_temp": 61,
+      "opened_at": "2026-04-18T15:24:30.052281"
+    },
+    "2011148": {
+      "question": "Will the highest temperature in Atlanta be between 74-75\u00b0F on April 20?",
+      "entry_price": 0.13,
+      "shares": 313.30769230769226,
+      "cost": 40.73,
+      "date": "2026-04-20",
+      "location": "atlanta",
+      "forecast_temp": 75,
+      "opened_at": "2026-04-18T15:24:39.504776"
+    }
+  },
+  "trades": [
+    {
+      "type": "entry",
+      "question": "Will the highest temperature in Chicago be 72\u00b0F or higher on April 18?",
+      "entry_price": 0.0015,
+      "shares": 33333.333333333336,
+      "cost": 50.0,
+      "opened_at": "2026-04-18T14:23:29.466992"
+    },
+    {
+      "type": "entry",
+      "question": "Will the highest temperature in Dallas be between 78-79\u00b0F on April 18?",
+      "entry_price": 0.004,
+      "shares": 11875.0,
+      "cost": 47.5,
+      "opened_at": "2026-04-18T14:23:33.764318"
+    },
+    {
+      "type": "entry",
+      "question": "Will the highest temperature in Dallas be between 74-75\u00b0F on April 19?",
+      "entry_price": 0.135,
+      "shares": 334.2222222222222,
+      "cost": 45.12,
+      "opened_at": "2026-04-18T14:23:34.044860"
+    },
+    {
+      "type": "entry",
+      "question": "Will the highest temperature in New York City be between 60-61\u00b0F on April 18?",
+      "entry_price": 0.0665,
+      "shares": 644.6616541353383,
+      "cost": 42.87,
+      "opened_at": "2026-04-18T15:24:30.052404"
+    },
+    {
+      "type": "entry",
+      "question": "Will the highest temperature in Atlanta be between 74-75\u00b0F on April 20?",
+      "entry_price": 0.13,
+      "shares": 313.30769230769226,
+      "cost": 40.73,
+      "opened_at": "2026-04-18T15:24:39.504798"
+    }
+  ],
+  "total_trades": 5,
+  "wins": 0,
+  "losses": 0,
+  "peak_balance": 1000.0
+}

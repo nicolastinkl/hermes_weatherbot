@@ -1,0 +1,179 @@
+{
+  "city": "singapore",
+  "city_name": "Singapore",
+  "date": "2026-04-20",
+  "unit": "C",
+  "station": "WSSS",
+  "event_end_date": "2026-04-20T12:00:00Z",
+  "hours_at_discovery": 53.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:28.838426+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.4,
+      "ecmwf": 28.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 28.4,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:28.838426+00:00",
+      "top_bucket": "32.0-999.0C",
+      "top_price": 0.605
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Singapore be 22°C or below on April 20?",
+      "market_id": "2011266",
+      "range": [
+        -999.0,
+        22.0
+      ],
+      "bid": 0.0035,
+      "ask": 0.9965,
+      "price": 0.0035,
+      "spread": 0.993,
+      "volume": 300.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 23°C on April 20?",
+      "market_id": "2011267",
+      "range": [
+        23.0,
+        23.0
+      ],
+      "bid": 0.0055,
+      "ask": 0.9945,
+      "price": 0.0055,
+      "spread": 0.989,
+      "volume": 220.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 24°C on April 20?",
+      "market_id": "2011268",
+      "range": [
+        24.0,
+        24.0
+      ],
+      "bid": 0.0075,
+      "ask": 0.9925,
+      "price": 0.0075,
+      "spread": 0.985,
+      "volume": 150.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 25°C on April 20?",
+      "market_id": "2011269",
+      "range": [
+        25.0,
+        25.0
+      ],
+      "bid": 0.012,
+      "ask": 0.988,
+      "price": 0.012,
+      "spread": 0.976,
+      "volume": 170.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 26°C on April 20?",
+      "market_id": "2011270",
+      "range": [
+        26.0,
+        26.0
+      ],
+      "bid": 0.0095,
+      "ask": 0.9905,
+      "price": 0.0095,
+      "spread": 0.981,
+      "volume": 170.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 27°C on April 20?",
+      "market_id": "2011271",
+      "range": [
+        27.0,
+        27.0
+      ],
+      "bid": 0.017,
+      "ask": 0.983,
+      "price": 0.017,
+      "spread": 0.966,
+      "volume": 165.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 28°C on April 20?",
+      "market_id": "2011272",
+      "range": [
+        28.0,
+        28.0
+      ],
+      "bid": 0.02,
+      "ask": 0.98,
+      "price": 0.02,
+      "spread": 0.96,
+      "volume": 162.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 29°C on April 20?",
+      "market_id": "2011273",
+      "range": [
+        29.0,
+        29.0
+      ],
+      "bid": 0.0235,
+      "ask": 0.9765,
+      "price": 0.0235,
+      "spread": 0.953,
+      "volume": 332.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 30°C on April 20?",
+      "market_id": "2011274",
+      "range": [
+        30.0,
+        30.0
+      ],
+      "bid": 0.15,
+      "ask": 0.85,
+      "price": 0.15,
+      "spread": 0.7,
+      "volume": 39.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 31°C on April 20?",
+      "market_id": "2011275",
+      "range": [
+        31.0,
+        31.0
+      ],
+      "bid": 0.24,
+      "ask": 0.76,
+      "price": 0.24,
+      "spread": 0.52,
+      "volume": 1.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 32°C or higher on April 20?",
+      "market_id": "2011276",
+      "range": [
+        32.0,
+        999.0
+      ],
+      "bid": 0.605,
+      "ask": 0.395,
+      "price": 0.605,
+      "spread": -0.21,
+      "volume": 78.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:31.831362+00:00"
+}

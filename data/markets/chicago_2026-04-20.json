@@ -1,0 +1,179 @@
+{
+  "city": "chicago",
+  "city_name": "Chicago",
+  "date": "2026-04-20",
+  "unit": "F",
+  "station": "KORD",
+  "event_end_date": "2026-04-20T12:00:00Z",
+  "hours_at_discovery": 53.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:33.876961+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.4,
+      "ecmwf": 50,
+      "hrrr": 57,
+      "metar": null,
+      "best": 57,
+      "best_source": "hrrr"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:33.876961+00:00",
+      "top_bucket": "-999.0-55.0F",
+      "top_price": 0.745
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Chicago be 55°F or below on April 20?",
+      "market_id": "2011167",
+      "range": [
+        -999.0,
+        55.0
+      ],
+      "bid": 0.745,
+      "ask": 0.255,
+      "price": 0.745,
+      "spread": -0.49,
+      "volume": 174.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 56-57°F on April 20?",
+      "market_id": "2011168",
+      "range": [
+        56.0,
+        57.0
+      ],
+      "bid": 0.165,
+      "ask": 0.835,
+      "price": 0.165,
+      "spread": 0.67,
+      "volume": 78.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 58-59°F on April 20?",
+      "market_id": "2011169",
+      "range": [
+        58.0,
+        59.0
+      ],
+      "bid": 0.085,
+      "ask": 0.915,
+      "price": 0.085,
+      "spread": 0.83,
+      "volume": 60.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 60-61°F on April 20?",
+      "market_id": "2011170",
+      "range": [
+        60.0,
+        61.0
+      ],
+      "bid": 0.0605,
+      "ask": 0.9395,
+      "price": 0.0605,
+      "spread": 0.879,
+      "volume": 240.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 62-63°F on April 20?",
+      "market_id": "2011171",
+      "range": [
+        62.0,
+        63.0
+      ],
+      "bid": 0.04,
+      "ask": 0.96,
+      "price": 0.04,
+      "spread": 0.92,
+      "volume": 258.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 64-65°F on April 20?",
+      "market_id": "2011172",
+      "range": [
+        64.0,
+        65.0
+      ],
+      "bid": 0.025,
+      "ask": 0.975,
+      "price": 0.025,
+      "spread": 0.95,
+      "volume": 82.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 66-67°F on April 20?",
+      "market_id": "2011173",
+      "range": [
+        66.0,
+        67.0
+      ],
+      "bid": 0.025,
+      "ask": 0.975,
+      "price": 0.025,
+      "spread": 0.95,
+      "volume": 103.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 68-69°F on April 20?",
+      "market_id": "2011174",
+      "range": [
+        68.0,
+        69.0
+      ],
+      "bid": 0.007,
+      "ask": 0.993,
+      "price": 0.007,
+      "spread": 0.986,
+      "volume": 424.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 70-71°F on April 20?",
+      "market_id": "2011175",
+      "range": [
+        70.0,
+        71.0
+      ],
+      "bid": 0.007,
+      "ask": 0.993,
+      "price": 0.007,
+      "spread": 0.986,
+      "volume": 223.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 72-73°F on April 20?",
+      "market_id": "2011176",
+      "range": [
+        72.0,
+        73.0
+      ],
+      "bid": 0.007,
+      "ask": 0.993,
+      "price": 0.007,
+      "spread": 0.986,
+      "volume": 218.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be 74°F or higher on April 20?",
+      "market_id": "2011177",
+      "range": [
+        74.0,
+        999.0
+      ],
+      "bid": 0.007,
+      "ask": 0.993,
+      "price": 0.007,
+      "spread": 0.986,
+      "volume": 222.0
+    }
+  ],
+  "created_at": "2026-04-18T06:33:38.007412+00:00"
+}

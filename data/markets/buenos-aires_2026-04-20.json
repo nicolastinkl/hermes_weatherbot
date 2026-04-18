@@ -1,0 +1,179 @@
+{
+  "city": "buenos-aires",
+  "city_name": "Buenos Aires",
+  "date": "2026-04-20",
+  "unit": "C",
+  "station": "SAEZ",
+  "event_end_date": "2026-04-20T12:00:00Z",
+  "hours_at_discovery": 53.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:45.652558+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.4,
+      "ecmwf": 24.1,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.1,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:45.652558+00:00",
+      "top_bucket": "22.0-22.0C",
+      "top_price": 0.28
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Buenos Aires be 15°C or below on April 20?",
+      "market_id": "2011079",
+      "range": [
+        -999.0,
+        15.0
+      ],
+      "bid": 0.0075,
+      "ask": 0.9925,
+      "price": 0.0075,
+      "spread": 0.985,
+      "volume": 187.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 16°C on April 20?",
+      "market_id": "2011080",
+      "range": [
+        16.0,
+        16.0
+      ],
+      "bid": 0.0235,
+      "ask": 0.9765,
+      "price": 0.0235,
+      "spread": 0.953,
+      "volume": 190.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 17°C on April 20?",
+      "market_id": "2011081",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.0245,
+      "ask": 0.9755,
+      "price": 0.0245,
+      "spread": 0.951,
+      "volume": 69.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 18°C on April 20?",
+      "market_id": "2011082",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.0395,
+      "ask": 0.9605,
+      "price": 0.0395,
+      "spread": 0.921,
+      "volume": 29.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 19°C on April 20?",
+      "market_id": "2011083",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.045,
+      "ask": 0.955,
+      "price": 0.045,
+      "spread": 0.91,
+      "volume": 0.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 20°C on April 20?",
+      "market_id": "2011084",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.1,
+      "ask": 0.9,
+      "price": 0.1,
+      "spread": 0.8,
+      "volume": 11.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 21°C on April 20?",
+      "market_id": "2011085",
+      "range": [
+        21.0,
+        21.0
+      ],
+      "bid": 0.245,
+      "ask": 0.755,
+      "price": 0.245,
+      "spread": 0.51,
+      "volume": 17.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 22°C on April 20?",
+      "market_id": "2011086",
+      "range": [
+        22.0,
+        22.0
+      ],
+      "bid": 0.28,
+      "ask": 0.72,
+      "price": 0.28,
+      "spread": 0.44,
+      "volume": 13.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 23°C on April 20?",
+      "market_id": "2011087",
+      "range": [
+        23.0,
+        23.0
+      ],
+      "bid": 0.265,
+      "ask": 0.735,
+      "price": 0.265,
+      "spread": 0.47,
+      "volume": 0.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 24°C on April 20?",
+      "market_id": "2011088",
+      "range": [
+        24.0,
+        24.0
+      ],
+      "bid": 0.14,
+      "ask": 0.86,
+      "price": 0.14,
+      "spread": 0.72,
+      "volume": 0.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 25°C or higher on April 20?",
+      "market_id": "2011089",
+      "range": [
+        25.0,
+        999.0
+      ],
+      "bid": 0.0955,
+      "ask": 0.9045,
+      "price": 0.0955,
+      "spread": 0.809,
+      "volume": 20.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:48.498830+00:00"
+}

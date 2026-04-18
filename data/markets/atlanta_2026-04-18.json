@@ -1,0 +1,179 @@
+{
+  "city": "atlanta",
+  "city_name": "Atlanta",
+  "date": "2026-04-18",
+  "unit": "F",
+  "station": "KATL",
+  "event_end_date": "2026-04-18T12:00:00Z",
+  "hours_at_discovery": 5.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:52.905589+00:00",
+      "horizon": "D+0",
+      "hours_left": 5.4,
+      "ecmwf": 86,
+      "hrrr": 86,
+      "metar": 71,
+      "best": 86,
+      "best_source": "hrrr"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:52.905589+00:00",
+      "top_bucket": "86.0-87.0F",
+      "top_price": 0.465
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Atlanta be 75°F or below on April 18?",
+      "market_id": "1996388",
+      "range": [
+        -999.0,
+        75.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.9985,
+      "price": 0.0015,
+      "spread": 0.997,
+      "volume": 9595.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 76-77°F on April 18?",
+      "market_id": "1996389",
+      "range": [
+        76.0,
+        77.0
+      ],
+      "bid": 0.003,
+      "ask": 0.997,
+      "price": 0.003,
+      "spread": 0.994,
+      "volume": 5397.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 78-79°F on April 18?",
+      "market_id": "1996390",
+      "range": [
+        78.0,
+        79.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 3671.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 80-81°F on April 18?",
+      "market_id": "1996391",
+      "range": [
+        80.0,
+        81.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 6139.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 82-83°F on April 18?",
+      "market_id": "1996392",
+      "range": [
+        82.0,
+        83.0
+      ],
+      "bid": 0.0065,
+      "ask": 0.9935,
+      "price": 0.0065,
+      "spread": 0.987,
+      "volume": 4193.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 84-85°F on April 18?",
+      "market_id": "1996393",
+      "range": [
+        84.0,
+        85.0
+      ],
+      "bid": 0.155,
+      "ask": 0.845,
+      "price": 0.155,
+      "spread": 0.69,
+      "volume": 1922.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 86-87°F on April 18?",
+      "market_id": "1996394",
+      "range": [
+        86.0,
+        87.0
+      ],
+      "bid": 0.465,
+      "ask": 0.535,
+      "price": 0.465,
+      "spread": 0.07,
+      "volume": 2533.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 88-89°F on April 18?",
+      "market_id": "1996395",
+      "range": [
+        88.0,
+        89.0
+      ],
+      "bid": 0.3,
+      "ask": 0.7,
+      "price": 0.3,
+      "spread": 0.4,
+      "volume": 3258.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 90-91°F on April 18?",
+      "market_id": "1996396",
+      "range": [
+        90.0,
+        91.0
+      ],
+      "bid": 0.025,
+      "ask": 0.975,
+      "price": 0.025,
+      "spread": 0.95,
+      "volume": 2976.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 92-93°F on April 18?",
+      "market_id": "1996397",
+      "range": [
+        92.0,
+        93.0
+      ],
+      "bid": 0.0065,
+      "ask": 0.9935,
+      "price": 0.0065,
+      "spread": 0.987,
+      "volume": 2349.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be 94°F or higher on April 18?",
+      "market_id": "1996398",
+      "range": [
+        94.0,
+        999.0
+      ],
+      "bid": 0.0055,
+      "ask": 0.9945,
+      "price": 0.0055,
+      "spread": 0.989,
+      "volume": 1310.0
+    }
+  ],
+  "created_at": "2026-04-18T06:33:56.159071+00:00"
+}

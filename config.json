@@ -1,7 +1,7 @@
 {
-  "balance": 10000.0,
-  "max_bet": 20.0,
-  "min_ev": 0.1,
+  "balance": 0.0,
+  "max_bet": 2.0,
+  "min_ev": 0.10,
   "max_price": 0.45,
   "min_volume": 500,
   "min_hours": 2.0,
@@ -9,6 +9,7 @@
   "kelly_fraction": 0.25,
   "scan_interval": 3600,
   "calibration_min": 30,
-  "vc_key": "YOUR_KEY_HERE",
+  "vc_key": "DFPWW2VD4LTZSM32ZS2R6XTSA",
+  "mode": "live",
   "max_slippage": 0.03
 }

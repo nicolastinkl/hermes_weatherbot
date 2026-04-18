@@ -1,0 +1,179 @@
+{
+  "city": "tokyo",
+  "city_name": "Tokyo",
+  "date": "2026-04-20",
+  "unit": "C",
+  "station": "RJTT",
+  "event_end_date": "2026-04-20T12:00:00Z",
+  "hours_at_discovery": 53.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:22.441395+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.4,
+      "ecmwf": 20.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 20.4,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:22.441395+00:00",
+      "top_bucket": "22.0-22.0C",
+      "top_price": 0.345
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Tokyo be 14°C or below on April 20?",
+      "market_id": "2011233",
+      "range": [
+        -999.0,
+        14.0
+      ],
+      "bid": 0.0075,
+      "ask": 0.9925,
+      "price": 0.0075,
+      "spread": 0.985,
+      "volume": 228.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 15°C on April 20?",
+      "market_id": "2011234",
+      "range": [
+        15.0,
+        15.0
+      ],
+      "bid": 0.007,
+      "ask": 0.993,
+      "price": 0.007,
+      "spread": 0.986,
+      "volume": 228.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 16°C on April 20?",
+      "market_id": "2011235",
+      "range": [
+        16.0,
+        16.0
+      ],
+      "bid": 0.024,
+      "ask": 0.976,
+      "price": 0.024,
+      "spread": 0.952,
+      "volume": 205.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 17°C on April 20?",
+      "market_id": "2011236",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.014,
+      "ask": 0.986,
+      "price": 0.014,
+      "spread": 0.972,
+      "volume": 129.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 18°C on April 20?",
+      "market_id": "2011237",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.075,
+      "ask": 0.925,
+      "price": 0.075,
+      "spread": 0.85,
+      "volume": 99.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 19°C on April 20?",
+      "market_id": "2011238",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.045,
+      "ask": 0.955,
+      "price": 0.045,
+      "spread": 0.91,
+      "volume": 217.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 20°C on April 20?",
+      "market_id": "2011239",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.17,
+      "ask": 0.83,
+      "price": 0.17,
+      "spread": 0.66,
+      "volume": 77.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 21°C on April 20?",
+      "market_id": "2011240",
+      "range": [
+        21.0,
+        21.0
+      ],
+      "bid": 0.235,
+      "ask": 0.765,
+      "price": 0.235,
+      "spread": 0.53,
+      "volume": 59.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 22°C on April 20?",
+      "market_id": "2011241",
+      "range": [
+        22.0,
+        22.0
+      ],
+      "bid": 0.345,
+      "ask": 0.655,
+      "price": 0.345,
+      "spread": 0.31,
+      "volume": 109.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 23°C on April 20?",
+      "market_id": "2011242",
+      "range": [
+        23.0,
+        23.0
+      ],
+      "bid": 0.215,
+      "ask": 0.785,
+      "price": 0.215,
+      "spread": 0.57,
+      "volume": 111.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 24°C or higher on April 20?",
+      "market_id": "2011243",
+      "range": [
+        24.0,
+        999.0
+      ],
+      "bid": 0.13,
+      "ask": 0.87,
+      "price": 0.13,
+      "spread": 0.74,
+      "volume": 352.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:25.258606+00:00"
+}

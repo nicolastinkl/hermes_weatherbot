@@ -1,0 +1,179 @@
+{
+  "city": "miami",
+  "city_name": "Miami",
+  "date": "2026-04-20",
+  "unit": "F",
+  "station": "KMIA",
+  "event_end_date": "2026-04-20T12:00:00Z",
+  "hours_at_discovery": 53.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:38.465891+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.4,
+      "ecmwf": 79,
+      "hrrr": 85,
+      "metar": null,
+      "best": 85,
+      "best_source": "hrrr"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:38.465891+00:00",
+      "top_bucket": "82.0-83.0F",
+      "top_price": 0.405
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Miami be 73°F or below on April 20?",
+      "market_id": "2011156",
+      "range": [
+        -999.0,
+        73.0
+      ],
+      "bid": 0.0075,
+      "ask": 0.9925,
+      "price": 0.0075,
+      "spread": 0.985,
+      "volume": 211.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 74-75°F on April 20?",
+      "market_id": "2011157",
+      "range": [
+        74.0,
+        75.0
+      ],
+      "bid": 0.015,
+      "ask": 0.985,
+      "price": 0.015,
+      "spread": 0.97,
+      "volume": 34.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 76-77°F on April 20?",
+      "market_id": "2011158",
+      "range": [
+        76.0,
+        77.0
+      ],
+      "bid": 0.027,
+      "ask": 0.973,
+      "price": 0.027,
+      "spread": 0.946,
+      "volume": 41.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 78-79°F on April 20?",
+      "market_id": "2011159",
+      "range": [
+        78.0,
+        79.0
+      ],
+      "bid": 0.055,
+      "ask": 0.945,
+      "price": 0.055,
+      "spread": 0.89,
+      "volume": 108.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 80-81°F on April 20?",
+      "market_id": "2011160",
+      "range": [
+        80.0,
+        81.0
+      ],
+      "bid": 0.19,
+      "ask": 0.81,
+      "price": 0.19,
+      "spread": 0.62,
+      "volume": 44.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 82-83°F on April 20?",
+      "market_id": "2011161",
+      "range": [
+        82.0,
+        83.0
+      ],
+      "bid": 0.405,
+      "ask": 0.595,
+      "price": 0.405,
+      "spread": 0.19,
+      "volume": 58.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 84-85°F on April 20?",
+      "market_id": "2011162",
+      "range": [
+        84.0,
+        85.0
+      ],
+      "bid": 0.22,
+      "ask": 0.78,
+      "price": 0.22,
+      "spread": 0.56,
+      "volume": 39.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 86-87°F on April 20?",
+      "market_id": "2011163",
+      "range": [
+        86.0,
+        87.0
+      ],
+      "bid": 0.115,
+      "ask": 0.885,
+      "price": 0.115,
+      "spread": 0.77,
+      "volume": 131.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 88-89°F on April 20?",
+      "market_id": "2011164",
+      "range": [
+        88.0,
+        89.0
+      ],
+      "bid": 0.06,
+      "ask": 0.94,
+      "price": 0.06,
+      "spread": 0.88,
+      "volume": 271.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 90-91°F on April 20?",
+      "market_id": "2011165",
+      "range": [
+        90.0,
+        91.0
+      ],
+      "bid": 0.0065,
+      "ask": 0.9935,
+      "price": 0.0065,
+      "spread": 0.987,
+      "volume": 371.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be 92°F or higher on April 20?",
+      "market_id": "2011166",
+      "range": [
+        92.0,
+        999.0
+      ],
+      "bid": 0.006,
+      "ask": 0.994,
+      "price": 0.006,
+      "spread": 0.988,
+      "volume": 284.0
+    }
+  ],
+  "created_at": "2026-04-18T06:33:43.136335+00:00"
+}

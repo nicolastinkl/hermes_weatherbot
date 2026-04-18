@@ -1,0 +1,179 @@
+{
+  "city": "toronto",
+  "city_name": "Toronto",
+  "date": "2026-04-20",
+  "unit": "C",
+  "station": "CYYZ",
+  "event_end_date": "2026-04-20T12:00:00Z",
+  "hours_at_discovery": 53.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:39.006007+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.4,
+      "ecmwf": 3.0,
+      "hrrr": null,
+      "metar": null,
+      "best": 3.0,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:39.006007+00:00",
+      "top_bucket": "4.0-4.0C",
+      "top_price": 0.205
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Toronto be 1°C or below on April 20?",
+      "market_id": "2011101",
+      "range": [
+        -999.0,
+        1.0
+      ],
+      "bid": 0.07,
+      "ask": 0.93,
+      "price": 0.07,
+      "spread": 0.86,
+      "volume": 5.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 2°C on April 20?",
+      "market_id": "2011102",
+      "range": [
+        2.0,
+        2.0
+      ],
+      "bid": 0.12,
+      "ask": 0.88,
+      "price": 0.12,
+      "spread": 0.76,
+      "volume": 0.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 3°C on April 20?",
+      "market_id": "2011103",
+      "range": [
+        3.0,
+        3.0
+      ],
+      "bid": 0.165,
+      "ask": 0.835,
+      "price": 0.165,
+      "spread": 0.67,
+      "volume": 20.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 4°C on April 20?",
+      "market_id": "2011104",
+      "range": [
+        4.0,
+        4.0
+      ],
+      "bid": 0.205,
+      "ask": 0.795,
+      "price": 0.205,
+      "spread": 0.59,
+      "volume": 0.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 5°C on April 20?",
+      "market_id": "2011105",
+      "range": [
+        5.0,
+        5.0
+      ],
+      "bid": 0.15,
+      "ask": 0.85,
+      "price": 0.15,
+      "spread": 0.7,
+      "volume": 0.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 6°C on April 20?",
+      "market_id": "2011106",
+      "range": [
+        6.0,
+        6.0
+      ],
+      "bid": 0.095,
+      "ask": 0.905,
+      "price": 0.095,
+      "spread": 0.81,
+      "volume": 90.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 7°C on April 20?",
+      "market_id": "2011107",
+      "range": [
+        7.0,
+        7.0
+      ],
+      "bid": 0.13,
+      "ask": 0.87,
+      "price": 0.13,
+      "spread": 0.74,
+      "volume": 123.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 8°C on April 20?",
+      "market_id": "2011108",
+      "range": [
+        8.0,
+        8.0
+      ],
+      "bid": 0.1,
+      "ask": 0.9,
+      "price": 0.1,
+      "spread": 0.8,
+      "volume": 63.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 9°C on April 20?",
+      "market_id": "2011109",
+      "range": [
+        9.0,
+        9.0
+      ],
+      "bid": 0.095,
+      "ask": 0.905,
+      "price": 0.095,
+      "spread": 0.81,
+      "volume": 30.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 10°C on April 20?",
+      "market_id": "2011110",
+      "range": [
+        10.0,
+        10.0
+      ],
+      "bid": 0.0205,
+      "ask": 0.9795,
+      "price": 0.0205,
+      "spread": 0.959,
+      "volume": 209.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 11°C or higher on April 20?",
+      "market_id": "2011111",
+      "range": [
+        11.0,
+        999.0
+      ],
+      "bid": 0.008,
+      "ask": 0.992,
+      "price": 0.008,
+      "spread": 0.984,
+      "volume": 600.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:41.919838+00:00"
+}

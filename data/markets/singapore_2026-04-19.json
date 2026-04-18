@@ -1,0 +1,179 @@
+{
+  "city": "singapore",
+  "city_name": "Singapore",
+  "date": "2026-04-19",
+  "unit": "C",
+  "station": "WSSS",
+  "event_end_date": "2026-04-19T12:00:00Z",
+  "hours_at_discovery": 29.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:28.838426+00:00",
+      "horizon": "D+1",
+      "hours_left": 29.4,
+      "ecmwf": 28.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 28.5,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:28.838426+00:00",
+      "top_bucket": "32.0-32.0C",
+      "top_price": 0.405
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Singapore be 25°C or below on April 19?",
+      "market_id": "2003854",
+      "range": [
+        -999.0,
+        25.0
+      ],
+      "bid": 0.001,
+      "ask": 0.999,
+      "price": 0.001,
+      "spread": 0.998,
+      "volume": 1734.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 26°C on April 19?",
+      "market_id": "2003855",
+      "range": [
+        26.0,
+        26.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.9985,
+      "price": 0.0015,
+      "spread": 0.997,
+      "volume": 1475.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 27°C on April 19?",
+      "market_id": "2003856",
+      "range": [
+        27.0,
+        27.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.9985,
+      "price": 0.0015,
+      "spread": 0.997,
+      "volume": 1509.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 28°C on April 19?",
+      "market_id": "2003857",
+      "range": [
+        28.0,
+        28.0
+      ],
+      "bid": 0.0085,
+      "ask": 0.9915,
+      "price": 0.0085,
+      "spread": 0.983,
+      "volume": 3608.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 29°C on April 19?",
+      "market_id": "2003858",
+      "range": [
+        29.0,
+        29.0
+      ],
+      "bid": 0.0125,
+      "ask": 0.9875,
+      "price": 0.0125,
+      "spread": 0.975,
+      "volume": 3433.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 30°C on April 19?",
+      "market_id": "2003859",
+      "range": [
+        30.0,
+        30.0
+      ],
+      "bid": 0.075,
+      "ask": 0.925,
+      "price": 0.075,
+      "spread": 0.85,
+      "volume": 1891.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 31°C on April 19?",
+      "market_id": "2003860",
+      "range": [
+        31.0,
+        31.0
+      ],
+      "bid": 0.205,
+      "ask": 0.795,
+      "price": 0.205,
+      "spread": 0.59,
+      "volume": 1092.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 32°C on April 19?",
+      "market_id": "2003861",
+      "range": [
+        32.0,
+        32.0
+      ],
+      "bid": 0.405,
+      "ask": 0.595,
+      "price": 0.405,
+      "spread": 0.19,
+      "volume": 976.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 33°C on April 19?",
+      "market_id": "2003862",
+      "range": [
+        33.0,
+        33.0
+      ],
+      "bid": 0.23,
+      "ask": 0.77,
+      "price": 0.23,
+      "spread": 0.54,
+      "volume": 1428.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 34°C on April 19?",
+      "market_id": "2003863",
+      "range": [
+        34.0,
+        34.0
+      ],
+      "bid": 0.0435,
+      "ask": 0.9565,
+      "price": 0.0435,
+      "spread": 0.913,
+      "volume": 2474.0
+    },
+    {
+      "question": "Will the highest temperature in Singapore be 35°C or higher on April 19?",
+      "market_id": "2003864",
+      "range": [
+        35.0,
+        999.0
+      ],
+      "bid": 0.011,
+      "ask": 0.989,
+      "price": 0.011,
+      "spread": 0.978,
+      "volume": 2518.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:31.397951+00:00"
+}

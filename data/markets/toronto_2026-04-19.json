@@ -1,0 +1,179 @@
+{
+  "city": "toronto",
+  "city_name": "Toronto",
+  "date": "2026-04-19",
+  "unit": "C",
+  "station": "CYYZ",
+  "event_end_date": "2026-04-19T12:00:00Z",
+  "hours_at_discovery": 29.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:39.006007+00:00",
+      "horizon": "D+1",
+      "hours_left": 29.4,
+      "ecmwf": 7.6,
+      "hrrr": null,
+      "metar": null,
+      "best": 7.6,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:39.006007+00:00",
+      "top_bucket": "8.0-8.0C",
+      "top_price": 0.325
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Toronto be 0°C or below on April 19?",
+      "market_id": "2003689",
+      "range": [
+        -999.0,
+        0.0
+      ],
+      "bid": 0.0035,
+      "ask": 0.9965,
+      "price": 0.0035,
+      "spread": 0.993,
+      "volume": 1569.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 1°C on April 19?",
+      "market_id": "2003690",
+      "range": [
+        1.0,
+        1.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.9975,
+      "price": 0.0025,
+      "spread": 0.995,
+      "volume": 1094.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 2°C on April 19?",
+      "market_id": "2003691",
+      "range": [
+        2.0,
+        2.0
+      ],
+      "bid": 0.004,
+      "ask": 0.996,
+      "price": 0.004,
+      "spread": 0.992,
+      "volume": 1114.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 3°C on April 19?",
+      "market_id": "2003692",
+      "range": [
+        3.0,
+        3.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.9975,
+      "price": 0.0025,
+      "spread": 0.995,
+      "volume": 1174.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 4°C on April 19?",
+      "market_id": "2003693",
+      "range": [
+        4.0,
+        4.0
+      ],
+      "bid": 0.0135,
+      "ask": 0.9865,
+      "price": 0.0135,
+      "spread": 0.973,
+      "volume": 738.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 5°C on April 19?",
+      "market_id": "2003694",
+      "range": [
+        5.0,
+        5.0
+      ],
+      "bid": 0.029,
+      "ask": 0.971,
+      "price": 0.029,
+      "spread": 0.942,
+      "volume": 876.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 6°C on April 19?",
+      "market_id": "2003695",
+      "range": [
+        6.0,
+        6.0
+      ],
+      "bid": 0.155,
+      "ask": 0.845,
+      "price": 0.155,
+      "spread": 0.69,
+      "volume": 1043.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 7°C on April 19?",
+      "market_id": "2003696",
+      "range": [
+        7.0,
+        7.0
+      ],
+      "bid": 0.265,
+      "ask": 0.735,
+      "price": 0.265,
+      "spread": 0.47,
+      "volume": 611.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 8°C on April 19?",
+      "market_id": "2003697",
+      "range": [
+        8.0,
+        8.0
+      ],
+      "bid": 0.325,
+      "ask": 0.675,
+      "price": 0.325,
+      "spread": 0.35,
+      "volume": 913.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 9°C on April 19?",
+      "market_id": "2003698",
+      "range": [
+        9.0,
+        9.0
+      ],
+      "bid": 0.125,
+      "ask": 0.875,
+      "price": 0.125,
+      "spread": 0.75,
+      "volume": 638.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 10°C or higher on April 19?",
+      "market_id": "2003699",
+      "range": [
+        10.0,
+        999.0
+      ],
+      "bid": 0.125,
+      "ask": 0.875,
+      "price": 0.125,
+      "spread": 0.75,
+      "volume": 1485.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:41.520483+00:00"
+}

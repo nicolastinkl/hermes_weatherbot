@@ -1,0 +1,179 @@
+{
+  "city": "nyc",
+  "city_name": "New York City",
+  "date": "2026-04-19",
+  "unit": "F",
+  "station": "KLGA",
+  "event_end_date": "2026-04-19T12:00:00Z",
+  "hours_at_discovery": 29.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:27.912931+00:00",
+      "horizon": "D+1",
+      "hours_left": 29.4,
+      "ecmwf": 55,
+      "hrrr": 52,
+      "metar": null,
+      "best": 52,
+      "best_source": "hrrr"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:27.912931+00:00",
+      "top_bucket": "54.0-55.0F",
+      "top_price": 0.355
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in New York City be 47°F or below on April 19?",
+      "market_id": "2003711",
+      "range": [
+        -999.0,
+        47.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.9975,
+      "price": 0.0025,
+      "spread": 0.995,
+      "volume": 1488.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 48-49°F on April 19?",
+      "market_id": "2003712",
+      "range": [
+        48.0,
+        49.0
+      ],
+      "bid": 0.009,
+      "ask": 0.991,
+      "price": 0.009,
+      "spread": 0.982,
+      "volume": 2539.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 50-51°F on April 19?",
+      "market_id": "2003713",
+      "range": [
+        50.0,
+        51.0
+      ],
+      "bid": 0.0175,
+      "ask": 0.9825,
+      "price": 0.0175,
+      "spread": 0.965,
+      "volume": 2143.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 52-53°F on April 19?",
+      "market_id": "2003714",
+      "range": [
+        52.0,
+        53.0
+      ],
+      "bid": 0.205,
+      "ask": 0.795,
+      "price": 0.205,
+      "spread": 0.59,
+      "volume": 1156.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 54-55°F on April 19?",
+      "market_id": "2003715",
+      "range": [
+        54.0,
+        55.0
+      ],
+      "bid": 0.355,
+      "ask": 0.645,
+      "price": 0.355,
+      "spread": 0.29,
+      "volume": 1107.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 56-57°F on April 19?",
+      "market_id": "2003716",
+      "range": [
+        56.0,
+        57.0
+      ],
+      "bid": 0.305,
+      "ask": 0.695,
+      "price": 0.305,
+      "spread": 0.39,
+      "volume": 992.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 58-59°F on April 19?",
+      "market_id": "2003717",
+      "range": [
+        58.0,
+        59.0
+      ],
+      "bid": 0.115,
+      "ask": 0.885,
+      "price": 0.115,
+      "spread": 0.77,
+      "volume": 1156.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 60-61°F on April 19?",
+      "market_id": "2003718",
+      "range": [
+        60.0,
+        61.0
+      ],
+      "bid": 0.0215,
+      "ask": 0.9785,
+      "price": 0.0215,
+      "spread": 0.957,
+      "volume": 1572.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 62-63°F on April 19?",
+      "market_id": "2003719",
+      "range": [
+        62.0,
+        63.0
+      ],
+      "bid": 0.007,
+      "ask": 0.993,
+      "price": 0.007,
+      "spread": 0.986,
+      "volume": 1729.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 64-65°F on April 19?",
+      "market_id": "2003720",
+      "range": [
+        64.0,
+        65.0
+      ],
+      "bid": 0.0055,
+      "ask": 0.9945,
+      "price": 0.0055,
+      "spread": 0.989,
+      "volume": 1490.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be 66°F or higher on April 19?",
+      "market_id": "2003721",
+      "range": [
+        66.0,
+        999.0
+      ],
+      "bid": 0.0085,
+      "ask": 0.9915,
+      "price": 0.0085,
+      "spread": 0.983,
+      "volume": 1458.0
+    }
+  ],
+  "created_at": "2026-04-18T06:33:32.948007+00:00"
+}

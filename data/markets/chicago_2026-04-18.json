@@ -1,0 +1,179 @@
+{
+  "city": "chicago",
+  "city_name": "Chicago",
+  "date": "2026-04-18",
+  "unit": "F",
+  "station": "KORD",
+  "event_end_date": "2026-04-18T12:00:00Z",
+  "hours_at_discovery": 5.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:33.876961+00:00",
+      "horizon": "D+0",
+      "hours_left": 5.4,
+      "ecmwf": 66,
+      "hrrr": 63,
+      "metar": 63,
+      "best": 63,
+      "best_source": "hrrr"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:33.876961+00:00",
+      "top_bucket": "62.0-63.0F",
+      "top_price": 0.9185
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Chicago be 53°F or below on April 18?",
+      "market_id": "1996411",
+      "range": [
+        -999.0,
+        53.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 55796.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 54-55°F on April 18?",
+      "market_id": "1996412",
+      "range": [
+        54.0,
+        55.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 11575.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 56-57°F on April 18?",
+      "market_id": "1996413",
+      "range": [
+        56.0,
+        57.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 10782.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 58-59°F on April 18?",
+      "market_id": "1996414",
+      "range": [
+        58.0,
+        59.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 13442.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 60-61°F on April 18?",
+      "market_id": "1996415",
+      "range": [
+        60.0,
+        61.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 13791.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 62-63°F on April 18?",
+      "market_id": "1996416",
+      "range": [
+        62.0,
+        63.0
+      ],
+      "bid": 0.9185,
+      "ask": 0.0815,
+      "price": 0.9185,
+      "spread": -0.837,
+      "volume": 10274.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 64-65°F on April 18?",
+      "market_id": "1996417",
+      "range": [
+        64.0,
+        65.0
+      ],
+      "bid": 0.0615,
+      "ask": 0.9385,
+      "price": 0.0615,
+      "spread": 0.877,
+      "volume": 5738.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 66-67°F on April 18?",
+      "market_id": "1996418",
+      "range": [
+        66.0,
+        67.0
+      ],
+      "bid": 0.0345,
+      "ask": 0.9655,
+      "price": 0.0345,
+      "spread": 0.931,
+      "volume": 9171.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 68-69°F on April 18?",
+      "market_id": "1996419",
+      "range": [
+        68.0,
+        69.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.9975,
+      "price": 0.0025,
+      "spread": 0.995,
+      "volume": 8138.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be between 70-71°F on April 18?",
+      "market_id": "1996420",
+      "range": [
+        70.0,
+        71.0
+      ],
+      "bid": 0.0045,
+      "ask": 0.9955,
+      "price": 0.0045,
+      "spread": 0.991,
+      "volume": 7215.0
+    },
+    {
+      "question": "Will the highest temperature in Chicago be 72°F or higher on April 18?",
+      "market_id": "1996421",
+      "range": [
+        72.0,
+        999.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.9985,
+      "price": 0.0015,
+      "spread": 0.997,
+      "volume": 13447.0
+    }
+  ],
+  "created_at": "2026-04-18T06:33:36.997932+00:00"
+}

@@ -1,0 +1,179 @@
+{
+  "city": "wellington",
+  "city_name": "Wellington",
+  "date": "2026-04-19",
+  "unit": "C",
+  "station": "NZWN",
+  "event_end_date": "2026-04-19T12:00:00Z",
+  "hours_at_discovery": 29.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:48.896577+00:00",
+      "horizon": "D+1",
+      "hours_left": 29.4,
+      "ecmwf": 16.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 16.5,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:48.896577+00:00",
+      "top_bucket": "18.0-18.0C",
+      "top_price": 0.455
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Wellington be 11°C or below on April 19?",
+      "market_id": "2003777",
+      "range": [
+        -999.0,
+        11.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 3310.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 12°C on April 19?",
+      "market_id": "2003778",
+      "range": [
+        12.0,
+        12.0
+      ],
+      "bid": 0.001,
+      "ask": 0.999,
+      "price": 0.001,
+      "spread": 0.998,
+      "volume": 3379.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 13°C on April 19?",
+      "market_id": "2003779",
+      "range": [
+        13.0,
+        13.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.9975,
+      "price": 0.0025,
+      "spread": 0.995,
+      "volume": 1378.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 14°C on April 19?",
+      "market_id": "2003780",
+      "range": [
+        14.0,
+        14.0
+      ],
+      "bid": 0.0055,
+      "ask": 0.9945,
+      "price": 0.0055,
+      "spread": 0.989,
+      "volume": 886.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 15°C on April 19?",
+      "market_id": "2003781",
+      "range": [
+        15.0,
+        15.0
+      ],
+      "bid": 0.015,
+      "ask": 0.985,
+      "price": 0.015,
+      "spread": 0.97,
+      "volume": 1971.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 16°C on April 19?",
+      "market_id": "2003782",
+      "range": [
+        16.0,
+        16.0
+      ],
+      "bid": 0.095,
+      "ask": 0.905,
+      "price": 0.095,
+      "spread": 0.81,
+      "volume": 4786.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 17°C on April 19?",
+      "market_id": "2003783",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.22,
+      "ask": 0.78,
+      "price": 0.22,
+      "spread": 0.56,
+      "volume": 3839.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 18°C on April 19?",
+      "market_id": "2003784",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.455,
+      "ask": 0.545,
+      "price": 0.455,
+      "spread": 0.09,
+      "volume": 1109.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 19°C on April 19?",
+      "market_id": "2003785",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.125,
+      "ask": 0.875,
+      "price": 0.125,
+      "spread": 0.75,
+      "volume": 2433.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 20°C on April 19?",
+      "market_id": "2003786",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.0145,
+      "ask": 0.9855,
+      "price": 0.0145,
+      "spread": 0.971,
+      "volume": 891.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 21°C or higher on April 19?",
+      "market_id": "2003787",
+      "range": [
+        21.0,
+        999.0
+      ],
+      "bid": 0.009,
+      "ask": 0.991,
+      "price": 0.009,
+      "spread": 0.982,
+      "volume": 994.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:51.516723+00:00"
+}

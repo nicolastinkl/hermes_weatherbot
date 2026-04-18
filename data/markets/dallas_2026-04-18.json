@@ -1,0 +1,179 @@
+{
+  "city": "dallas",
+  "city_name": "Dallas",
+  "date": "2026-04-18",
+  "unit": "F",
+  "station": "KDAL",
+  "event_end_date": "2026-04-18T12:00:00Z",
+  "hours_at_discovery": 5.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:43.603858+00:00",
+      "horizon": "D+0",
+      "hours_left": 5.4,
+      "ecmwf": 76,
+      "hrrr": 77,
+      "metar": 75,
+      "best": 77,
+      "best_source": "hrrr"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:43.603858+00:00",
+      "top_bucket": "74.0-75.0F",
+      "top_price": 0.9665
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Dallas be 67°F or below on April 18?",
+      "market_id": "1996377",
+      "range": [
+        -999.0,
+        67.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 17470.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 68-69°F on April 18?",
+      "market_id": "1996378",
+      "range": [
+        68.0,
+        69.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 8578.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 70-71°F on April 18?",
+      "market_id": "1996379",
+      "range": [
+        70.0,
+        71.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 4876.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 72-73°F on April 18?",
+      "market_id": "1996380",
+      "range": [
+        72.0,
+        73.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 17389.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 74-75°F on April 18?",
+      "market_id": "1996381",
+      "range": [
+        74.0,
+        75.0
+      ],
+      "bid": 0.9665,
+      "ask": 0.0335,
+      "price": 0.9665,
+      "spread": -0.933,
+      "volume": 9096.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 76-77°F on April 18?",
+      "market_id": "1996382",
+      "range": [
+        76.0,
+        77.0
+      ],
+      "bid": 0.0155,
+      "ask": 0.9845,
+      "price": 0.0155,
+      "spread": 0.969,
+      "volume": 6118.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 78-79°F on April 18?",
+      "market_id": "1996383",
+      "range": [
+        78.0,
+        79.0
+      ],
+      "bid": 0.004,
+      "ask": 0.996,
+      "price": 0.004,
+      "spread": 0.992,
+      "volume": 4528.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 80-81°F on April 18?",
+      "market_id": "1996384",
+      "range": [
+        80.0,
+        81.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.9985,
+      "price": 0.0015,
+      "spread": 0.997,
+      "volume": 4863.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 82-83°F on April 18?",
+      "market_id": "1996385",
+      "range": [
+        82.0,
+        83.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.9975,
+      "price": 0.0025,
+      "spread": 0.995,
+      "volume": 4885.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 84-85°F on April 18?",
+      "market_id": "1996386",
+      "range": [
+        84.0,
+        85.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.9985,
+      "price": 0.0015,
+      "spread": 0.997,
+      "volume": 4908.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be 86°F or higher on April 18?",
+      "market_id": "1996387",
+      "range": [
+        86.0,
+        999.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.9985,
+      "price": 0.0015,
+      "spread": 0.997,
+      "volume": 11146.0
+    }
+  ],
+  "created_at": "2026-04-18T06:33:47.023682+00:00"
+}

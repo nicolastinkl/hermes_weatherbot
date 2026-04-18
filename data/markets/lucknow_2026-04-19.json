@@ -1,0 +1,179 @@
+{
+  "city": "lucknow",
+  "city_name": "Lucknow",
+  "date": "2026-04-19",
+  "unit": "C",
+  "station": "VILK",
+  "event_end_date": "2026-04-19T12:00:00Z",
+  "hours_at_discovery": 29.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:32.279705+00:00",
+      "horizon": "D+1",
+      "hours_left": 29.4,
+      "ecmwf": 42.0,
+      "hrrr": null,
+      "metar": null,
+      "best": 42.0,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:32.279705+00:00",
+      "top_bucket": "42.0-42.0C",
+      "top_price": 0.455
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Lucknow be 40°C or below on April 19?",
+      "market_id": "2003788",
+      "range": [
+        -999.0,
+        40.0
+      ],
+      "bid": 0.0425,
+      "ask": 0.9575,
+      "price": 0.0425,
+      "spread": 0.915,
+      "volume": 776.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 41°C on April 19?",
+      "market_id": "2003789",
+      "range": [
+        41.0,
+        41.0
+      ],
+      "bid": 0.2,
+      "ask": 0.8,
+      "price": 0.2,
+      "spread": 0.6,
+      "volume": 700.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 42°C on April 19?",
+      "market_id": "2003790",
+      "range": [
+        42.0,
+        42.0
+      ],
+      "bid": 0.455,
+      "ask": 0.545,
+      "price": 0.455,
+      "spread": 0.09,
+      "volume": 386.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 43°C on April 19?",
+      "market_id": "2003791",
+      "range": [
+        43.0,
+        43.0
+      ],
+      "bid": 0.295,
+      "ask": 0.705,
+      "price": 0.295,
+      "spread": 0.41,
+      "volume": 347.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 44°C on April 19?",
+      "market_id": "2003792",
+      "range": [
+        44.0,
+        44.0
+      ],
+      "bid": 0.0505,
+      "ask": 0.9495,
+      "price": 0.0505,
+      "spread": 0.899,
+      "volume": 802.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 45°C on April 19?",
+      "market_id": "2003793",
+      "range": [
+        45.0,
+        45.0
+      ],
+      "bid": 0.0225,
+      "ask": 0.9775,
+      "price": 0.0225,
+      "spread": 0.955,
+      "volume": 537.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 46°C on April 19?",
+      "market_id": "2003794",
+      "range": [
+        46.0,
+        46.0
+      ],
+      "bid": 0.003,
+      "ask": 0.997,
+      "price": 0.003,
+      "spread": 0.994,
+      "volume": 1296.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 47°C on April 19?",
+      "market_id": "2003795",
+      "range": [
+        47.0,
+        47.0
+      ],
+      "bid": 0.0035,
+      "ask": 0.9965,
+      "price": 0.0035,
+      "spread": 0.993,
+      "volume": 595.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 48°C on April 19?",
+      "market_id": "2003796",
+      "range": [
+        48.0,
+        48.0
+      ],
+      "bid": 0.0035,
+      "ask": 0.9965,
+      "price": 0.0035,
+      "spread": 0.993,
+      "volume": 506.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 49°C on April 19?",
+      "market_id": "2003797",
+      "range": [
+        49.0,
+        49.0
+      ],
+      "bid": 0.007,
+      "ask": 0.993,
+      "price": 0.007,
+      "spread": 0.986,
+      "volume": 1563.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 50°C or higher on April 19?",
+      "market_id": "2003798",
+      "range": [
+        50.0,
+        999.0
+      ],
+      "bid": 0.002,
+      "ask": 0.998,
+      "price": 0.002,
+      "spread": 0.996,
+      "volume": 934.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:34.657369+00:00"
+}

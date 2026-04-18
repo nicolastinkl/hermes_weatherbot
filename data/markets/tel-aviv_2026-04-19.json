@@ -1,0 +1,179 @@
+{
+  "city": "tel-aviv",
+  "city_name": "Tel Aviv",
+  "date": "2026-04-19",
+  "unit": "C",
+  "station": "LLBG",
+  "event_end_date": "2026-04-19T12:00:00Z",
+  "hours_at_discovery": 29.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:35.480269+00:00",
+      "horizon": "D+1",
+      "hours_left": 29.4,
+      "ecmwf": 23.6,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.6,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:35.480269+00:00",
+      "top_bucket": "23.0-23.0C",
+      "top_price": 0.365
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Tel Aviv be 16°C or below on April 19?",
+      "market_id": "2003810",
+      "range": [
+        -999.0,
+        16.0
+      ],
+      "bid": 0.003,
+      "ask": 0.997,
+      "price": 0.003,
+      "spread": 0.994,
+      "volume": 1300.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 17°C on April 19?",
+      "market_id": "2003811",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.0035,
+      "ask": 0.9965,
+      "price": 0.0035,
+      "spread": 0.993,
+      "volume": 851.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 18°C on April 19?",
+      "market_id": "2003812",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.0055,
+      "ask": 0.9945,
+      "price": 0.0055,
+      "spread": 0.989,
+      "volume": 615.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 19°C on April 19?",
+      "market_id": "2003813",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.012,
+      "ask": 0.988,
+      "price": 0.012,
+      "spread": 0.976,
+      "volume": 509.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 20°C on April 19?",
+      "market_id": "2003814",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.0145,
+      "ask": 0.9855,
+      "price": 0.0145,
+      "spread": 0.971,
+      "volume": 988.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 21°C on April 19?",
+      "market_id": "2003815",
+      "range": [
+        21.0,
+        21.0
+      ],
+      "bid": 0.056,
+      "ask": 0.944,
+      "price": 0.056,
+      "spread": 0.888,
+      "volume": 966.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 22°C on April 19?",
+      "market_id": "2003816",
+      "range": [
+        22.0,
+        22.0
+      ],
+      "bid": 0.19,
+      "ask": 0.81,
+      "price": 0.19,
+      "spread": 0.62,
+      "volume": 477.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 23°C on April 19?",
+      "market_id": "2003817",
+      "range": [
+        23.0,
+        23.0
+      ],
+      "bid": 0.365,
+      "ask": 0.635,
+      "price": 0.365,
+      "spread": 0.27,
+      "volume": 337.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 24°C on April 19?",
+      "market_id": "2003818",
+      "range": [
+        24.0,
+        24.0
+      ],
+      "bid": 0.255,
+      "ask": 0.745,
+      "price": 0.255,
+      "spread": 0.49,
+      "volume": 556.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 25°C on April 19?",
+      "market_id": "2003819",
+      "range": [
+        25.0,
+        25.0
+      ],
+      "bid": 0.135,
+      "ask": 0.865,
+      "price": 0.135,
+      "spread": 0.73,
+      "volume": 435.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 26°C or higher on April 19?",
+      "market_id": "2003820",
+      "range": [
+        26.0,
+        999.0
+      ],
+      "bid": 0.03,
+      "ask": 0.97,
+      "price": 0.03,
+      "spread": 0.94,
+      "volume": 828.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:38.147706+00:00"
+}

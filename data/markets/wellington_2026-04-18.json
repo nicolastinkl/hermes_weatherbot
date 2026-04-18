@@ -1,0 +1,179 @@
+{
+  "city": "wellington",
+  "city_name": "Wellington",
+  "date": "2026-04-18",
+  "unit": "C",
+  "station": "NZWN",
+  "event_end_date": "2026-04-18T12:00:00Z",
+  "hours_at_discovery": 5.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:48.896577+00:00",
+      "horizon": "D+0",
+      "hours_left": 5.4,
+      "ecmwf": 16.1,
+      "hrrr": null,
+      "metar": 15.0,
+      "best": 16.1,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:48.896577+00:00",
+      "top_bucket": "18.0-18.0C",
+      "top_price": 0.9975
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Wellington be 11°C or below on April 18?",
+      "market_id": "1996433",
+      "range": [
+        -999.0,
+        11.0
+      ],
+      "bid": 0.0,
+      "ask": 1.0,
+      "price": 0.0,
+      "spread": 1.0,
+      "volume": 8770.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 12°C on April 18?",
+      "market_id": "1996434",
+      "range": [
+        12.0,
+        12.0
+      ],
+      "bid": 0.0,
+      "ask": 1.0,
+      "price": 0.0,
+      "spread": 1.0,
+      "volume": 5930.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 13°C on April 18?",
+      "market_id": "1996435",
+      "range": [
+        13.0,
+        13.0
+      ],
+      "bid": 0.0,
+      "ask": 1.0,
+      "price": 0.0,
+      "spread": 1.0,
+      "volume": 22294.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 14°C on April 18?",
+      "market_id": "1996436",
+      "range": [
+        14.0,
+        14.0
+      ],
+      "bid": 0.0,
+      "ask": 1.0,
+      "price": 0.0,
+      "spread": 1.0,
+      "volume": 7013.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 15°C on April 18?",
+      "market_id": "1996437",
+      "range": [
+        15.0,
+        15.0
+      ],
+      "bid": 0.0,
+      "ask": 1.0,
+      "price": 0.0,
+      "spread": 1.0,
+      "volume": 9707.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 16°C on April 18?",
+      "market_id": "1996438",
+      "range": [
+        16.0,
+        16.0
+      ],
+      "bid": 0.0,
+      "ask": 1.0,
+      "price": 0.0,
+      "spread": 1.0,
+      "volume": 22976.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 17°C on April 18?",
+      "market_id": "1996439",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.0,
+      "ask": 1.0,
+      "price": 0.0,
+      "spread": 1.0,
+      "volume": 18034.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 18°C on April 18?",
+      "market_id": "1996440",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.9975,
+      "ask": 0.0025,
+      "price": 0.9975,
+      "spread": -0.995,
+      "volume": 15309.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 19°C on April 18?",
+      "market_id": "1996441",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.9985,
+      "price": 0.0015,
+      "spread": 0.997,
+      "volume": 11653.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 20°C on April 18?",
+      "market_id": "1996442",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.9985,
+      "price": 0.0015,
+      "spread": 0.997,
+      "volume": 7086.0
+    },
+    {
+      "question": "Will the highest temperature in Wellington be 21°C or higher on April 18?",
+      "market_id": "1996443",
+      "range": [
+        21.0,
+        999.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 5960.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:51.093871+00:00"
+}

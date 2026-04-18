@@ -1,0 +1,179 @@
+{
+  "city": "sao-paulo",
+  "city_name": "Sao Paulo",
+  "date": "2026-04-18",
+  "unit": "C",
+  "station": "SBGR",
+  "event_end_date": "2026-04-18T12:00:00Z",
+  "hours_at_discovery": 5.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:42.322054+00:00",
+      "horizon": "D+0",
+      "hours_left": 5.4,
+      "ecmwf": 29.4,
+      "hrrr": null,
+      "metar": 21.0,
+      "best": 29.4,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:42.322054+00:00",
+      "top_bucket": "29.0-29.0C",
+      "top_price": 0.385
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Sao Paulo be 24°C or below on April 18?",
+      "market_id": "1996311",
+      "range": [
+        -999.0,
+        24.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 2203.0
+    },
+    {
+      "question": "Will the highest temperature in Sao Paulo be 25°C on April 18?",
+      "market_id": "1996312",
+      "range": [
+        25.0,
+        25.0
+      ],
+      "bid": 0.004,
+      "ask": 0.996,
+      "price": 0.004,
+      "spread": 0.992,
+      "volume": 2005.0
+    },
+    {
+      "question": "Will the highest temperature in Sao Paulo be 26°C on April 18?",
+      "market_id": "1996313",
+      "range": [
+        26.0,
+        26.0
+      ],
+      "bid": 0.014,
+      "ask": 0.986,
+      "price": 0.014,
+      "spread": 0.972,
+      "volume": 2804.0
+    },
+    {
+      "question": "Will the highest temperature in Sao Paulo be 27°C on April 18?",
+      "market_id": "1996314",
+      "range": [
+        27.0,
+        27.0
+      ],
+      "bid": 0.085,
+      "ask": 0.915,
+      "price": 0.085,
+      "spread": 0.83,
+      "volume": 2693.0
+    },
+    {
+      "question": "Will the highest temperature in Sao Paulo be 28°C on April 18?",
+      "market_id": "1996315",
+      "range": [
+        28.0,
+        28.0
+      ],
+      "bid": 0.29,
+      "ask": 0.71,
+      "price": 0.29,
+      "spread": 0.42,
+      "volume": 1843.0
+    },
+    {
+      "question": "Will the highest temperature in Sao Paulo be 29°C on April 18?",
+      "market_id": "1996316",
+      "range": [
+        29.0,
+        29.0
+      ],
+      "bid": 0.385,
+      "ask": 0.615,
+      "price": 0.385,
+      "spread": 0.23,
+      "volume": 1848.0
+    },
+    {
+      "question": "Will the highest temperature in Sao Paulo be 30°C on April 18?",
+      "market_id": "1996317",
+      "range": [
+        30.0,
+        30.0
+      ],
+      "bid": 0.165,
+      "ask": 0.835,
+      "price": 0.165,
+      "spread": 0.67,
+      "volume": 2784.0
+    },
+    {
+      "question": "Will the highest temperature in Sao Paulo be 31°C on April 18?",
+      "market_id": "1996318",
+      "range": [
+        31.0,
+        31.0
+      ],
+      "bid": 0.0465,
+      "ask": 0.9535,
+      "price": 0.0465,
+      "spread": 0.907,
+      "volume": 2968.0
+    },
+    {
+      "question": "Will the highest temperature in Sao Paulo be 32°C on April 18?",
+      "market_id": "1996319",
+      "range": [
+        32.0,
+        32.0
+      ],
+      "bid": 0.007,
+      "ask": 0.993,
+      "price": 0.007,
+      "spread": 0.986,
+      "volume": 1552.0
+    },
+    {
+      "question": "Will the highest temperature in Sao Paulo be 33°C on April 18?",
+      "market_id": "1996320",
+      "range": [
+        33.0,
+        33.0
+      ],
+      "bid": 0.003,
+      "ask": 0.997,
+      "price": 0.003,
+      "spread": 0.994,
+      "volume": 1022.0
+    },
+    {
+      "question": "Will the highest temperature in Sao Paulo be 34°C or higher on April 18?",
+      "market_id": "1996321",
+      "range": [
+        34.0,
+        999.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 1100.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:44.398380+00:00"
+}

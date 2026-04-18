@@ -1,0 +1,179 @@
+{
+  "city": "paris",
+  "city_name": "Paris",
+  "date": "2026-04-19",
+  "unit": "C",
+  "station": "LFPG",
+  "event_end_date": "2026-04-19T12:00:00Z",
+  "hours_at_discovery": 29.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:01.592793+00:00",
+      "horizon": "D+1",
+      "hours_left": 29.4,
+      "ecmwf": 16.0,
+      "hrrr": null,
+      "metar": null,
+      "best": 16.0,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:01.592793+00:00",
+      "top_bucket": "17.0-17.0C",
+      "top_price": 0.335
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Paris be 13°C or below on April 19?",
+      "market_id": "2003645",
+      "range": [
+        -999.0,
+        13.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.9975,
+      "price": 0.0025,
+      "spread": 0.995,
+      "volume": 3186.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 14°C on April 19?",
+      "market_id": "2003646",
+      "range": [
+        14.0,
+        14.0
+      ],
+      "bid": 0.0035,
+      "ask": 0.9965,
+      "price": 0.0035,
+      "spread": 0.993,
+      "volume": 3122.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 15°C on April 19?",
+      "market_id": "2003647",
+      "range": [
+        15.0,
+        15.0
+      ],
+      "bid": 0.0105,
+      "ask": 0.9895,
+      "price": 0.0105,
+      "spread": 0.979,
+      "volume": 2180.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 16°C on April 19?",
+      "market_id": "2003648",
+      "range": [
+        16.0,
+        16.0
+      ],
+      "bid": 0.155,
+      "ask": 0.845,
+      "price": 0.155,
+      "spread": 0.69,
+      "volume": 1330.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 17°C on April 19?",
+      "market_id": "2003649",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.335,
+      "ask": 0.665,
+      "price": 0.335,
+      "spread": 0.33,
+      "volume": 871.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 18°C on April 19?",
+      "market_id": "2003650",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.325,
+      "ask": 0.675,
+      "price": 0.325,
+      "spread": 0.35,
+      "volume": 1033.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 19°C on April 19?",
+      "market_id": "2003651",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.15,
+      "ask": 0.85,
+      "price": 0.15,
+      "spread": 0.7,
+      "volume": 1525.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 20°C on April 19?",
+      "market_id": "2003652",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.0295,
+      "ask": 0.9705,
+      "price": 0.0295,
+      "spread": 0.941,
+      "volume": 1430.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 21°C on April 19?",
+      "market_id": "2003653",
+      "range": [
+        21.0,
+        21.0
+      ],
+      "bid": 0.01,
+      "ask": 0.99,
+      "price": 0.01,
+      "spread": 0.98,
+      "volume": 2077.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 22°C on April 19?",
+      "market_id": "2003654",
+      "range": [
+        22.0,
+        22.0
+      ],
+      "bid": 0.007,
+      "ask": 0.993,
+      "price": 0.007,
+      "spread": 0.986,
+      "volume": 2212.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 23°C or higher on April 19?",
+      "market_id": "2003655",
+      "range": [
+        23.0,
+        999.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.9975,
+      "price": 0.0025,
+      "spread": 0.995,
+      "volume": 1824.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:04.267164+00:00"
+}

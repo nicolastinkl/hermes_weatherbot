@@ -1,0 +1,179 @@
+{
+  "city": "miami",
+  "city_name": "Miami",
+  "date": "2026-04-19",
+  "unit": "F",
+  "station": "KMIA",
+  "event_end_date": "2026-04-19T12:00:00Z",
+  "hours_at_discovery": 29.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:38.465891+00:00",
+      "horizon": "D+1",
+      "hours_left": 29.4,
+      "ecmwf": 84,
+      "hrrr": 86,
+      "metar": null,
+      "best": 86,
+      "best_source": "hrrr"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:38.465891+00:00",
+      "top_bucket": "84.0-85.0F",
+      "top_price": 0.405
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Miami be 75°F or below on April 19?",
+      "market_id": "2003744",
+      "range": [
+        -999.0,
+        75.0
+      ],
+      "bid": 0.003,
+      "ask": 0.997,
+      "price": 0.003,
+      "spread": 0.994,
+      "volume": 1760.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 76-77°F on April 19?",
+      "market_id": "2003745",
+      "range": [
+        76.0,
+        77.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.9985,
+      "price": 0.0015,
+      "spread": 0.997,
+      "volume": 1219.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 78-79°F on April 19?",
+      "market_id": "2003746",
+      "range": [
+        78.0,
+        79.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.9975,
+      "price": 0.0025,
+      "spread": 0.995,
+      "volume": 1171.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 80-81°F on April 19?",
+      "market_id": "2003747",
+      "range": [
+        80.0,
+        81.0
+      ],
+      "bid": 0.02,
+      "ask": 0.98,
+      "price": 0.02,
+      "spread": 0.96,
+      "volume": 2113.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 82-83°F on April 19?",
+      "market_id": "2003748",
+      "range": [
+        82.0,
+        83.0
+      ],
+      "bid": 0.0585,
+      "ask": 0.9415,
+      "price": 0.0585,
+      "spread": 0.883,
+      "volume": 2195.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 84-85°F on April 19?",
+      "market_id": "2003749",
+      "range": [
+        84.0,
+        85.0
+      ],
+      "bid": 0.405,
+      "ask": 0.595,
+      "price": 0.405,
+      "spread": 0.19,
+      "volume": 1712.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 86-87°F on April 19?",
+      "market_id": "2003750",
+      "range": [
+        86.0,
+        87.0
+      ],
+      "bid": 0.365,
+      "ask": 0.635,
+      "price": 0.365,
+      "spread": 0.27,
+      "volume": 1403.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 88-89°F on April 19?",
+      "market_id": "2003751",
+      "range": [
+        88.0,
+        89.0
+      ],
+      "bid": 0.175,
+      "ask": 0.825,
+      "price": 0.175,
+      "spread": 0.65,
+      "volume": 2064.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 90-91°F on April 19?",
+      "market_id": "2003752",
+      "range": [
+        90.0,
+        91.0
+      ],
+      "bid": 0.026,
+      "ask": 0.974,
+      "price": 0.026,
+      "spread": 0.948,
+      "volume": 1114.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 92-93°F on April 19?",
+      "market_id": "2003753",
+      "range": [
+        92.0,
+        93.0
+      ],
+      "bid": 0.0105,
+      "ask": 0.9895,
+      "price": 0.0105,
+      "spread": 0.979,
+      "volume": 594.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be 94°F or higher on April 19?",
+      "market_id": "2003754",
+      "range": [
+        94.0,
+        999.0
+      ],
+      "bid": 0.0075,
+      "ask": 0.9925,
+      "price": 0.0075,
+      "spread": 0.985,
+      "volume": 1541.0
+    }
+  ],
+  "created_at": "2026-04-18T06:33:42.656331+00:00"
+}

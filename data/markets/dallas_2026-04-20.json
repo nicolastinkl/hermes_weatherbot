@@ -1,0 +1,179 @@
+{
+  "city": "dallas",
+  "city_name": "Dallas",
+  "date": "2026-04-20",
+  "unit": "F",
+  "station": "KDAL",
+  "event_end_date": "2026-04-20T12:00:00Z",
+  "hours_at_discovery": 53.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:43.603858+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.4,
+      "ecmwf": 74,
+      "hrrr": 70,
+      "metar": null,
+      "best": 70,
+      "best_source": "hrrr"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:33:43.603858+00:00",
+      "top_bucket": "-999.0-71.0F",
+      "top_price": 0.385
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Dallas be 71°F or below on April 20?",
+      "market_id": "2011134",
+      "range": [
+        -999.0,
+        71.0
+      ],
+      "bid": 0.385,
+      "ask": 0.615,
+      "price": 0.385,
+      "spread": 0.23,
+      "volume": 86.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 72-73°F on April 20?",
+      "market_id": "2011135",
+      "range": [
+        72.0,
+        73.0
+      ],
+      "bid": 0.345,
+      "ask": 0.655,
+      "price": 0.345,
+      "spread": 0.31,
+      "volume": 43.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 74-75°F on April 20?",
+      "market_id": "2011136",
+      "range": [
+        74.0,
+        75.0
+      ],
+      "bid": 0.29,
+      "ask": 0.71,
+      "price": 0.29,
+      "spread": 0.42,
+      "volume": 77.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 76-77°F on April 20?",
+      "market_id": "2011137",
+      "range": [
+        76.0,
+        77.0
+      ],
+      "bid": 0.225,
+      "ask": 0.775,
+      "price": 0.225,
+      "spread": 0.55,
+      "volume": 37.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 78-79°F on April 20?",
+      "market_id": "2011138",
+      "range": [
+        78.0,
+        79.0
+      ],
+      "bid": 0.09,
+      "ask": 0.91,
+      "price": 0.09,
+      "spread": 0.82,
+      "volume": 43.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 80-81°F on April 20?",
+      "market_id": "2011139",
+      "range": [
+        80.0,
+        81.0
+      ],
+      "bid": 0.0065,
+      "ask": 0.9935,
+      "price": 0.0065,
+      "spread": 0.987,
+      "volume": 268.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 82-83°F on April 20?",
+      "market_id": "2011140",
+      "range": [
+        82.0,
+        83.0
+      ],
+      "bid": 0.006,
+      "ask": 0.994,
+      "price": 0.006,
+      "spread": 0.988,
+      "volume": 280.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 84-85°F on April 20?",
+      "market_id": "2011141",
+      "range": [
+        84.0,
+        85.0
+      ],
+      "bid": 0.0055,
+      "ask": 0.9945,
+      "price": 0.0055,
+      "spread": 0.989,
+      "volume": 254.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 86-87°F on April 20?",
+      "market_id": "2011142",
+      "range": [
+        86.0,
+        87.0
+      ],
+      "bid": 0.006,
+      "ask": 0.994,
+      "price": 0.006,
+      "spread": 0.988,
+      "volume": 244.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be between 88-89°F on April 20?",
+      "market_id": "2011143",
+      "range": [
+        88.0,
+        89.0
+      ],
+      "bid": 0.0095,
+      "ask": 0.9905,
+      "price": 0.0095,
+      "spread": 0.981,
+      "volume": 200.0
+    },
+    {
+      "question": "Will the highest temperature in Dallas be 90°F or higher on April 20?",
+      "market_id": "2011144",
+      "range": [
+        90.0,
+        999.0
+      ],
+      "bid": 0.0085,
+      "ask": 0.9915,
+      "price": 0.0085,
+      "spread": 0.983,
+      "volume": 213.0
+    }
+  ],
+  "created_at": "2026-04-18T06:33:47.902131+00:00"
+}

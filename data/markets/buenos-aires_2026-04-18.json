@@ -1,0 +1,179 @@
+{
+  "city": "buenos-aires",
+  "city_name": "Buenos Aires",
+  "date": "2026-04-18",
+  "unit": "C",
+  "station": "SAEZ",
+  "event_end_date": "2026-04-18T12:00:00Z",
+  "hours_at_discovery": 5.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:45.652558+00:00",
+      "horizon": "D+0",
+      "hours_left": 5.4,
+      "ecmwf": 26.2,
+      "hrrr": null,
+      "metar": 15.0,
+      "best": 26.2,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:45.652558+00:00",
+      "top_bucket": "27.0-27.0C",
+      "top_price": 0.36
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Buenos Aires be 20°C or below on April 18?",
+      "market_id": "1996322",
+      "range": [
+        -999.0,
+        20.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.9995,
+      "price": 0.0005,
+      "spread": 0.999,
+      "volume": 3663.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 21°C on April 18?",
+      "market_id": "1996323",
+      "range": [
+        21.0,
+        21.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.9985,
+      "price": 0.0015,
+      "spread": 0.997,
+      "volume": 5174.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 22°C on April 18?",
+      "market_id": "1996324",
+      "range": [
+        22.0,
+        22.0
+      ],
+      "bid": 0.003,
+      "ask": 0.997,
+      "price": 0.003,
+      "spread": 0.994,
+      "volume": 5139.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 23°C on April 18?",
+      "market_id": "1996325",
+      "range": [
+        23.0,
+        23.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.9985,
+      "price": 0.0015,
+      "spread": 0.997,
+      "volume": 5815.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 24°C on April 18?",
+      "market_id": "1996326",
+      "range": [
+        24.0,
+        24.0
+      ],
+      "bid": 0.005,
+      "ask": 0.995,
+      "price": 0.005,
+      "spread": 0.99,
+      "volume": 5152.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 25°C on April 18?",
+      "market_id": "1996327",
+      "range": [
+        25.0,
+        25.0
+      ],
+      "bid": 0.095,
+      "ask": 0.905,
+      "price": 0.095,
+      "spread": 0.81,
+      "volume": 3754.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 26°C on April 18?",
+      "market_id": "1996328",
+      "range": [
+        26.0,
+        26.0
+      ],
+      "bid": 0.335,
+      "ask": 0.665,
+      "price": 0.335,
+      "spread": 0.33,
+      "volume": 1369.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 27°C on April 18?",
+      "market_id": "1996329",
+      "range": [
+        27.0,
+        27.0
+      ],
+      "bid": 0.36,
+      "ask": 0.64,
+      "price": 0.36,
+      "spread": 0.28,
+      "volume": 1548.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 28°C on April 18?",
+      "market_id": "1996330",
+      "range": [
+        28.0,
+        28.0
+      ],
+      "bid": 0.185,
+      "ask": 0.815,
+      "price": 0.185,
+      "spread": 0.63,
+      "volume": 2543.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 29°C on April 18?",
+      "market_id": "1996331",
+      "range": [
+        29.0,
+        29.0
+      ],
+      "bid": 0.0155,
+      "ask": 0.9845,
+      "price": 0.0155,
+      "spread": 0.969,
+      "volume": 3325.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 30°C or higher on April 18?",
+      "market_id": "1996332",
+      "range": [
+        30.0,
+        999.0
+      ],
+      "bid": 0.005,
+      "ask": 0.995,
+      "price": 0.005,
+      "spread": 0.99,
+      "volume": 1860.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:47.738646+00:00"
+}

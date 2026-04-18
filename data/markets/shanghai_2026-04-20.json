@@ -1,0 +1,179 @@
+{
+  "city": "shanghai",
+  "city_name": "Shanghai",
+  "date": "2026-04-20",
+  "unit": "C",
+  "station": "ZSPD",
+  "event_end_date": "2026-04-20T12:00:00Z",
+  "hours_at_discovery": 53.4,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:25.740032+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.4,
+      "ecmwf": 20.6,
+      "hrrr": null,
+      "metar": null,
+      "best": 20.6,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-18T06:34:25.740032+00:00",
+      "top_bucket": "20.0-20.0C",
+      "top_price": 0.32
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Shanghai be 12°C or below on April 20?",
+      "market_id": "2011255",
+      "range": [
+        -999.0,
+        12.0
+      ],
+      "bid": 0.0065,
+      "ask": 0.9935,
+      "price": 0.0065,
+      "spread": 0.987,
+      "volume": 197.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 13°C on April 20?",
+      "market_id": "2011256",
+      "range": [
+        13.0,
+        13.0
+      ],
+      "bid": 0.007,
+      "ask": 0.993,
+      "price": 0.007,
+      "spread": 0.986,
+      "volume": 175.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 14°C on April 20?",
+      "market_id": "2011257",
+      "range": [
+        14.0,
+        14.0
+      ],
+      "bid": 0.0175,
+      "ask": 0.9825,
+      "price": 0.0175,
+      "spread": 0.965,
+      "volume": 131.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 15°C on April 20?",
+      "market_id": "2011258",
+      "range": [
+        15.0,
+        15.0
+      ],
+      "bid": 0.0325,
+      "ask": 0.9675,
+      "price": 0.0325,
+      "spread": 0.935,
+      "volume": 20.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 16°C on April 20?",
+      "market_id": "2011259",
+      "range": [
+        16.0,
+        16.0
+      ],
+      "bid": 0.075,
+      "ask": 0.925,
+      "price": 0.075,
+      "spread": 0.85,
+      "volume": 28.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 17°C on April 20?",
+      "market_id": "2011260",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.07,
+      "ask": 0.93,
+      "price": 0.07,
+      "spread": 0.86,
+      "volume": 216.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 18°C on April 20?",
+      "market_id": "2011261",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.165,
+      "ask": 0.835,
+      "price": 0.165,
+      "spread": 0.67,
+      "volume": 21.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 19°C on April 20?",
+      "market_id": "2011262",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.23,
+      "ask": 0.77,
+      "price": 0.23,
+      "spread": 0.54,
+      "volume": 5.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 20°C on April 20?",
+      "market_id": "2011263",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.32,
+      "ask": 0.68,
+      "price": 0.32,
+      "spread": 0.36,
+      "volume": 8.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 21°C on April 20?",
+      "market_id": "2011264",
+      "range": [
+        21.0,
+        21.0
+      ],
+      "bid": 0.15,
+      "ask": 0.85,
+      "price": 0.15,
+      "spread": 0.7,
+      "volume": 31.0
+    },
+    {
+      "question": "Will the highest temperature in Shanghai be 22°C or higher on April 20?",
+      "market_id": "2011265",
+      "range": [
+        22.0,
+        999.0
+      ],
+      "bid": 0.135,
+      "ask": 0.865,
+      "price": 0.135,
+      "spread": 0.73,
+      "volume": 20.0
+    }
+  ],
+  "created_at": "2026-04-18T06:34:28.411810+00:00"
+}
