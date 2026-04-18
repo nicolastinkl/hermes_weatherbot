@@ -453,14 +453,49 @@ def tg_signal(city: str, horizon: str, date: str, bucket_label: str,
         )
     send_telegram(msg)
 
-def tg_scan_summary(new_trades: int, errors: int, balance: float, cities: int):
-    """Send a scan summary to Telegram."""
+def tg_scan_summary(new_trades: int, errors: int, balance: float, cities: int,
+                     top_signals: list = None, open_positions: list = None):
+    """Send a detailed scan summary to Telegram."""
     status_emoji = "✅" if errors == 0 else "⚠️"
-    msg = (
-        f"🔔 <b>Weather Bot Scan Complete</b>\n"
-        f"{status_emoji} Cities: {cities} | New trades: {new_trades} | Errors: {errors}\n"
-        f"💰 Balance: <b>${balance:.4f}</b> USDC.e"
-    )
+
+    # Build header
+    lines = [
+        f"🔔 <b>Weather Bot — Scan Report</b>",
+        f"{status_emoji} Cities: {cities} | New trades: {new_trades} | Errors: {errors}",
+        f"💰 Balance: <b>${balance:.4f}</b> USDC.e",
+    ]
+
+    # Open positions
+    if open_positions:
+        lines.append("")
+        lines.append(f"📊 <b>Open Positions ({len(open_positions)}):</b>")
+        for pos in open_positions[:5]:  # Max 5 shown
+            label = f"{pos['bucket_low']}-{pos['bucket_high']}°F"
+            pnl_str = f"${pos.get('pnl', 0):.2f}" if pos.get('pnl') else "pending"
+            entry = pos.get('entry_price', 0)
+            cost = pos.get('cost', 0)
+            lines.append(
+                f"  • {pos['city_name']} {pos['date']} | {label} | "
+                f"entry ${entry:.3f} | cost ${cost:.2f} | PnL {pnl_str}"
+            )
+        if len(open_positions) > 5:
+            lines.append(f"  ...and {len(open_positions) - 5} more")
+    else:
+        lines.append("")
+        lines.append("📊 <b>Open Positions:</b> 0")
+
+    # Top signals from this scan
+    if top_signals:
+        lines.append("")
+        lines.append(f"🎯 <b>Top EV Signals ({len(top_signals)} found):</b>")
+        for sig in top_signals[:5]:  # Max 5 shown
+            lines.append(
+                f"  • {sig['city']} {sig['horizon']} | "
+                f"{sig['bucket']} | EV <b>+{sig['ev']:.2f}</b> | "
+                f"${sig['price']:.3f} (market) vs ${sig['true_prob']:.3f} (model)"
+            )
+
+    msg = "\n".join(lines)
     send_telegram(msg)
 
 # =============================================================================
@@ -1115,6 +1150,39 @@ def scan_and_trade():
             print("ok", end="", flush=True)
         print()  # newline after city
 
+    # Build top signals from this scan for Telegram
+    top_signals = []
+    for city_slug, loc, outcomes, forecastsnap, horizon, end_date, date in city_market_data:
+        if not outcomes or not forecastsnap:
+            continue
+        forecast_temp = forecastsnap.get("temp")
+        if forecast_temp is None:
+            continue
+        sigma = get_sigma(city_slug)
+        for o in outcomes:
+            t_low, t_high = o["range"]
+            if not in_bucket(forecast_temp, t_low, t_high):
+                continue
+            p = bucket_prob(forecast_temp, t_low, t_high, sigma)
+            ev = calc_ev(p, o["ask"])
+            if ev > 0:
+                top_signals.append({
+                    "city": loc["name"],
+                    "horizon": horizon,
+                    "bucket": f"{t_low}-{t_high}°F",
+                    "ev": ev,
+                    "price": o["ask"],
+                    "true_prob": p,
+                })
+    top_signals.sort(key=lambda x: x["ev"], reverse=True)
+
+    # Open positions
+    markets = load_all_markets()
+    open_positions = [
+        m for m in markets
+        if m.get("position") and m["position"].get("status") == "open"
+    ]
+
     # Save updated balance
     state["balance"] = round(balance, 4)
     save_state(state)
@@ -1128,7 +1196,9 @@ def scan_and_trade():
 
     # Telegram scan summary
     tg_scan_summary(new_trades=new_trades, errors=len(errors),
-                    balance=balance, cities=len(LOCATIONS))
+                    balance=balance, cities=len(LOCATIONS),
+                    top_signals=top_signals,
+                    open_positions=open_positions)
 
     return new_trades, errors
 
