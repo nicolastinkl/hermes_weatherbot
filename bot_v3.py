@@ -23,8 +23,10 @@ import os
 import logging
 import dotenv
 import requests
+import threading
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from typing import Callable, Any
 
 # =============================================================================
 # CONFIG
@@ -117,6 +119,190 @@ def warn(msg): print(f"{C.YELLOW}  ⚠️  {msg}{C.RESET}")
 def info(msg): print(f"{C.CYAN}  {msg}{C.RESET}")
 def skip(msg): print(f"{C.GRAY}  ⏸️  {msg}{C.RESET}")
 def live(msg): print(f"{C.GREEN}  {msg}{C.RESET}")
+
+# =============================================================================
+# TIMEOUT WRAPPER — prevents CLOB/HTTP calls from hanging forever
+# =============================================================================
+
+def _timeout_call(func: Callable, args: tuple = (), kwargs: dict = None,
+                  timeout: float = 10.0, default: Any = None) -> Any:
+    """Run func in a thread with a timeout. Returns default on timeout."""
+    kwargs = kwargs or {}
+    result = [default]
+    error = [None]
+
+    def target():
+        try:
+            result[0] = func(*args, **kwargs)
+        except Exception as e:
+            error[0] = e
+
+    t = threading.Thread(target=target, daemon=True)
+    t.start()
+    t.join(timeout=timeout)
+    if t.is_alive():
+        return default
+    if error[0]:
+        raise error[0]
+    return result[0]
+
+# =============================================================================
+# SELF-LEARNING SYSTEM — adapts strategy based on trade history
+# =============================================================================
+
+LEARNING_DIR = BOT_DIR / "data" / "learning"
+LEARNING_DIR.mkdir(exist_ok=True)
+TRADE_LOG = LEARNING_DIR / "trade_log.json"
+MODEL_FILE = LEARNING_DIR / "model.json"
+LEARNING_WINDOW = 30  # Consider last N trades for adaptation
+
+# Default model (conservative start)
+_DEFAULT_MODEL = {
+    "version": 1,
+    "city_knowledge": {},      # city_slug -> {wins, losses, total_pnl, trades}
+    "bucket_knowledge": {},   # bucket_range -> {wins, losses}
+    "global": {"wins": 0, "losses": 0, "total_pnl": 0.0, "trades": 0},
+    "kelly_adjustment": 1.0,  # multiplier on Kelly fraction
+    "ev_floor": MIN_EV,       # adaptive EV threshold
+    "max_kelly_frac": KELLY_FRAC,
+    "confidence": 0.0,        # 0-1, how much to trust learned params
+}
+
+def _load_model() -> dict:
+    if MODEL_FILE.exists():
+        return json.loads(MODEL_FILE.read_text(encoding="utf-8"))
+    return _DEFAULT_MODEL.copy()
+
+def _save_model(model: dict):
+    MODEL_FILE.write_text(json.dumps(model, indent=2, ensure_ascii=False), encoding="utf-8")
+
+def record_trade(city_slug: str, bucket_low: int, bucket_high: int,
+                outcome: str, pnl: float, cost: float, kelly: float, ev: float):
+    """
+    Record a completed trade for self-learning.
+    outcome: 'win' | 'loss' | 'pending'
+    pnl: profit/loss amount in USDC
+    """
+    model = _load_model()
+
+    # Load existing trade log
+    log = []
+    if TRADE_LOG.exists():
+        log = json.loads(TRADE_LOG.read_text(encoding="utf-8"))
+
+    # Append new trade
+    trade = {
+        "id": len(log) + 1,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "city": city_slug,
+        "bucket": f"{bucket_low}-{bucket_high}",
+        "outcome": outcome,
+        "pnl": round(pnl, 4),
+        "cost": round(cost, 4),
+        "kelly": round(kelly, 4),
+        "ev": round(ev, 4),
+    }
+    log.append(trade)
+
+    # Keep only recent trades
+    log = log[-LEARNING_WINDOW:]
+    TRADE_LOG.write_text(json.dumps(log, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    # Update model based on resolved trades only
+    resolved = [t for t in log if t["outcome"] in ("win", "loss")]
+    if not resolved:
+        _save_model(model)
+        return
+
+    wins = sum(1 for t in resolved if t["outcome"] == "win")
+    losses = sum(1 for t in resolved if t["outcome"] == "loss")
+    total_pnl = sum(t["pnl"] for t in resolved)
+    total_trades = len(resolved)
+    winrate = wins / total_trades if total_trades > 0 else 0.5
+
+    avg_win = sum(t["pnl"] for t in resolved if t["outcome"] == "win") / wins if wins > 0 else 1.0
+    avg_loss = abs(sum(t["pnl"] for t in resolved if t["outcome"] == "loss") / losses) if losses > 0 else 1.0
+
+    # Global update
+    model["global"] = {
+        "wins": wins, "losses": losses,
+        "total_pnl": round(total_pnl, 4),
+        "trades": total_trades,
+    }
+
+    # City-level knowledge
+    for city in set(t["city"] for t in resolved):
+        city_trades = [t for t in resolved if t["city"] == city]
+        city_wins = sum(1 for t in city_trades if t["outcome"] == "win")
+        city_losses = sum(1 for t in city_trades if t["outcome"] == "loss")
+        city_pnl = sum(t["pnl"] for t in city_trades)
+        model["city_knowledge"][city] = {
+            "wins": city_wins, "losses": city_losses,
+            "total_pnl": round(city_pnl, 4),
+            "trades": len(city_trades),
+        }
+
+    # Bucket-level knowledge
+    for bucket in set(t["bucket"] for t in resolved):
+        b_trades = [t for t in resolved if t["bucket"] == bucket]
+        b_wins = sum(1 for t in b_trades if t["outcome"] == "win")
+        b_losses = sum(1 for t in b_trades if t["outcome"] == "loss")
+        model["bucket_knowledge"][bucket] = {
+            "wins": b_wins, "losses": b_losses,
+        }
+
+    # Adaptive Kelly: lower if winrate < 50% or poor PnL
+    if total_trades >= 5:
+        if winrate < 0.45 or total_pnl < -1.0:
+            model["kelly_adjustment"] = max(0.25, model["kelly_adjustment"] * 0.8)
+            model["ev_floor"] = min(0.20, model["ev_floor"] * 1.1)
+        elif winrate > 0.55 and total_pnl > 2.0:
+            model["kelly_adjustment"] = min(1.0, model["kelly_adjustment"] * 1.1)
+            model["ev_floor"] = max(MIN_EV, model["ev_floor"] * 0.95)
+
+        model["max_kelly_frac"] = round(KELLY_FRAC * model["kelly_adjustment"], 4)
+        model["confidence"] = min(1.0, total_trades / 20.0)
+
+    _save_model(model)
+
+def get_adjusted_kelly(base_kelly: float) -> float:
+    """Apply learned adjustment to Kelly fraction."""
+    model = _load_model()
+    adj = model.get("kelly_adjustment", 1.0)
+    capped = min(base_kelly * adj, model.get("max_kelly_frac", KELLY_FRAC))
+    return round(capped, 4)
+
+def get_adjusted_ev_floor() -> float:
+    """Get adaptive EV threshold based on recent performance."""
+    model = _load_model()
+    return model.get("ev_floor", MIN_EV)
+
+def get_city_winrate(city_slug: str) -> float:
+    """Get learned winrate for a specific city (0.5 if unknown)."""
+    model = _load_model()
+    city = model.get("city_knowledge", {}).get(city_slug)
+    if not city or city["trades"] < 2:
+        return 0.5
+    total = city["wins"] + city["losses"]
+    return city["wins"] / total
+
+def get_learning_stats() -> dict:
+    """Return current learning model summary."""
+    model = _load_model()
+    g = model.get("global", {})
+    trades = g.get("trades", 0)
+    if trades == 0:
+        return {"trades": 0, "winrate": "N/A", "pnl": "$0.00", "confidence": "0%",
+                "kelly_adj": "1.0x", "ev_floor": f"{MIN_EV*100:.0f}%"}
+    wr = g.get("wins", 0) / trades
+    return {
+        "trades": trades,
+        "winrate": f"{wr:.0%}",
+        "pnl": f"${g.get('total_pnl', 0):.2f}",
+        "confidence": f"{model.get('confidence', 0)*100:.0f}%",
+        "kelly_adj": f"{model.get('kelly_adjustment', 1.0):.2f}x",
+        "ev_floor": f"{model.get('ev_floor', MIN_EV)*100:.0f}%",
+    }
 
 # =============================================================================
 # CLOB CLIENT
@@ -370,10 +556,8 @@ def place_buy_order(market_id: str, token_id: str, price: float, shares: float,
     Place a BUY order on Polymarket CLOB.
     Uses FOK (Fill-Or-Kill) market order to guarantee execution.
     Returns dict with success status and details.
+    Uses _timeout_call to prevent indefinite hangs.
     """
-    w3 = get_w3()
-    clob = get_clob()
-
     cost = round(shares * price, 4)
     if cost > balance:
         return {"success": False, "reason": f"Insufficient balance (${balance:.2f} < ${cost:.2f})"}
@@ -381,7 +565,7 @@ def place_buy_order(market_id: str, token_id: str, price: float, shares: float,
     if not is_approved(USDC_ADDRESS, ROUTER, wallet):
         return {"success": False, "reason": "Router approval missing"}
 
-    # --- Market order via CLOB ---
+    # --- Market order via CLOB (with 10s timeout) ---
     order_args = MarketOrderArgs(
         token_id=token_id,
         amount=cost,   # For BUY: amount is in dollars (USDC)
@@ -390,10 +574,21 @@ def place_buy_order(market_id: str, token_id: str, price: float, shares: float,
     )
 
     try:
-        # First check allowance
-        clob.assert_level_1_auth()
-        order_result = clob.create_market_order(order_args)
+        clob = get_clob()
+        # assert_level_1_auth first (fast, with timeout)
+        auth_ok = _timeout_call(clob.assert_level_1_auth, timeout=10.0)
+        if auth_ok is None:
+            return {"success": False, "reason": "CLOB auth timeout (>10s)"}
+
+        # create_market_order (network call, with 10s timeout)
+        order_result = _timeout_call(
+            clob.create_market_order, args=(order_args,), timeout=10.0
+        )
+        if order_result is None:
+            return {"success": False, "reason": "Order execution timeout (>10s)"}
+
         live(f"Market order placed: {order_result}")
+
     except Exception as e:
         return {"success": False, "reason": f"Order failed: {e}"}
 
@@ -565,9 +760,17 @@ def in_bucket(forecast, t_low, t_high):
     return t_low <= float(forecast) <= t_high
 
 def get_condition_id(market_id: str) -> str:
-    """Get condition ID for a market from Polymarket."""
+    """Get condition ID for a market from Polymarket (with 8s timeout)."""
     try:
-        r = requests.get(f"https://gamma-api.polymarket.com/markets/{market_id}", timeout=(5, 8))
+        r = _timeout_call(
+            requests.get,
+            args=(f"https://gamma-api.polymarket.com/markets/{market_id}",),
+            kwargs={"timeout": (5, 8)},
+            timeout=8.0,
+        )
+        if r is None:
+            warn(f"get_condition_id timeout for {market_id[:16]}...")
+            return ""
         data = r.json()
         return data.get("conditionId", "")
     except Exception:
@@ -675,21 +878,33 @@ def scan_and_trade():
         unit_sym = "F"
 
         try:
+            # --- Step 1: Fetch forecasts ---
+            t0 = time.time()
             dates = [(now + timedelta(days=i)).strftime("%Y-%m-%d") for i in range(4)]
             forecasts = get_forecast_snapshot(city_slug, dates)
+            info(f"[{loc['name']}] forecast loaded in {time.time()-t0:.1f}s")
+
             time.sleep(0.3)
         except Exception as e:
             print(f"error ({e})")
             continue
 
+        # --- Step 2: Find signal per date ---
+        city_found_signal = False
         for i, date in enumerate(dates):
-            dt = datetime.strptime(date, "%Y-%m-%d")
-            event = get_polymarket_event(
-                city_slug,
-                MONTHS[dt.month - 1],
-                dt.day,
-                dt.year
-            )
+            t0 = time.time()
+            try:
+                event = get_polymarket_event(
+                    city_slug,
+                    MONTHS[datetime.strptime(date, "%Y-%m-%d").month - 1],
+                    datetime.strptime(date, "%Y-%m-%d").day,
+                    datetime.strptime(date, "%Y-%m-%d").year
+                )
+                info(f"  [{loc['name']} D+{i}] event fetched in {time.time()-t0:.1f}s")
+            except Exception as e:
+                warn(f"Polymarket error for {loc['name']} D+{i}: {e}")
+                continue
+
             if not event:
                 continue
 
@@ -756,13 +971,17 @@ def scan_and_trade():
                 if spread > MAX_SLIPPAGE:
                     continue
 
+                # Use adaptive EV floor and Kelly from self-learning
+                adaptive_ev_floor = get_adjusted_ev_floor()
+                base_kelly = calc_kelly(p, ask)
+                adjusted_kelly = get_adjusted_kelly(base_kelly)
+
                 p = bucket_prob(forecast_temp, t_low, t_high, sigma)
                 ev = calc_ev(p, ask)
-                if ev < MIN_EV:
+                if ev < adaptive_ev_floor:
                     continue
 
-                kelly = calc_kelly(p, ask)
-                size = bet_size(kelly, balance)
+                size = bet_size(adjusted_kelly, balance)
                 if size < 0.50:
                     continue
 
@@ -791,6 +1010,7 @@ def scan_and_trade():
                 break  # Only one bucket per market
 
             if best_signal:
+                city_found_signal = True
                 bucket_label = f"{best_signal['bucket_low']}-{best_signal['bucket_high']}{unit_sym}"
                 print(f"\n  {C.BOLD}📍 {loc['name']} {horizon} — {date}{C.RESET}")
                 print(f"  {C.CYAN}  Forecast: {forecast_temp}°F ({best_source}) | {bucket_label}{C.RESET}")
@@ -812,6 +1032,18 @@ def scan_and_trade():
                     new_trades += 1
                     state["total_trades"] += 1
                     balance -= best_signal["cost"]
+
+                    # Record trade for self-learning (outcome='pending' until resolved)
+                    record_trade(
+                        city_slug=city_slug,
+                        bucket_low=best_signal["bucket_low"],
+                        bucket_high=best_signal["bucket_high"],
+                        outcome="pending",
+                        pnl=0.0,   # will be updated when market resolves
+                        cost=best_signal["cost"],
+                        kelly=best_signal["kelly"],
+                        ev=best_signal["ev"],
+                    )
 
                     live(f"  [LIVE] BUY {loc['name']} {horizon} | {bucket_label} @ ${best_signal['entry_price']:.3f} "
                          f"| EV {best_signal['ev']:+.2f} | ${best_signal['cost']:.2f}")
@@ -870,7 +1102,11 @@ def scan_and_trade():
                     skip(f" {forecast_temp}°F bucket {t_low}-{t_high}F @ ${ask:.3f} EV={ev:.2f} — skipped")
                     break
 
-        print("ok")
+        # Print "ok" regardless of whether signal found
+        if not city_found_signal:
+            # Show first skip reason for this city
+            print("ok", end="", flush=True)
+        print()  # newline after city
 
     # Save updated balance
     state["balance"] = round(balance, 4)
