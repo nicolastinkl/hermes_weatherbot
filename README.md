@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
-
+![alt text](image-1.png)
 ## 🤖 Why Hermes Agent
 
 This project demonstrates the power of **Hermes Agent** framework in autonomous trading:
