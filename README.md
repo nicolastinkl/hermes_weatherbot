@@ -31,6 +31,66 @@ The bot monitors **6 US cities** (NYC, Chicago, Miami, Dallas, Seattle, Atlanta)
 
 ---
 
+## 🚀 Quick Start
+
+### 1. Clone & Install
+
+```bash
+git clone https://github.com/nicolastinkl/hermes_weatherbot.git
+cd hermes_weatherbot
+python3.13 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 2. Configure
+
+Copy the example env file and fill in your wallet credentials:
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env`:
+
+```env
+# Your Polygon private key (hex, without 0x prefix)
+PK=your_polygon_private_key_here
+
+# Your Polygon wallet address
+WALLET=0xYourWalletAddressHere
+
+# Signature type (0 = EOA)
+SIG_TYPE=0
+```
+
+Edit `config.json` to set your trading parameters:
+
+```json
+{
+  "max_bet": 2.0,
+  "min_ev": 0.10,
+  "min_volume": 500,
+  "scan_interval": 3600,
+  "telegram_bot_token": "your_token",
+  "telegram_chat_id": "your_chat_id"
+}
+```
+
+### 3. Start Trading
+
+```bash
+# Start the bot (runs in background)
+./start_bot_v3.sh
+
+# Stop the bot
+./stop_bot_v3.sh
+```
+
+That's it! The bot will continuously scan markets and trade automatically.
+
+---
+
 ## 🧠 Core Math: Gaussian Bucket Model
 
 ### Step 1 — True Probability from ECMWF
@@ -85,7 +145,7 @@ def calc_kelly(p, price):
 
 ## 🌀 Auto-Evolution Learning System
 
-This is a core strength of the Hermes Agent framework — the bot **learns from实战 and auto-tunes**:
+This is a core strength of the Hermes Agent framework — the bot **learns from trading and auto-tunes**:
 
 ```
 data/learning/
@@ -115,58 +175,6 @@ Hermes Agent (Autonomous Decision Engine)
 Polymarket CLOB (On-chain, Polygon)
         ↓
 Telegram (Real-time Notifications)
-```
-
----
-
-## ⚙️ Quick Start
-
-### Requirements
-- Python 3.13+
-- Polygon wallet + USDC.e
-- Polymarket CLOB approval
-- Polymarket API credentials
-
-### Installation
-```bash
-git clone https://github.com/nicolastinkl/hermes_weatherbot.git
-cd hermes_weatherbot
-python3.13 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-### Configuration
-Create `.env`:
-```env
-PK=your_polygon_private_key
-WALLET=your_polygon_address
-SIG_TYPE=0
-```
-
-Edit `config.json`:
-```json
-{
-  "balance": 0,
-  "max_bet": 2.0,
-  "min_ev": 0.10,
-  "min_volume": 500,
-  "scan_interval": 3600,
-  "telegram_bot_token": "your_token",
-  "telegram_chat_id": "your_chat_id"
-}
-```
-
-### Run
-```bash
-# One-shot scan
-python bot_v3.py scan
-
-# Continuous trading loop
-python bot_v3.py run
-
-# Check status
-python bot_v3.py status
 ```
 
 ---
