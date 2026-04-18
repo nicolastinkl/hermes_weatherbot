@@ -366,34 +366,23 @@ def wait_for_receipt(w3, tx_hash: str, timeout=120):
 # =============================================================================
 # BALANCE CHECK
 # =============================================================================
-
 def get_usdc_balance(wallet: str) -> float:
-    """Get USDC.e balance on Polygon."""
+    """Get USDC.e balance on Polygon via raw eth_call (avoids web3 contract ABI issues)."""
     w3 = get_w3()
-    usdc_abi = [
-        {
-            "name": "balanceOf",
-            "inputs": [{"name": "account", "type": "address"}],
-            "outputs": [{"name": "", "type": "uint256"}],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "name": "decimals",
-            "inputs": [],
-            "outputs": [{"name": "", "type": "uint8"}],
-            "stateMutability": "view",
-            "type": "function"
-        }
-    ]
-    usdc = w3.eth.contract(
-        address=Web3.to_checksum_address(USDC_ADDRESS),
-        abi=usdc_abi
-    )
+    wallet_checksum = Web3.to_checksum_address(wallet)
+    usdc_checksum = Web3.to_checksum_address(USDC_ADDRESS)
+
+    #balanceOf(address) — the "data" is the function selector hash + padded address
+    selector = "0x70a08231"  # balanceOf(address)
+    data = selector + wallet_checksum[2:].lower().rjust(64, '0')
+
     try:
-        decimals = usdc.functions.decimals().call()
-        bal = usdc.functions.balanceOf(Web3.to_checksum_address(wallet)).call()
-        return bal / (10 ** decimals)
+        result = w3.eth.call({
+            "to": usdc_checksum,
+            "data": data,
+        })
+        bal = int.from_bytes(result, "big")
+        return bal / 1e6  # USDC.e = 6 decimals
     except Exception as e:
         warn(f"Balance check failed: {e}")
         return 0.0
