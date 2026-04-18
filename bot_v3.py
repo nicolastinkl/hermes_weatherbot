@@ -1144,9 +1144,11 @@ def scan_and_trade():
                         success=False, reason=result.get("reason", "unknown"),
                     )
             else:
-                # No signal — show why
+                # No signal — show why (skip sentinel buckets to avoid confusing EV)
                 for o in outcomes:
                     t_low, t_high = o["range"]
+                    if t_low == -999 or t_high == 999:
+                        continue
                     if not in_bucket(forecast_temp, t_low, t_high):
                         continue
                     ask = o["ask"]
