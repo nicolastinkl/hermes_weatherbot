@@ -1,7 +1,12 @@
 #!/bin/bash
 # Start bot_v3 in background
+# Unsets ALL_PROXY so TUN VPN handles routing at network level
+# (no more per-session proxy config needed in code)
 
 cd ~/weatherbot
+
+# Unset SOCKS proxy env vars — TUN mode handles routing at OS level
+unset ALL_PROXY all_proxy http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
 
 # Check if already running
 if pgrep -f "bot_v3.py run" > /dev/null 2>&1; then

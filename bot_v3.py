@@ -215,15 +215,6 @@ def get_pol_balance(wallet: str) -> float:
 # =============================================================================
 
 _tg_session = requests.Session()
-_tg_session.trust_env = False   # Don't use env ALL_PROXY — SOCKS is configured below
-_tg_session.proxies = {
-    "http": "socks5h://127.0.0.1:6922",
-    "https": "socks5h://127.0.0.1:6922",
-}
-
-# Direct session — ignores ALL_PROXY, used for Polymarket/Open-Meteo API calls
-_direct_session = requests.Session()
-_direct_session.trust_env = False
 
 def send_telegram(text: str, retry=2) -> bool:
     """Send a message via Telegram Bot API. Returns True on success."""
@@ -475,7 +466,7 @@ def get_ecmwf(city_slug, dates):
     result = {}
     for attempt in range(3):
         try:
-            data = _direct_session.get(url, timeout=(5, 10)).json()
+            data = requests.get(url, timeout=(5, 10)).json()
             if "error" not in data:
                 for date, temp in zip(data["daily"]["time"], data["daily"]["temperature_2m_max"]):
                     if date in dates and temp is not None:
@@ -493,7 +484,7 @@ def get_metar(city_slug):
     loc = LOCATIONS[city_slug]
     try:
         url = f"https://aviationweather.gov/api/data/metar?ids={loc['station']}&format=json"
-        data = _direct_session.get(url, timeout=(5, 8)).json()
+        data = requests.get(url, timeout=(5, 8)).json()
         if data and isinstance(data, list):
             temp_c = data[0].get("temp")
             if temp_c is not None:
@@ -527,7 +518,7 @@ def get_forecast_snapshot(city_slug, dates):
 def get_polymarket_event(city_slug, month, day, year):
     slug = f"highest-temperature-in-{city_slug}-on-{month}-{day}-{year}"
     try:
-        r = _direct_session.get(f"https://gamma-api.polymarket.com/events?slug={slug}", timeout=(5, 8))
+        r = requests.get(f"https://gamma-api.polymarket.com/events?slug={slug}", timeout=(5, 8))
         data = r.json()
         if data and isinstance(data, list) and len(data) > 0:
             return data[0]
@@ -537,7 +528,7 @@ def get_polymarket_event(city_slug, month, day, year):
 
 def get_market_price(market_id):
     try:
-        r = _direct_session.get(f"https://gamma-api.polymarket.com/markets/{market_id}", timeout=(3, 5))
+        r = requests.get(f"https://gamma-api.polymarket.com/markets/{market_id}", timeout=(3, 5))
         data = r.json()
         prices = json.loads(data.get("outcomePrices", "[0.5,0.5]"))
         return float(prices[0]), float(prices[1]) if len(prices) > 1 else float(prices[0])
@@ -576,7 +567,7 @@ def in_bucket(forecast, t_low, t_high):
 def get_condition_id(market_id: str) -> str:
     """Get condition ID for a market from Polymarket."""
     try:
-        r = _direct_session.get(f"https://gamma-api.polymarket.com/markets/{market_id}", timeout=(5, 8))
+        r = requests.get(f"https://gamma-api.polymarket.com/markets/{market_id}", timeout=(5, 8))
         data = r.json()
         return data.get("conditionId", "")
     except Exception:
