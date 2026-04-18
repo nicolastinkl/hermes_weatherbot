@@ -1175,6 +1175,9 @@ def scan_and_trade():
         sigma = get_sigma(city_slug)
         for o in outcomes:
             t_low, t_high = o["range"]
+            # Skip sentinel/unbounded buckets — they give false EV signals
+            if t_low == -999 or t_high == 999:
+                continue
             if not in_bucket(forecast_temp, t_low, t_high):
                 continue
             p = bucket_prob(forecast_temp, t_low, t_high, sigma)
