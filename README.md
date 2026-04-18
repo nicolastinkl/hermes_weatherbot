@@ -1,127 +1,249 @@
-# 🌤 WeatherBet — Polymarket Weather Trading Bot
+# 🌦️ WeatherBet — Polymarket Weather Trading Bot
 
-Automated weather market trading bot for Polymarket. Finds mispriced temperature outcomes using real forecast data from multiple sources across 20 cities worldwide.
+> Autonomous trading bot that exploits weather forecast errors to find mispriced Polymarket prediction markets — and self-improves over time.
 
-No SDK. No black box. Pure Python.
-
----
-
-## Versions
-
-### `bot_v1.py` — Base Bot
-The foundation. Scans 6 US cities, fetches forecasts from NWS using airport station coordinates, finds matching temperature buckets on Polymarket, and enters trades when the market price is below the entry threshold.
-
-No math, no complexity. Just the core logic — good for understanding how the system works.
-
-### `weatherbet.py` — Full Bot (current)
-Everything in v1, plus:
-- **20 cities** across 4 continents (US, Europe, Asia, South America, Oceania)
-- **3 forecast sources** — ECMWF (global), HRRR/GFS (US, hourly), METAR (real-time observations)
-- **Expected Value** — skips trades where the math doesn't work
-- **Kelly Criterion** — sizes positions based on edge strength
-- **Stop-loss + trailing stop** — 20% stop, moves to breakeven at +20%
-- **Slippage filter** — skips markets with spread > $0.03
-- **Self-calibration** — learns forecast accuracy per city over time
-- **Full data storage** — every forecast snapshot, trade, and resolution saved to JSON
+[![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/downloads/)
+[![Polygon](https://img.shields.io/badge/Chain-Polygon%20137-9B59B6.svg)](https://polygon.technology/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
 
-## How It Works
+## 🎯 What It Does
 
-Polymarket runs markets like "Will the highest temperature in Chicago be between 46–47°F on March 7?" These markets are often mispriced — the forecast says 78% likely but the market is trading at 8 cents.
-
-The bot:
-1. Fetches forecasts from ECMWF and HRRR via Open-Meteo (free, no key required)
-2. Gets real-time observations from METAR airport stations
-3. Finds the matching temperature bucket on Polymarket
-4. Calculates Expected Value — only enters if the math is positive
-5. Sizes the position using fractional Kelly Criterion
-6. Monitors stops every 10 minutes, full scan every hour
-7. Auto-resolves markets by querying Polymarket API directly
+The bot monitors **6 US cities** (NYC, Chicago, Miami, Dallas, Seattle, Atlanta) and bets on Polymarket's temperature prediction markets using **real ECMWF weather forecasts** as its edge. When the forecast predicts a temperature bucket, but the market price implies a different probability, the bot calculates the Expected Value (EV) and places a trade if EV > threshold.
 
 ---
 
-## Why Airport Coordinates Matter
+## 💡 Why It Makes Money
 
-Most bots use city center coordinates. That's wrong.
+**The edge is weather forecast accuracy.**
 
-Every Polymarket weather market resolves on a specific airport station. NYC resolves on LaGuardia (KLGA), Dallas on Love Field (KDAL) — not DFW. The difference between city center and airport can be 3–8°F. On markets with 1–2°F buckets, that's the difference between the right trade and a guaranteed loss.
+Polymarket traders rely on gut feel and consensus. This bot uses **ECMWF** — the world's most accurate weather model — to calculate the true probability of each temperature bucket, then compares it to the market price.
 
-| City | Station | Airport |
-|------|---------|---------|
-| NYC | KLGA | LaGuardia |
-| Chicago | KORD | O'Hare |
-| Miami | KMIA | Miami Intl |
-| Dallas | KDAL | Love Field |
-| Seattle | KSEA | Sea-Tac |
-| Atlanta | KATL | Hartsfield |
-| London | EGLC | London City |
-| Tokyo | RJTT | Haneda |
-| ... | ... | ... |
-
----
-
-## Installation
-```bash
-git clone https://github.com/alteregoeth-ai/weatherbot
-cd weatherbot
-pip install requests
+```
+True Probability (from ECMWF) vs. Market Price (from Polymarket)
 ```
 
-Create `config.json` in the project folder:
+When `Market Price < True Probability`, the market is **underpriced** → BUY.
+
+---
+
+## 🧮 The Math
+
+### Step 1 — True Probability (Gaussian Bucket Model)
+
+```python
+def bucket_prob(forecast_temp, t_low, t_high, sigma=2.0°F):
+    """
+    The forecast says 72°F ± 2σ.
+    What's the probability the actual high falls in the 70-75°F bucket?
+    """
+    from scipy.stats import norm
+    z_low  = (t_low  - forecast_temp) / sigma
+    z_high = (t_high - forecast_temp) / sigma
+    return norm.cdf(z_high) - norm.cdf(z_low)
+```
+
+### Step 2 — Expected Value
+
+```python
+def calc_ev(true_prob, market_price):
+    """
+    EV = P(win) × payoff - P(lose) × cost
+    If EV > 0, the market underprices this outcome.
+    """
+    win  = true_prob * (1 / market_price - 1)   # profit if we win
+    lose = (1 - true_prob) * 1                   # we lose our stake
+    return win - lose
+```
+
+**Example:**
+- Forecast: 72°F → 75% chance of 70-75°F bucket
+- Market price: $0.30 (implies 30% probability)
+- `EV = 0.75 × (1/0.30 - 1) - 0.25 = +1.25` → **Strong BUY**
+
+### Step 3 — Kelly Criterion (Optimal Bet Size)
+
+```python
+def calc_kelly(p, price):
+    """
+    Kelly % = (bp - q) / b
+    where b = 1/price - 1, p = true_prob, q = 1-p
+    """
+    b = 1.0 / price - 1.0
+    f = (p * b - (1.0 - p)) / b
+    return round(min(max(f, 0.0) * KELLY_FRAC, 1.0), 4)
+
+def bet_size(kelly, balance):
+    return round(min(kelly * balance, MAX_BET), 2)
+```
+
+- Uses **1/4 Kelly** (conservative fraction) to survive variance
+- Caps bet at `$2.00` per trade
+- **Only trades when EV ≥ 10%** (adaptive floor, self-improving)
+
+### Summary: Why This Strategy Wins
+
+| Component | Detail |
+|---|---|
+| **Edge** | ECMWF weather model is more accurate than consensus |
+| **Signal** | Mispriced markets when `Market Price < True Probability` |
+| **Sizing** | Kelly Criterion — mathematically optimal bet sizing |
+| **Filter** | EV ≥ 10% (adaptive), volume > $500, spread < 3% |
+| **Execution** | Real Polymarket CLOB on Polygon (not simulation) |
+| **Learning** | Self-tuning Kelly fraction + EV floor from trade history |
+
+---
+
+## 🧠 Self-Learning System
+
+After each trade, the bot records the outcome and adjusts its strategy:
+
+```
+data/learning/
+├── trade_log.json   # All trades: city, bucket, cost, outcome, pnl
+└── model.json       # Learned parameters per city/bucket
+```
+
+**Adaptation rules:**
+- Winrate < 45% → Kelly fraction ×0.8, EV floor +10%
+- Winrate > 55% + PnL > $2 → Kelly fraction ×1.1, EV floor −5%
+- Per-city winrate tracking adjusts confidence in each market
+- Starts conservative (25% Kelly) → converges to optimal as data accumulates
+
+---
+
+## ⚙️ Setup
+
+### Requirements
+
+- Python 3.13+
+- Polygon wallet with USDC.e (on chain 137)
+- Polymarket CLOB approval
+- Polymarket API credentials
+
+### Installation
+
+```bash
+git clone https://github.com/yourhandle/weatherbot.git
+cd weatherbot
+python3.13 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Configuration
+
+Create `.env`:
+```env
+PK=your_polygon_private_key
+WALLET=your_polygon_address
+SIG_TYPE=0
+```
+
+Edit `config.json`:
 ```json
 {
-  "balance": 10000.0,
-  "max_bet": 20.0,
-  "min_ev": 0.05,
-  "max_price": 0.45,
-  "min_volume": 2000,
-  "min_hours": 2.0,
-  "max_hours": 72.0,
-  "kelly_fraction": 0.25,
-  "max_slippage": 0.03,
+  "balance": 0,
+  "max_bet": 2.0,
+  "min_ev": 0.10,
+  "min_volume": 500,
   "scan_interval": 3600,
-  "calibration_min": 30,
-  "vc_key": "YOUR_VISUAL_CROSSING_KEY"
+  "telegram_bot_token": "your_token",
+  "telegram_chat_id": "your_chat_id"
 }
 ```
 
-Get a free Visual Crossing API key at visualcrossing.com — used to fetch actual temperatures after market resolution.
+### Run
 
----
-
-## Usage
 ```bash
-python weatherbet.py           # start the bot — scans every hour
-python weatherbet.py status    # balance and open positions
-python weatherbet.py report    # full breakdown of all resolved markets
+# One-shot scan
+python bot_v3.py scan
+
+# Continuous trading loop
+python bot_v3.py run
+
+# Check status
+python bot_v3.py status
 ```
 
 ---
 
-## Data Storage
+## 📊 Architecture
 
-All data is saved to `data/markets/` — one JSON file per market. Each file contains:
-- Hourly forecast snapshots (ECMWF, HRRR, METAR)
-- Market price history
-- Position details (entry, stop, PnL)
-- Final resolution outcome
-
-This data is used for self-calibration — the bot learns forecast accuracy per city over time and adjusts position sizing accordingly.
+```
+bot_v3.py
+│
+├── Weather Data
+│   ├── ECMWF API      — 10-day temperature forecast (primary signal)
+│   └── METAR          — current obs for D+0 override
+│
+├── Signal Evaluation
+│   ├── bucket_prob()  — Gaussian model → true probability
+│   ├── calc_ev()      — expected value vs market price
+│   ├── calc_kelly()   — optimal bet fraction
+│   └── Adaptive floor — self-learning EV threshold
+│
+├── Execution
+│   ├── py_clob_client — Polymarket CLOB on Polygon
+│   ├── place_buy_order — market order with 10s timeout
+│   └── on-chain settlement
+│
+├── Monitoring
+│   ├── Telegram       — real-time trade alerts
+│   ├── Self-learning  — trade_log + model.json
+│   └── 60-min loop    — continuous scan
+│
+└── Market Resolution
+    └── Outcome check   — PnL update when market resolves
+```
 
 ---
 
-## APIs Used
+## 🔐 Trading Flow
 
-| API | Auth | Purpose |
-|-----|------|---------|
-| Open-Meteo | None | ECMWF + HRRR forecasts |
-| Aviation Weather (METAR) | None | Real-time station observations |
-| Polymarket Gamma | None | Market data |
-| Visual Crossing | Free key | Historical temps for resolution |
+```
+1. Fetch ECMWF forecast for each city (D+0 to D+3)
+2. Query Polymarket for temperature bucket markets
+3. Calculate true probability (Gaussian model, σ=2°F)
+4. Compare to market price → calc EV
+5. If EV ≥ adaptive threshold → calculate Kelly bet size
+6. Execute market order on Polymarket CLOB (Polygon)
+7. Record trade → update self-learning model
+8. Send Telegram notification
+9. Repeat every 60 minutes
+```
 
 ---
 
-## Disclaimer
+## ⚠️ Risk Management
 
-This is not financial advice. Prediction markets carry real risk. Run the simulation thoroughly before committing real capital.
+| Parameter | Value | Purpose |
+|---|---|---|
+| Max bet | $2.00 | Cap per-trade exposure |
+| Kelly fraction | 25% | Survive variance (1/4 Kelly) |
+| Min EV | 10%+ | Only trade positive EV |
+| Min volume | $500 | Avoid illiquid markets |
+| Max spread | 3% | Avoid high-slippage markets |
+| Adaptive floor | 10-20% | Self-tuning from performance |
+
+---
+
+## 📦 Tech Stack
+
+- **Language:** Python 3.13
+- **Trading:** [py_clob_client](https://github.com/polymarket/py-clob-client) — Polymarket CLOB
+- **Weather:** ECMWF OpenMETAR / Open-Meteo API
+- **Chain:** Polygon (Chain ID 137) — USDC.e stablecoin
+- **Notifications:** Telegram Bot API
+- **Self-learning:** Pure Python JSON persistence (no DB needed)
+
+---
+
+## 📝 Disclaimer
+
+This bot trades real markets with real money. Past performance does not guarantee future results. Trade at your own risk. The bot is provided as-is for educational and research purposes.
+
+---
+
+*Built with 🐍 on Polygon — autonomous weather prediction trading.*
